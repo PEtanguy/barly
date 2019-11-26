@@ -5,6 +5,22 @@ class BarsController < ApplicationController
   #   authorize @bar
   #   @bars = Bar.all
   # end
+
+  def local_bars
+    @ip = request.remote_ip
+    if @ip == "::1"
+      @coordinates = [51.7804, 1.0876]
+    else
+      @user_location = JSON.parse(open("http://iplocate.io/api/lookup/#{@ip}").read)
+      @coordinates = [@user_location['latitude'], @user_location['longitude']]
+    end
+    if @coordinates[0] && @coordinates[1]
+      @bars = Bar.near([@coordinates[0], @coordinates[1]], 2)
+    else
+      @bars = Bar.all
+    end
+  end
+
   def show
     @bar = Bar.find(params[:id])
     authorize @bar
