@@ -7,27 +7,52 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+MenuItem.destroy_all
+Bar.destroy_all
+User.destroy_all
+
 
 # create 1 user
 
-puts 'creating user'
+puts 'Creating user'
 
 1.times do
   User.create(
-    email: 'test@barly.io'
-    password: '123456'
-    gender: 'male'
+    email: 'test@barly.io',
+    password: '123456',
+    gender: 'male',
     dob: '01/01/1871')
 end
 
-puts 'done creating user'
+puts 'Done creating user'
 
-puts 'creating bars'
+puts 'Creating bars'
+
 
 5.times do
+  Bar.create(
+    name: Faker::Company.name,
+    address: Faker::Address.street_address,
+    capacity: '100',
+    opening_time: '15:00',
+    closing_time: '23:30',
+    user: User.first
+    )
+  end
+
+  puts 'Finished creating bars'
+
+  puts 'Creating menu items'
+
+50.times do
+  MenuItem.create(
+    name: Faker::Beer.name,
+    price: Faker::Number.decimal(l_digits: 2),
+    description: Faker::Beer.style,
+    bar: Bar.first
+    )
+  end
+
+  puts 'All done!'
 
 
-# create 5 bars
-
-
-# for each bar create 50 drinks (menu_items)
