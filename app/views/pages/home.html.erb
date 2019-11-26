@@ -17,11 +17,11 @@
           <p>THIS PAGE IS AN INDEX OF THE BARS FOR TESTING REASONS. TO BE CHNGED.</p>
         </div>
 
-        <% if Bar.any? %>
+        <% if Bar.all.any? %>
           <% Bar.all.each do |bar| %>
             <div class="centered">
+              <%=link_to bar.name, bar_menu_items_path(bar) %>
 
-              <%=link_to bar.name, bar_path(bar) %>
             </div>
           <% end  %>
 
