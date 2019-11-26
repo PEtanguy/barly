@@ -2,7 +2,7 @@
 body {
   font-family: $body-font;
   color: $white;
-  background-color: $primary;
+
 
   a {
     color: $white;
@@ -10,9 +10,10 @@ body {
   }
 
   h1 {
-    margin-top: 25%;
+    margin-top: 60%;
     font-family: $headers-font;
     font-size: 86px;
+    margin-bottom: 25%;
   }
 
   h2 {
@@ -26,26 +27,22 @@ body {
   }
 }
 
+.home-banner {
+  min-height: 100vh;
+}
+
 .search-container {
-  padding: 10px;
-
-  .input {
-    padding: 10px;
-  }
+  padding-top: 30px;
 }
 
-.z0 {
-  z-index: -10;
-}
-.yellow-background {
-  z-index: -2;
-  position: absolute;
-  height: 700px;
-  width: 400px;
-  top: -150px;
-  left: -100px;
-  transform: rotate(30deg);
-  background: rgb(255,107,107);
-  background: linear-gradient(0deg, rgba(255,107,107,1) 0%, rgba(253,187,45,1) 77%);
+.button, input {
+  width: 275px;
+  padding: 18px;
   border-radius: 20px;
+  box-shadow: 0px 5px 5px 0px $shadow;
+  border-style: none;
 }
+
+
+
+
