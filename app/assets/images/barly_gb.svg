@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="414px" height="896px" viewBox="0 0 414 896" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>iPhone 11</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="82.5526301%" y1="100%" x2="63.5379479%" y2="35.9774548%" id="linearGradient-1">
+            <stop stop-color="#FF6B6B" offset="0%"></stop>
+            <stop stop-color="#F2A541" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="iPhone-11" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FF6B6B" x="0" y="0" width="414" height="896"></rect>
+        <rect id="Rectangle" fill="url(#linearGradient-1)" transform="translate(134.786342, 229.698015) rotate(40.000000) translate(-134.786342, -229.698015) " x="-170.213658" y="-148.301985" width="610" height="756" rx="23"></rect>
+    </g>
+</svg>
