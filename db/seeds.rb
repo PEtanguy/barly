@@ -29,16 +29,53 @@ puts 'Done creating user'
 puts 'Creating bars'
 
 
-5.times do
   Bar.create(
-    name: Faker::Company.name,
-    address: Faker::Address.street_address,
+    name: "Jack's Pub",
+    address: 'WC2N 4HS',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
     user: User.first
     )
-  end
+
+
+  Bar.create(
+    name: "Tilly's Bar",
+    address: 'SE1 7RW',
+    capacity: '100',
+    opening_time: '15:00',
+    closing_time: '23:30',
+    user: User.first
+    )
+
+
+  Bar.create(
+    name: "Rick's Speakeasy",
+    address: 'WC2N 6DU',
+    capacity: '100',
+    opening_time: '15:00',
+    closing_time: '23:30',
+    user: User.first
+    )
+
+
+  Bar.create(
+    name: "Pierre's Winery",
+    address: 'WC1H 0XG',
+    capacity: '100',
+    opening_time: '15:00',
+    closing_time: '23:30',
+    user: User.first
+    )
+
+  Bar.create(
+    name: "Lenny's Latenight",
+    address: 'WC2E 8PS' ,
+    capacity: '100',
+    opening_time: '15:00',
+    closing_time: '23:30',
+    user: User.first
+    )
 
   puts 'Finished creating bars'
 
