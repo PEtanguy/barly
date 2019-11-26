@@ -1,10 +1,10 @@
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# The data can then be loaded with the rails db:seed command (or create!d alongside the database with db:setup).
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create!(name: 'Luke', movie: movies.first)
 
 require 'faker'
 MenuItem.destroy_all
@@ -12,12 +12,12 @@ Bar.destroy_all
 User.destroy_all
 
 
-# create 1 user
+# create! 1 user
 
 puts 'Creating user'
 
 1.times do
-  User.create(
+  User.create!(
     email: 'test@barly.io',
     password: '123456',
     gender: 'male',
@@ -29,7 +29,7 @@ puts 'Done creating user'
 puts 'Creating bars'
 
 
-  Bar.create(
+  Bar.create!(
     name: "Jack's Pub",
     address: 'WC2N 4HS',
     capacity: '100',
@@ -39,7 +39,7 @@ puts 'Creating bars'
     )
 
 
-  Bar.create(
+  Bar.create!(
     name: "Tilly's Bar",
     address: 'SE1 7RW',
     capacity: '100',
@@ -49,7 +49,7 @@ puts 'Creating bars'
     )
 
 
-  Bar.create(
+  Bar.create!(
     name: "Rick's Speakeasy",
     address: 'WC2N 6DU',
     capacity: '100',
@@ -59,7 +59,7 @@ puts 'Creating bars'
     )
 
 
-  Bar.create(
+  Bar.create!(
     name: "Pierre's Winery",
     address: 'WC1H 0XG',
     capacity: '100',
@@ -68,7 +68,7 @@ puts 'Creating bars'
     user: User.first
     )
 
-  Bar.create(
+  Bar.create!(
     name: "Lenny's Latenight",
     address: 'WC2E 8PS' ,
     capacity: '100',
@@ -82,13 +82,13 @@ puts 'Creating bars'
   puts 'Creating menu items'
 
 50.times do
-  MenuItem.create(
+  MenuItem.create!(
     name: Faker::Beer.name,
     price: Faker::Number.decimal(l_digits: 2),
     description: Faker::Beer.style,
     bar: Bar.first
     )
-  end
+end
 
   puts 'All done!'
 
