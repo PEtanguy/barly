@@ -1,10 +1,10 @@
 class BarsController < ApplicationController
 
 
-  # def index
-  #   authorize @bar
-  #   @bars = Bar.all
-  # end
+  def index
+    authorize @bar
+    @bars = Bar.all
+  end
 
   def local_bars
     @ip = request.remote_ip
