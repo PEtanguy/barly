@@ -21,6 +21,9 @@ insertBasketItem = (data) => {
     <button type='submit'>
       Add to basket
     </button>
+    <% raise %>
+    <%= link_to "Basket", user_basket_path(current_user, @basket_item.basket.id), class: "nav-link"  %>
+
   <% end %>
 `;
 basket_item_field.insertAdjacentHTML('beforeend', basket_item);
