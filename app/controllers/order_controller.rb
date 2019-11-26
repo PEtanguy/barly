@@ -22,6 +22,7 @@ def index
     else
       render :new
     end
+    # en js faire un create.js.erb qui va nous afficher le basket avec option d'ajouter
     authorize @order
   end
 
