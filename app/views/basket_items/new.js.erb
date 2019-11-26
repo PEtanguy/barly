@@ -21,8 +21,10 @@ insertBasketItem = (data) => {
     <button type='submit'>
       Add to basket
     </button>
-    <% raise %>
-    <%= link_to "Basket", user_basket_path(current_user, @basket_item.basket.id), class: "nav-link"  %>
+    <% if current_user.basket %>
+      <%= link_to "Basket", user_basket_path(current_user, current_user.basket.id), class: "nav-link"  %>
+    <% else %>
+    <% end %>
 
   <% end %>
 `;
