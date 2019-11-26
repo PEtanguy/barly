@@ -39,12 +39,11 @@ def index
   end
 
   def delete
-    authorize @menu_item
     @menu_item = Menu_item.find(params[:id])
     @menu_item.destroy
     redirect_to root_path
+    authorize @menu_item
   end
-
 end
 
 
