@@ -11,6 +11,7 @@
         <% if Bar.any? %>
           <% Bar.all.each do |bar| %>
             <div class="centered">
+
               <%=link_to bar.name, bar_path(bar) %>
             </div>
           <% end  %>
