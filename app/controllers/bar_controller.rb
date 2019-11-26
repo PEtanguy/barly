@@ -1,36 +1,36 @@
 class BarController < ApplicationController
 
 
-  def index
-    authorize @bar
-    @bars = Bar.all
-  end
-
+  # def index
+  #   authorize @bar
+  #   @bars = Bar.all
+  # end
   def show
-    authorize @bar
+
     @bar = Bar.find(params[:id])
+    authorize @bar
   end
 
   def edit
-    authorize @bar
     @bar = Bar.find(params[:id])
+    authorize @bar
   end
 
   def update
-    authorize @bar
     if @bar.update(bar_params)
       redirect_to bar_path(@bar)
     else
       render :edit
     end
 
+    authorize @bar
   end
 
   def delete
-    authorize @bar
     @bar = Bar.find(params[:id])
     @bar.destroy
     redirect_to root_path
+    authorize @bar
   end
 
 

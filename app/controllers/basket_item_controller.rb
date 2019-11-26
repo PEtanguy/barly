@@ -7,6 +7,7 @@ class BasketItemController < ApplicationController
 
   def new
     @basket_item = Basket_item.new
+    authorize @basket_item
   end
 
   def create
@@ -16,28 +17,27 @@ class BasketItemController < ApplicationController
     else
       render :new
     end
+    authorize @basket_item
   end
 
   def edit
-    authorize @basket_item
     @basket_item = Basket_item.find(params[:id])
+    authorize @basket_item
   end
 
   def update
-    authorize @basket_item
     if @basket_item.update(basket_item_params)
       redirect_to basket_item_path(@basket_item)
     else
       render :edit
     end
-
+    authorize @basket_item
   end
 
   def delete
-    authorize @basket_item
     @basket_item = Basket_item.find(params[:id])
     @basket_item.destroy
     redirect_to root_path
+    authorize @basket_item
   end
-
 end

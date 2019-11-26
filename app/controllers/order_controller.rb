@@ -1,17 +1,18 @@
 class OrderController < ApplicationController
 
 def index
-    authorize @order
     @orders = Order.all
+    authorize @order
   end
 
   def show
-    authorize @order
     @order = Order.find(params[:id])
+    authorize @order
   end
 
   def new
     @order_item = Order_item.new
+    authorize @order
   end
 
   def create
@@ -21,12 +22,15 @@ def index
     else
       render :new
     end
+    authorize @order
   end
 
   def make
+    authorize @order
   end
 
   def finish
+    authorize @order
   end
 
 end
