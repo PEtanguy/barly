@@ -9,9 +9,9 @@
         </div>
 
         <% if Bar.any? %>
-          <% Bar.each do |bar| %>
+          <% Bar.all.each do |bar| %>
             <div class="centered">
-              <%=blink_to bar.name, bar_path(bar) %>
+              <%=link_to bar.name, bar_path(bar) %>
             </div>
           <% end  %>
 
