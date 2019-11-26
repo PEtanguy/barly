@@ -17,11 +17,11 @@ Rails.application.routes.draw do
     resources :orders, only: [ :index, :show,:new, :create]
     get "bars/:bar_id/orders/:id/make", to: "orders#make"
     get "bars/:bar_id/orders/:id/finish", to: "orders#finish"
-    resources :basket_item
-
-
   end
 
+  resources :menu_items, only: [] do
+    resources :basket_items
+  end
 
 
 
