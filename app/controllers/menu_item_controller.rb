@@ -1,4 +1,4 @@
-class MenuItemController < ApplicationController
+class MenuItemsController < ApplicationController
 
 def index
     authorize @menu_item

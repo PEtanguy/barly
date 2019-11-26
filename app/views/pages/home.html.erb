@@ -11,7 +11,7 @@
         <% if Bar.any? %>
           <% Bar.each do |bar| %>
             <div class="centered">
-              <%=blink_to bar.name, bar_path(bar) %>
+              <%=blink_to bar.name, bar_menu_items_path(bar) %>
             </div>
           <% end  %>
 
