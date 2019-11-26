@@ -7,6 +7,7 @@ def index
   def show
     @menu_item = MenuItem.find(params[:id])
     authorize @menu_item
+
   end
 
   def new
@@ -30,10 +31,12 @@ def index
   def update
     if @menu_item.update(menu_item_params)
       authorize @menu_item
+
       redirect_to menu_item_path(@menu_item)
     else
       render :edit
     end
+
   end
 
   def delete
