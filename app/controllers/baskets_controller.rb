@@ -5,7 +5,7 @@ class BasketsController < ApplicationController
   end
 
   def show
-    @basket = Basket.find(params[current_user])
+    @basket = current_user.basket || Basket.create(user: current_user)
     authorize @basket
   end
 
