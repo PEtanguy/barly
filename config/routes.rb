@@ -22,7 +22,13 @@ Rails.application.routes.draw do
   resources :menu_items, only: [] do
     resources :basket_items
   end
+
   get '/basket', to: 'baskets#show'
+
+
+  resources :users, only: [] do
+    resources :baskets
+  end
 
 
 
