@@ -1,14 +1,35 @@
 <div class="container">
 
-<h1> Menu</h1>
-<ul>
-  <% @menu_items.each do |menuitem| %>
+  <div class="centered">
+    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80" alt="" width="1000" height="500">
+  </div>
 
-    <li>
-      <%= menuitem.name %>
-      <%= menuitem.price %>
-      <% end %>
-    </li>
-</ul>
+  <div>
+    <h1><%= @bar.name %></h1>
+
+    <h1> Menu</h1>
+    <ul>
+      <% @bar.menu_items.each do |menuitem| %>
+      <li>
+        <div >
+          <%= menuitem.name %>
+          <%= menuitem.price %>
+          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary', remote: true  %>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <!-- JAVASCRIPT DYNAMIC MODULAR STICKY BASKET ITEM NEW -->
+
+    <!-- EVENT LISTENER: DISPLAYING THE STICKY BASKET_ITEM ONLY ON CLICK -->
+
+
+        <div class="basket_item_field" id="your_id">
+        </div>
 </div>
+
 

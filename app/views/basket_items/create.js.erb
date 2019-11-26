@@ -1,0 +1,6 @@
+basket_item_field = document.querySelector('.basket_item_field');
+while (basket_item_field.firstChild) {
+  basket_item_field.firstChild.remove()
+}
+
+basket_item_field.insertAdjacentHTML('beforeend', '<div>Item added to basket</div>')
