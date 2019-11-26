@@ -28,4 +28,6 @@ body {
 }
 
 
-.hidden { display: none; }
+.hidden { display: none;
+position: sticky;
+  top: 0; }

@@ -1,8 +1,7 @@
 class OrdersController < ApplicationController
 
 def index
-    @orders = Order.all
-    authorize @order
+    @orders = policy_scope(Order)
   end
 
   def show

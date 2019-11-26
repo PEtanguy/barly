@@ -16,10 +16,14 @@
 
     <h1> Menu</h1>
     <ul>
-      <% @menu_item.each do |menuitem| %>
+      <% @bar.menu_items.each do |menuitem| %>
       <li>
+        <div class= "add_to_basket">
         <%= menuitem.name %>
         <%= menuitem.price %>
+
+        <button class= "add_to_basket"> Add to Basket</button>
+        </div>
         <% end %>
       </li>
     </ul>

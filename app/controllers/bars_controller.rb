@@ -6,7 +6,6 @@ class BarsController < ApplicationController
   #   @bars = Bar.all
   # end
   def show
-
     @bar = Bar.find(params[:id])
     authorize @bar
   end
