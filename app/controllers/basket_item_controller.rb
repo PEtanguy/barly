@@ -1,10 +1,5 @@
 class BasketItemController < ApplicationController
 
-
-
-
-
-
   def new
     @basket_item = Basket_item.new
     authorize @basket_item

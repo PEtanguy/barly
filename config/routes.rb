@@ -12,14 +12,13 @@ Rails.application.routes.draw do
   resources :bars, only: [ :show, :edit, :update, :delete ] do
     resources :menu_items
     resources :orders, only: [ :index, :show,:new, :create]
-    resources :tables, only: [ :show, :edit, :update, :delete ]
     get "bars/:bar_id/orders/:id/make", to: "orders#make"
     get "bars/:bar_id/orders/:id/finish", to: "orders#finish"
+    resources :basket_item
+
+
   end
 
-
-
-  # Custom routes for Orders
 
 
 
