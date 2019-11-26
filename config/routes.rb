@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   # delete "bars/:id", to: "bars#destroy"
 
   resources :bars, only: [ :show, :edit, :update, :delete ] do
+    collection do
+      get "local_bars", to: "bars#local_bars"
+    end
     resources :menu_items
     resources :orders, only: [ :index, :show,:new, :create]
     get "bars/:bar_id/orders/:id/make", to: "orders#make"
