@@ -1,4 +1,4 @@
-class OrderController < ApplicationController
+class OrdersController < ApplicationController
 
 def index
     @orders = Order.all
@@ -11,12 +11,12 @@ def index
   end
 
   def new
-    @order_item = Order_item.new
+    @order_item = Order.new
     authorize @order
   end
 
   def create
-    @order_item = Order_item.new(order_item_params)
+    @order_item = Order.new(order_item_params)
     if @basket_item.save
       # redirect_to new_basket_item_dose_path(@basket_item)
     else

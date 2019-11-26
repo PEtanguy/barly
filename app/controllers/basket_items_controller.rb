@@ -1,4 +1,4 @@
-class BasketItemController < ApplicationController
+class BasketItemsController < ApplicationController
 
   def new
     @basket_item = BasketItem.new

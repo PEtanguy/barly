@@ -1,4 +1,4 @@
-class TableController < ApplicationController
+class TablesController < ApplicationController
 
 def edit
     @table_item = Table_item.find(params[:id])
