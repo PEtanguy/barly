@@ -1,6 +1,7 @@
 class MenuItemsController < ApplicationController
 
 def index
+    @bar = Bar.find(params[:bar_id])
     @menu_items = policy_scope(MenuItem)
   end
 
