@@ -1,8 +1,6 @@
 class OrdersController < ApplicationController
-
-def index
+  def index
     @orders = policy_scope(Order)
-
   end
 
   def show
@@ -11,13 +9,11 @@ def index
   end
 
   def new
-
     @order = Order.new
     authorize @order
   end
 
   def create
-
     @order = Order.new(order_item_params)
     if @order.save
       # redirect_to new_basket_item_dose_path(@basket_item)
@@ -35,5 +31,4 @@ def index
   def finish
     authorize @order
   end
-
 end

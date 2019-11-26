@@ -1,0 +1,35 @@
+
+
+<div class="container">
+
+<%= simple_form_for [@bar, @table] do |f| %>
+  <%= f.input :address %>
+  <%= f.input :capacity %>
+  <%= f.input :opening_time%>
+  <%= f.input :closing_time%>
+  <%= f.input :user_id%>
+  <br>
+  <%= f.button :submit %>
+<% end %>
+
+</div>
+
+
+
+
+
+
+
+<!-- create_table "bars", force: :cascade do |t|
+    t.text "address"
+    t.integer "capacity"
+    t.string "opening_time"
+    t.string "closing_time"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["user_id"], name: "index_bars_on_user_id"
+  end -->

@@ -1,0 +1,16 @@
+
+<div class="container">
+
+<h1> Orders</h1>
+<ul>
+  <% @orders.each do |order| %>
+
+    <li>
+      <%= order.table_id %>
+      <%= order.basket_id %>
+      <% end %>
+    </li>
+</ul>
+</div>
+
+

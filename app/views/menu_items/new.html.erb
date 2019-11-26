@@ -1,12 +1,11 @@
 
 <div class="container">
 
-<%= simple_form_for @menu_item do |f| %>
+<%= simple_form_for [@bar, @menu_item], method: :post, url: bar_menu_items_path(@bar) do |f| %>
   <%= f.input :name %>
   <%= f.input :price %>
   <%= f.input :description%>
   <%= f.input :ingredients%>
-  <%= f.input :bar_id%>
   <br>
   <%= f.button :submit, class: "signin_button" %>
 <% end %>
