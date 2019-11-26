@@ -5,9 +5,9 @@ while (basket_item_field.firstChild) {
 
 insertBasketItem = (data) => {
     basket_item =
-    `<div>
+    `
   <h2> Selected Item: <%= @menu_item.name %></h2>
-  <div id="price" data-price="<%= @menu_item.price %>"><%= @menu_item.price * 1 %></div>
+  <div id="price" data-price="<%= @menu_item.price %>"><%= @menu_item.price%></div>
 
   <div class="actions">
     <a class="btn round-bordered incrementer minus"  id="btnMinus" data-offset="-1">-</a>
@@ -22,7 +22,7 @@ insertBasketItem = (data) => {
       Add to basket
     </button>
   <% end %>
-</div>`;
+`;
 basket_item_field.insertAdjacentHTML('beforeend', basket_item);
 };
 
@@ -33,19 +33,26 @@ buttonMinus = document.getElementById("btnMinus");
 counter = document.getElementById("counter");
 price = document.getElementById("price");
 
+plus = (data) => {
+  buttonPlus.addEventListener("click", (event) => {
+    event.preventDefault()
+    let integer = parseInt(counter.innerText, 10);
+    integer += 1;
+    counter.innerHTML = integer;
+    document.getElementById('basket_item_quantity').value = counter
+    price.value = price + (counter * price)
+  });
+};
 
-buttonPlus.addEventListener("click", (event) => {
-  event.preventDefault()
-  let integer = parseInt(counter.innerText, 10);
-  integer += 1;
-  counter.innerHTML = integer;
-  document.getElementById('basket_item_quantity').value = counter
-});
+minus = (data) => {
+  buttonMinus.addEventListener("click", (event) => {
+    event.preventDefault()
+    let integer = parseInt(counter.innerText, 10);
+    integer -= 1;
+    counter.innerHTML = integer;
+    document.getElementById('basket_item_quantity').value = counter
+  });
+};
 
-buttonMinus.addEventListener("click", (event) => {
-  event.preventDefault()
-  let integer = parseInt(counter.innerText, 10);
-  integer -= 1;
-  counter.innerHTML = integer;
-  document.getElementById('basket_item_quantity').value = counter
-});
+plus()
+minus()
