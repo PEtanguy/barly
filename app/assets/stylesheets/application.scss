@@ -11,3 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
