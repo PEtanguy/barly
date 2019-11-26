@@ -12,6 +12,7 @@ gem 'redis'
 gem 'pundit'
 gem 'faker'
 gem 'geocoder'
+gem "algoliasearch-rails"
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
