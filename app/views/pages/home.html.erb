@@ -1,18 +1,27 @@
 <div class="container">
 
-        <div class= "centered">
-          <h1>Pages#home</h1>
+        <div class="title" id= "centered">
+          <h1>Barly</h1>
+        </div>
+
+        <div class="landing-question" id="centered">
+          <h2>What bar are you at?</h2>
+        </div>
+
+        <div class="search-container" id="centered">
+          <input type="text" placeholder="e.g. The Kings Arms">
+          <button type="button"><i class="fa fa-search"></i></button>
         </div>
 
         <div class= "centered">
           <p>THIS PAGE IS AN INDEX OF THE BARS FOR TESTING REASONS. TO BE CHNGED.</p>
         </div>
 
-        <% if Bar.any? %>
+        <% if Bar.all.any? %>
           <% Bar.all.each do |bar| %>
             <div class="centered">
+              <%=link_to bar.name, bar_menu_items_path(bar) %>
 
-              <%=link_to bar.name, bar_path(bar) %>
             </div>
           <% end  %>
 

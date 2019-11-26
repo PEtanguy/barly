@@ -16,15 +16,20 @@
 
     <h1> Menu</h1>
     <ul>
-      <% @menu_item.each do |menuitem| %>
-      <li>
-        <%= menuitem.name %>
-        <%= menuitem.price %>
-        <% end %>
-      </li>
+      <% @bar.menu_items.each do |menuitem| %>
+        <li>
+          <div class= "add_to_basket">
+            <%= menuitem.name %>
+            <%= menuitem.price %>
+
+            <button class= "add_to_basket"> Add to Basket</button>
+          </div>
+         </li>
+       <% end %>
     </ul>
   </div>
-  <div></div>
+</div>
+
 
 
 
@@ -33,7 +38,7 @@
     <!-- EVENT LISTENER: DISPLAYING THE STICKY BASKET_ITEM ONLY ON CLICK -->
 
 
-        <div class="hidden" id="your_id">
-            <%= render "shared/sticky_basket_item"%>
-        </div>
+  <div class="hidden" id="your_id">
+      <%= render "shared/sticky_basket_item"%>
+  </div>
 </div>

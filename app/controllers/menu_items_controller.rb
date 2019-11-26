@@ -1,13 +1,13 @@
 class MenuItemsController < ApplicationController
 
 def index
-    authorize @menu_item
-    @menu_items = MenuItem.all
+    @menu_items = policy_scope(MenuItem)
   end
 
   def show
-    authorize @menu_item
     @menu_item = MenuItem.find(params[:id])
+    authorize @menu_item
+
   end
 
   def new
@@ -24,13 +24,14 @@ def index
   end
 
   def edit
-    authorize @menu_item
     @menu_item = MenuItem.find(params[:id])
+    authorize @menu_item
   end
 
   def update
-    authorize @menu_item
     if @menu_item.update(menu_item_params)
+      authorize @menu_item
+
       redirect_to menu_item_path(@menu_item)
     else
       render :edit
