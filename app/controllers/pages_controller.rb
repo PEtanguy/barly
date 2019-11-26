@@ -6,7 +6,8 @@ class PagesController < ApplicationController
     @markers = @bars.map do |b|
       {
         lat: b.latitude,
-        lng: b.longitude
+        lng: b.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { bar: b })
       }
     end
   end
