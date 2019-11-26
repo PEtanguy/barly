@@ -1,5 +1,6 @@
 class MenuItemsController < ApplicationController
 
+
 def index
     @bar = Bar.find(params[:bar_id])
     @menu_items = policy_scope(MenuItem)
@@ -8,20 +9,25 @@ def index
   def show
     @menu_item = MenuItem.find(params[:id])
     authorize @menu_item
-
   end
 
   def new
+    @bar = Bar.find(params[:bar_id])
     @menu_item = MenuItem.new
+    authorize @menu_item
   end
 
   def create
+    @bar = Bar.find(params[:bar_id])
     @menu_item = MenuItem.new(menu_item_params)
+    @menu_item.bar = @bar
+
     if @menu_item.save
-      # redirect_to new_menu_item_dose_path(@menu_item)
+      redirect_to bar_menu_items_path(@menu_item)
     else
       render :new
     end
+    authorize @menu_item
   end
 
   def edit
@@ -45,6 +51,10 @@ def index
     @menu_item.destroy
     redirect_to root_path
     authorize @menu_item
+  end
+
+  def menu_item_params
+    params.require(:menu_item).permit(:name, :price, :description, :ingredients)
   end
 end
 

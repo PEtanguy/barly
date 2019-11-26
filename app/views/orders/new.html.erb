@@ -1,0 +1,13 @@
+<div class="container">
+
+<%= simple_form_for [@bar, @order] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description%>
+  <%= f.input :ingredients%>
+  <%= f.input :bar_id%>
+  <br>
+  <%= f.button :submit, class: "signin_button" %>
+<% end %>
+
+</div>

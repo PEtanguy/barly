@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Edit product name:</h1>
+  <%= simple_form_for @table do |f| %>
+    <%= f.input :bar_id, label: 'Bar' %>
+    <%= f.input :capacity%>
+    <br>
+    <%= f.button :submit%>
+  <% end %>
+</div>
+
+<!--
+create_table "tables", force: :cascade do |t|
+    t.bigint "bar_id"
+    t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_tables_on_bar_id"
+  end
+ -->

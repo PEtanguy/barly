@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get "local_bars", to: "bars#local_bars"
     end
     resources :menu_items
-    resources :orders, only: [ :index, :show,:new, :create]
+    resources :orders, only: [ :index, :show, :new, :create]
     get "bars/:bar_id/orders/:id/make", to: "orders#make"
     get "bars/:bar_id/orders/:id/finish", to: "orders#finish"
   end
