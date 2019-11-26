@@ -1,0 +1,13 @@
+<div class="container">
+
+<h1> Menu</h1>
+<ul>
+  <% @menu_item.each do |menuitem| %>
+    <li>
+      <%= menuitem.name %>
+      <%= menuitem.price %>
+      <% end %>
+    </li>
+</ul>
+</div>
+
