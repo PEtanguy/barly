@@ -1,0 +1,55 @@
+.bar-banner {
+  height: 30vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar-details {
+  padding: 2% 0 2% 2%;
+  height: 10%;
+  width: 100vw;
+  background-color: $white;
+  color: $black;
+
+  h3 {
+    margin-bottom: -0.03rem;
+  }
+
+  p {
+    margin-top: -0.03rem;
+  }
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+button {
+  background-color: $primary;
+  color: $white;
+  border-radius: 20px;
+  border-style: none;
+  margin: 1%;
+}
+
+.drink-types {
+  width: 100vw;
+  overflow: hidden;
+  padding: 0;
+
+}
+
+.drink-buttons {
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  border-top-style: solid;
+  border-top-color: $shadow;
+  border-top-width: 2px;
+  background-color: $white;
+}
