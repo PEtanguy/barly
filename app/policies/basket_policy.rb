@@ -6,10 +6,6 @@ class BasketPolicy < ApplicationPolicy
   end
 
   def show?
-
-
-
     return true
-
   end
 end
