@@ -17,6 +17,10 @@
   opacity: 0;
 }
 
+.btn_basket {
+  margin-left: 70px;
+}
+
 
 
 .mhresp {
@@ -27,3 +31,24 @@
 .hidden {
   display: none;
 }
+
+
+
+.style_basket_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $secondary;
+  color: $primary;
+  border-radius: 10px;
+  & h2 {
+    font-size: 15px;
+  }
+}
+
+.sub_div_basket_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
