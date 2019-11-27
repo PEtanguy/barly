@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 
+gem 'active_link_to'
+
 gem 'pundit'
 gem 'faker'
 gem 'geocoder'

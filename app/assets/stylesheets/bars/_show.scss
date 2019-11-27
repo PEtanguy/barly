@@ -32,24 +32,25 @@ button {
   color: $white;
   border-radius: 20px;
   border-style: none;
-  margin: 1%;
 }
 
 .drink-types {
   width: 100vw;
-  overflow: hidden;
   padding: 0;
-
 }
 
 .drink-buttons {
   padding: 0;
   display: flex;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
   border-top-style: solid;
   border-top-color: $shadow;
   border-top-width: 2px;
   background-color: $white;
+  color: $primary;
+}
+
+.active {
+  background-color: blue
 }
