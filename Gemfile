@@ -22,6 +22,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 #Cloudinary
+gem 'cloudinary', '~> 1.12.0'
 gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
