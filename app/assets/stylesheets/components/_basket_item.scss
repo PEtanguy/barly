@@ -1,0 +1,18 @@
+.shrink {
+  opacity: 1 !important;
+  transition: opacity 1s;
+
+}
+
+
+.stickycool {
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  bottom: 0;
+  background-color: $white;
+  color: $black;
+  opacity: 0;
+}
