@@ -102,9 +102,28 @@ i {
   justify-content: space-evenly;
 }
 
+#results {
+  padding: 0;
+  list-style-type: none;
+}
 .search-results {
-  font-size: 150%;
+  font-size: 200%;
   font-weight: bold;
+  border-bottom: 1px solid $white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.search-results a:hover {
+  color: #00CCBC;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #search_query {
