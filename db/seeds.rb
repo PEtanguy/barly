@@ -86,7 +86,8 @@ puts 'Creating bars'
     name: Faker::Beer.name,
     price: Faker::Number.decimal(l_digits: 1),
     description: Faker::Beer.style,
-    bar: Bar.first
+    bar: Bar.first,
+    category: ["Beer", "Wine", "Cocktails", "Mocktails", "Soft Drinks"].sample
     )
   end
 
