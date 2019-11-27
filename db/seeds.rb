@@ -84,7 +84,7 @@ puts 'Creating bars'
 50.times do
   MenuItem.create(
     name: Faker::Beer.name,
-    price: Faker::Number.decimal(l_digits: 2),
+    price: Faker::Number.decimal(l_digits: 1),
     description: Faker::Beer.style,
     bar: Bar.first
     )
