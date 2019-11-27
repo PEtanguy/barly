@@ -1,5 +1,14 @@
-basket_item_field = document.querySelector('.basket_item_field');
+basket_item_field = document.getElementById('basket_item');
+body = document.querySelector('.main');
 basket_item_field.classList.remove("shrink");
+body.classList.add("opaque");
+
+if (basket_item_field.classList.contains("hidden")) {
+ basket_item_field.classList.remove("hidden")
+}
+
+
+
 while (basket_item_field.firstChild) {
   basket_item_field.firstChild.remove()
 }
@@ -8,6 +17,8 @@ insertBasketItem = (data) => {
     basket_item =
     `
   <h2> Selected Item: <%= @menu_item.name %></h2>
+  <button class="btn"><i class="fas fa-times" id="exit_cross"></i></button>
+
   <div id="price" data-price="<%= @menu_item.price %>"><%= @menu_item.price%></div>
 
   <div class="actions">
@@ -20,7 +31,7 @@ insertBasketItem = (data) => {
 
 
   <%= simple_form_for([@menu_item, @basket_item], remote: true) do |f| %>
-    <%= f.input :quantity, as: :hidden, input_html: { value: 1 }, class:"input_hidden" %>
+    <%= f.input :quantity, as: :hidden, input_html: { value: 1 } %>
     <button type='submit'>
       Add to basket
     </button>
@@ -40,7 +51,6 @@ insertBasketItem()
 buttonPlus = document.getElementById("btnPlus");
 buttonMinus = document.getElementById("btnMinus");
 count_display = document.getElementById("counter");
-// counter = document.getElementById("counter");
 counter = 1
 price = document.getElementById("price").innerHTML;
 
@@ -48,38 +58,35 @@ plus = (data) => {
   buttonPlus.addEventListener("click", (event) => {
     event.preventDefault();
     counter += 1;
-    // document.getElementById('basket_item_quantity').value = counter;
     document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
     count_display.innerText = counter;
-    // test = parseInt(price) + counter * parseInt(price);
-    // @basket_item.quantity = counter.innerHTML;
-
-
     price.value = price + (counter * price)
   });
 };
 
 minus = (data) => {
   buttonMinus.addEventListener("click", (event) => {
-    // event.preventDefault()
-    // let integer = parseInt(counter.innerText, 10);
-    // integer -= 1;
-    // counter.innerHTML = integer;
-    // document.getElementById('basket_item_quantity').value = counter
-
     event.preventDefault();
     counter -= 1;
-    // document.getElementById('basket_item_quantity').value = counter;
     document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
     count_display.innerText = counter
-    // test = parseInt(price) + counter * parseInt(price)
-    // @basket_item.quantity = counter.innerHTML;
 
   });
 };
 
+
+
 plus()
 minus()
 setTimeout(function(){ basket_item_field.classList.add("shrink"); }, 500);
+exit_div = document.getElementById('exit_cross');
+exit = (data) => {
+  exit_div.addEventListener("click", (event) => {
+    event.preventDefault();
+      body.classList.remove("opaque");
+      basket_item_field.classList.add("hidden");
+  });
+};
+exit()
 
 

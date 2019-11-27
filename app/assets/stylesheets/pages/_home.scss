@@ -77,6 +77,15 @@ i {
   align-items: center;
 }
 
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);
+  border: 1px solid $white;
+  border-radius: 20px;
+  margin-top: 20px;
+  // margin-bottom: 200px;
+
 .my-wrapper {
   display: flex;
   flex-direction: column;
@@ -92,11 +101,15 @@ i {
   justify-content: space-evenly;
 }
 
+.search-results {
+  font-size: 150%;
+  font-weight: bold;
+
 #search_query {
   border-radius: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
   border: 1px solid $white;
-  height: 8vh;
+  height: 60px;
   width: 80vw;
   font-size: 20px;
       &:focus {
