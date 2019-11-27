@@ -16,3 +16,14 @@
   color: $black;
   opacity: 0;
 }
+
+
+
+.mhresp {
+  height: calc(100vh - 66px);
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
+}
