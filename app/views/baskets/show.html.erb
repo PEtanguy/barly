@@ -1,0 +1,15 @@
+<div class= "container">
+
+  <div>
+    <h1> Your Basket</h1>
+  </div>
+
+  <% @basket.basket_items.each  do |item|   %>
+  <div>
+    <%= item.menu_item.name %><p>£</p><%= item.menu_item.price  %>
+    <p>Quantity:</p> <%= item.menu_item.quantity  %>
+
+  </div>
+  <br>
+  <% end %>
+</div>
