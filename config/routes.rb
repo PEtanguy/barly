@@ -9,9 +9,12 @@ Rails.application.routes.draw do
   # patch "bars/:id", to: "bars#update"
   # delete "bars/:id", to: "bars#destroy"
 
+    get "map", to: "bars#map"
+    # get "local_bars", to: "bars#local_bars"
+
   resources :bars, only: [ :show, :edit, :update, :delete ] do
     collection do
-      get "local_bars", to: "bars#local_bars"
+      # get "local_bars", to: "bars#local_bars"
     end
     resources :menu_items
     resources :orders, only: [ :index, :show, :new, :create]

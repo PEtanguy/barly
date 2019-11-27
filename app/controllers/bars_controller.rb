@@ -48,6 +48,15 @@ class BarsController < ApplicationController
     authorize @bar
   end
 
-
-
+  def map
+    @bars = Bar.all
+      authorize @bars
+    @markers = @bars.map do |b|
+      {
+        lat: b.latitude,
+        lng: b.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { bar: b })
+      }
+    end
+  end
 end
