@@ -1,0 +1,53 @@
+.shrink {
+  opacity: 1 !important;
+  transition: opacity 1s;
+
+}
+
+
+.stickycool {
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  bottom: 0;
+  background-color: $white;
+  color: $black;
+  opacity: 0;
+}
+
+.btn_basket {
+  margin-left: 70px;
+}
+
+
+.mhresp {
+  height: calc(100vh - 66px);
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.style_basket_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $secondary;
+  color: $primary;
+  border-radius: 10px;
+  & h2 {
+    font-size: 15px;
+  }
+}
+
+.sub_div_basket_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
