@@ -1,15 +1,27 @@
 <div class= "container">
 
-  <div>
-    <h1> Your Basket</h1>
+  <div class="box_basket">
+    <div>
+      <h1> Your Basket</h1>
+      <h2>Items:</h2>
+    </div>
+        <div class="item_box">
+          <% total= 0  %>
+          <% @basket.basket_items.each  do |item|   %>
+            <div>
+              <div class="item_main">
+                <%= item.quantity  %>X <%= item.menu_item.name %> £<%= item.menu_item.price  %>
+              </div>
+              <div>
+              Sub-total: £<%=(item.quantity * item.menu_item.price).round(2) %>
+              <% total += item.quantity * item.menu_item.price  %>
+              </div>
+            </div>
+            <br>
+          <% end %>
+        </div>
+        <div class="total_price">
+          <h2>Total: <%= total.round(2) %></h2>
+        </div>
   </div>
-
-  <% @basket.basket_items.each  do |item|   %>
-  <div>
-    <%= item.menu_item.name %><p>£</p><%= item.menu_item.price  %>
-    <p>Quantity:</p> <%= item.quantity  %>
-
-  </div>
-  <br>
-  <% end %>
 </div>
