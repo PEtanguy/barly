@@ -1,37 +1,20 @@
-<div class="container mhresp">
-  <div class= "main">
 
-  <div class="centered">
-    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80" alt="" width="1000" height="500">
-  </div>
-
-  <div>
-    <h1><%= @bar.name %></h1>
-
-    <h1> Menu</h1>
-    <ul>
-      <% @bar.menu_items.each do |menuitem| %>
-      <li>
-        <div >
-          <%= menuitem.name %>
-          <%= menuitem.price %>
-          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary', remote: true  %>
-        </div>
-        <% end %>
-      </li>
-    </ul>
-  </div>
-
-
-  </div>
-    <!-- JAVASCRIPT DYNAMIC MODULAR STICKY BASKET ITEM NEW -->
-
-    <!-- EVENT LISTENER: DISPLAYING THE STICKY BASKET_ITEM ONLY ON CLICK -->
-
-
-        <div class="basket_item_field stickycool" id="basket_item">
-
-        </div>
+<div class="bar-banner" style="background-image: url('<%= asset_path("bar_banner.jpeg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
+<div class="bar-details">
+  <h3><%= @bar.name %></h3>
+  <p><%= @bar.address %></p>
 </div>
+<div class="drink-types">
+  <ul class="drink-buttons" list-style="none">
+    <button>Beer</button>
+    <br>
+    <button>Wine</button>
+    <br>
+    <button>Cocktails</button>
+    <br>
+    <button>Mocktails</button>
+    <br>
+    <button>Soft Drinks</button>
+  </ul>
 
 
