@@ -105,6 +105,7 @@ i {
 .search-results {
   font-size: 150%;
   font-weight: bold;
+}
 
 #search_query {
   border-radius: 20px;
@@ -113,10 +114,10 @@ i {
   height: 60px;
   width: 80vw;
   font-size: 20px;
-      &:focus {
-      height: 60px;
+  &:focus {
+  height: 60px;
 
-      }
+  }
 }
 
 .search-form-control .btn {
