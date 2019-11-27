@@ -1,0 +1,92 @@
+basket_item_field = document.getElementById('basket_item');
+body = document.querySelector('.main');
+basket_item_field.classList.remove("shrink");
+body.classList.add("opaque");
+
+if (basket_item_field.classList.contains("hidden")) {
+ basket_item_field.classList.remove("hidden")
+}
+
+
+
+while (basket_item_field.firstChild) {
+  basket_item_field.firstChild.remove()
+}
+
+insertBasketItem = (data) => {
+    basket_item =
+    `
+  <h2> Selected Item: <%= @menu_item.name %></h2>
+  <button class="btn"><i class="fas fa-times" id="exit_cross"></i></button>
+
+  <div id="price" data-price="<%= @menu_item.price %>"><%= @menu_item.price%></div>
+
+  <div class="actions">
+    <a class="btn round-bordered incrementer"  id="btnMinus" data-offset="-1">-</a>
+    <span id="counter" data-count="1">1</span>
+
+
+    <a class="btn round-bordered incrementer" id= "btnPlus"  data-offset="1">+</a>
+  </div>
+
+
+  <%= simple_form_for([@menu_item, @basket_item], remote: true) do |f| %>
+    <%= f.input :quantity, as: :hidden, input_html: { value: 1 } %>
+    <button type='submit'>
+      Add to basket
+    </button>
+    <% if current_user.basket %>
+      <%= link_to "Basket", user_basket_path(current_user, current_user.basket.id), class: "nav-link"  %>
+
+    <% else %>
+    <% end %>
+
+  <% end %>
+`;
+basket_item_field.insertAdjacentHTML('beforeend', basket_item);
+};
+
+insertBasketItem()
+
+buttonPlus = document.getElementById("btnPlus");
+buttonMinus = document.getElementById("btnMinus");
+count_display = document.getElementById("counter");
+counter = 1
+price = document.getElementById("price").innerHTML;
+
+plus = (data) => {
+  buttonPlus.addEventListener("click", (event) => {
+    event.preventDefault();
+    counter += 1;
+    document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
+    count_display.innerText = counter;
+    price.value = price + (counter * price)
+  });
+};
+
+minus = (data) => {
+  buttonMinus.addEventListener("click", (event) => {
+    event.preventDefault();
+    counter -= 1;
+    document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
+    count_display.innerText = counter
+
+  });
+};
+
+
+
+plus()
+minus()
+setTimeout(function(){ basket_item_field.classList.add("shrink"); }, 500);
+exit_div = document.getElementById('exit_cross');
+exit = (data) => {
+  exit_div.addEventListener("click", (event) => {
+    event.preventDefault();
+      body.classList.remove("opaque");
+      basket_item_field.classList.add("hidden");
+  });
+};
+exit()
+
+
