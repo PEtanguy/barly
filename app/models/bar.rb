@@ -8,6 +8,5 @@ class Bar < ApplicationRecord
   include AlgoliaSearch
 
   algoliasearch do
-    attributes :name, :address
   end
 end
