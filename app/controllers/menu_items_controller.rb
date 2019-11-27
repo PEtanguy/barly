@@ -23,7 +23,7 @@ def index
     @menu_item.bar = @bar
 
     if @menu_item.save
-      redirect_to bar_menu_items_path(@menu_item)
+      redirect_to bar_menu_items_path(@bar)
     else
       render :new
     end
@@ -54,7 +54,7 @@ def index
   end
 
   def menu_item_params
-    params.require(:menu_item).permit(:name, :price, :description, :ingredients)
+    params.require(:menu_item).permit(:name, :price, :description, :ingredients, :drink_photo)
   end
 end
 

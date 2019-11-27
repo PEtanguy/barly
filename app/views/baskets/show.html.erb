@@ -7,7 +7,7 @@
   <% @basket.basket_items.each  do |item|   %>
   <div>
     <%= item.menu_item.name %><p>£</p><%= item.menu_item.price  %>
-    <p>Quantity:</p> <%= item.menu_item.quantity  %>
+    <p>Quantity:</p> <%= item.quantity  %>
 
   </div>
   <br>
