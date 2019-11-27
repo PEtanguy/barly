@@ -1,3 +1,5 @@
+<div class="container mhresp">
+  <div class= "main">
 
 
   <div class="centered">
@@ -21,7 +23,7 @@
           <% end %>
           <%= menuitem.name %>
           <%= menuitem.price %>
-          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary', remote: true  %>
+          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
         </div>
         <% end %>
       </li>
@@ -29,6 +31,7 @@
   </div>
 
 
+  
 
 
 <div class="bar-banner" style="background-image: url('<%= asset_path("bar_banner.jpeg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
@@ -48,13 +51,14 @@
     <br>
     <button>Soft Drinks</button>
   </ul>
-  
+  </div>
+  </div>
     <!-- JAVASCRIPT DYNAMIC MODULAR STICKY BASKET ITEM NEW -->
 
     <!-- EVENT LISTENER: DISPLAYING THE STICKY BASKET_ITEM ONLY ON CLICK -->
 
 
-        <div class="basket_item_field stickycool" id="your_id">
+        <div class="basket_item_field stickycool" id="basket_item">
 
         </div>
 </div>
