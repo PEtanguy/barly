@@ -17,6 +17,6 @@ class BarPolicy < ApplicationPolicy
   end
 
   def my_bar?
-    true
+    return true
   end
 end
