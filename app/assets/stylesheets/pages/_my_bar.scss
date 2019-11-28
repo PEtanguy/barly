@@ -3,209 +3,38 @@
 // }
 
 
-/* Importing Google fonts */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+//
 
-/* Importing components */
-@import url("components/sidebars.css");
-@import url("components/badge.css");
-@import url("components/chat.css");
-@import url("components/messages.css");
 
-/* Importing layouts */
-@import url("layouts/slack.css");
-
-body {
-  font-family: 'Open Sans', sans-serif;
+.wrapper, html, body {
+    height: 100%;
+    margin: 0;
 }
-
-
-h1, h2, h3 {
-  font-weight: bold;
+.wrapper {
+    display: flex;
+    flex-direction: column;
 }
-h1 {
-  font-size: 30px;
+#row1 {
+    background-color: red;
 }
-h2 {
-  font-size: 25px;
-  margin-bottom: 20px;
+#row2 {
+    background-color: blue;
 }
-h3 {
-  font-size: 23px;
+#row3 {
+    background-color: green;
+    flex:2;
+    display: flex;
 }
-.padded {
-  padding: 30px 0;
+#col1 {
+    background-color: yellow;
+    flex: 0 0 240px;
 }
-
-.slack-container {
-  height: 100vh;
+#col2 {
+    background-color: orange;
+    flex: 1 1;
 }
-
-
-.person, .channel {
-  display: flex;
-  align-items: center;
+#col3 {
+    background-color: purple;
+    flex: 0 0 240px;
 }
-
-.person span, .channel span {
-  opacity: .5;
-}
-.channel i {
-  font-size: 14px;
-  margin-right: 4px;
-}
-
-.channel.active span {
-  opacity: 1;
-}
-
-.online-badge {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #1FE5BD;
-  margin-top: 2px;
-  margin-right: 8px;
-}
-
-
-.offline-badge {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: white;
-  margin-top: 2px;
-  margin-right: 8px;
-  opacity: .5;
-}
-
-
-a.chat-container {
-  flex-grow: 1;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-}
-
-.chat-header {
-  border-bottom: 1px solid rgb(240,240,240);
-}
-
-.chat-header h1 {
-  font-size: 24px;
-}
-
-.chat-header i {
-  font-size: 20px;
-}
-
-.chat-conversations {
-  flex-grow: 1;
-  padding: 16px 0;
-  overflow: scroll;
-}
-.message {
-  display: flex;
-  align-items: flex-start;
-}
-
-.message img {
-  width: 40px;
-  border-radius: 4px;
-  margin-right: 16px;
-}
-
-.message .message-content {
-  flex-grow: 1;
-}
-
-.message .message-content p:first-child {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-
-.organizations-sidebar {
-  background-color: #261C25;
-  color: white;
-  padding: 16px;
-  text-align: center;
-}
-
-.organization {
-  opacity: .3;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.organization:hover {
-  opacity: 1;
-}
-
-.organization.active {
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 8px;
-  border-radius: 4px;
-}
-
-.conversations-sidebar {
-  background-color: #4B3949;
-  color: white;
-  padding: 16px;
-  width: 200px;
-  flex-shrink: 0;
-}
-
-.conversations-sidebar h1 {
-  font-size: 24px;
-}
-
-.chat-section {
-  margin-top: 24px;
-}
-
-.chat-section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.chat-section-header h3 {
-  font-size: 16px;
-  margin: 0;
-}
-
-
-// .wrapper, html, body {
-//     height: 100%;
-//     margin: 0;
-// }
-// .wrapper {
-//     display: flex;
-//     flex-direction: column;
-// }
-// #row1 {
-//     background-color: red;
-// }
-// #row2 {
-//     background-color: blue;
-// }
-// #row3 {
-//     background-color: green;
-//     flex:2;
-//     display: flex;
-// }
-// #col1 {
-//     background-color: yellow;
-//     flex: 0 0 240px;
-// }
-// #col2 {
-//     background-color: orange;
-//     flex: 1 1;
-// }
-// #col3 {
-//     background-color: purple;
-//     flex: 0 0 240px;
-// }
 
