@@ -15,20 +15,28 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_item_params)
-    if @order.save
-      # redirect_to new_basket_item_dose_path(@basket_item)
-    else
-      render :new
+    @bar = Bar.find(params[:bar_id])
+    @order.bar = @bar
+    @order.user = current_user
+    @order.basket = current_user.basket
+    if @order.save!
+      @order.basket.basket_items.each do |item|
+        @order_item = OrderItem.new
+        @order_item.order_id = @order.id
+        @order_item.quantity = item.quantity
+        @order_item.menu_item_price = item.menu_item.price
+        @order_item.menu_item_name = item.menu_item.name
+        @order_item.save!
+      end
+      redirect_to order_path(@order)
+    # else
+      # render :new
     end
     # en js faire un create.js.erb qui va nous afficher le basket avec option d'ajouter
     authorize @order
   end
 
-  def make
-    authorize @order
-  end
-
-  def finish
-    authorize @order
+  def order_item_params
+    params.require(:order).permit(:table_id, :notes)
   end
 end

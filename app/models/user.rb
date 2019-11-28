@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   after_create :send_welcome
   has_many :bars
-
+  has_many :orders
   has_one :basket
 
   def send_welcome
