@@ -29,38 +29,62 @@
   }
 }
 
+.drinks {
+  width: 120%;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 ul {
   margin-bottom: 0;
 }
 
-button {
-  background-color: $primary;
-  color: $white;
-  border-radius: 20px;
-  border-style: none;
+// button {
+//   background-color: $primary;
+//   color: $white;
+//   border-radius: 20px;
+//   border-style: none;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.drink-buttons-arthur {
+  height: 7vh;
+  background-color: $white;
+  width: 100vw;
   display: flex;
-  justify-content: center;
   align-items: center;
+  overflow-x: scroll;
+  a {
+    background-color: $primary;
+    color:  white;
+    padding: 2px 10px;
+    display: inline-block;
+    min-width: 150px;
+    margin: 0 4px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+  }
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.drink-buttons-arthur::-webkit-scrollbar { width: 0 !important }
 
 .drink-types {
   width: 100vw;
   padding: 0;
 }
 
-.drink-buttons {
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $white;
-  color: $primary;
-}
-
-.active {
-  background-color: blue
-}
-
-.slick-list {
-  padding: 2% !important;
+.container {
+  padding: 0px !important;
 }
