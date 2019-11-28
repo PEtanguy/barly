@@ -13,31 +13,47 @@
       <a data-scroll href="#soft_drink">Soft Drinks</a>
     </div>
     <div class="mhresp">
-    <h1 id="beer">Beers</h1>
-    <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
-      <%= render 'drink_card', menuitem: menuitem %>
+    <% if @bar.menu_items.where(category: 'Beer').any? %>
+          <h1 id="beer">Beers</h1>
+          <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
+            <%= render 'drink_card', menuitem: menuitem %>
+          <% end %>
+     <% else %>
+     <% end %>
+     
+    <% if @bar.menu_items.where(category: 'Cocktail').any? %>
+          <h1 id="cocktail">Cocktails</h1>
+          <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
+            <%= render 'drink_card', menuitem: menuitem %>
+          <% end %>
+    <% else %>
     <% end %>
-
-    <h1 id="cocktail">Cocktails</h1>
-    <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
-      <%= render 'drink_card', menuitem: menuitem %>
+     
+    <% if @bar.menu_items.where(category: 'Wine').any? %>
+            <h1 id="wine">Wines</h1>
+            <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
+              <%= render 'drink_card', menuitem: menuitem %>
+            <% end %>
+    <% else %>
     <% end %>
-
-    <h1 id="wine">Wines</h1>
-    <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
-      <%= render 'drink_card', menuitem: menuitem %>
+    
+    <% if @bar.menu_items.where(category: 'Mocktail').any? %>
+            <h1 id="mocktail">Mocktails</h1>
+            <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
+              <%= render 'drink_card', menuitem: menuitem %>
+            <% end %>
+    <% else %>
     <% end %>
-
-    <h1 id="mocktail">Mocktails</h1>
-    <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
-      <%= render 'drink_card', menuitem: menuitem %>
+      
+      
+    <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
+            <h1 id="soft_drink">Soft Drinks</h1>
+            <% @bar.menu_items.where(category: 'Soft Drinks').find_each do |menuitem| %>
+              <%= render 'drink_card', menuitem: menuitem %>
+            <% end %>
+    <% else %>
     <% end %>
-
-      <h1 id="soft_drink">Soft Drinks</h1>
-      <% @bar.menu_items.where(category: 'Soft Drinks').find_each do |menuitem| %>
-        <%= render 'drink_card', menuitem: menuitem %>
-      <% end %>
-    </div>
+</div>
   </div>
 
 
