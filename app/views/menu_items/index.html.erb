@@ -11,45 +11,19 @@
 </div>
 <div class="drink-types">
   <ul class="drink-buttons" list-style="none">
-
-    <%= link_to "#" do %>
-      <a href="#beer"><button>Beers</button></a>
-    <% end %>
-    <%= link_to "#" do %>
-      <a href="#cocktail"><button>Cocktails</button></a>
-    <% end %>
-    <%= link_to "#" do %>
-      <a href="#wine"><button>Wines</button></a>
-    <% end %>
-    <%= link_to "#" do %>
-     <a href="#mocktail"><button>Mocktails</button></a>
-    <% end %>
-    <%= link_to "#" do %>
-     <a href="#soft_drink"><button>Soft Drinks</button></a>
-    <% end %>
+    <a href="#beer"><button>Beers</button></a>
+    <a href="#cocktail"><button>Cocktails</button></a>
+    <a href="#wine"><button>Wines</button></a>
+    <a href="#mocktail"><button>Mocktails</button></a>
+    <a href="#soft_drink"><button>Soft Drinks</button></a>
   </ul>
-  </div>
+</div>
 
-    <h1> Menu</h1>
+
     <h2 id="beer">Beers</h2>
-    <ul>
       <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
-      <li>
-        <div >
-          <% if  menuitem.drink_photo.attached? %>
-            <%= cl_image_tag(menuitem.drink_photo.key,
-            width: 200, height: 100, crop: :fill) %>
-          <% else %>
-            <%= cl_image_tag('barlycoa5vm',
-            width: 200, height: 100, crop: :fill) %>
-          <% end %>
-          <%= menuitem.name %>
-          <%= menuitem.price %>
-          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-        </div>
-        <% end %>
-      </li>
-    </ul>
+        <%= render 'drink_card', menuitem: menuitem %>
+      <% end %>
     <br>
     <br>
     <br>

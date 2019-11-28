@@ -1,11 +1,15 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: $primary;
+  background: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin: 10px;
+
+  border-radius: 20px;
+  width: 95vw;
+  height: 10vh;
 }
 
 .card-product img {
@@ -18,6 +22,8 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+
+  color: $black;
 }
 
 .card-product p {
@@ -26,6 +32,8 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+
+  color: $black;
 }
 
 .card-product .card-product-infos {
@@ -34,4 +42,12 @@
 
 .color_button {
   background-color: $secondary;
+}
+
+#beer {
+  margin-top: 10px;
+  color: $black;
+  font-size: 30px;
+  font-family: $headers-font;
+  margin-left: 4%;
 }
