@@ -7,9 +7,18 @@
   align-items: center;
 }
 
+#top-holder {
+  transition: height 0.5s;
+  height: 40vh;
+}
+.zero {
+  height: 0px !important;
+  overflow: hidden;
+}
+
 .bar-details {
   padding: 2% 0 2% 2%;
-  height: 10%;
+  height: 10vh;
   width: 100vw;
   background-color: $white;
   color: $black;

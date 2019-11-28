@@ -1,7 +1,33 @@
 .shrink {
   opacity: 1 !important;
   transition: opacity 1s;
+}
 
+.layer {
+  opacity: 0.5;
+}
+
+.adding-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $headers-font;
+  font-size: 30px;
+  padding: 0 10px 10px;
+  border-bottom-style: solid;
+  border-bottom-color: #e8ebeb;
+  border-bottom-width: 1px;
+}
+
+i {
+  font-size: 23px;
+  color: $primary;
+}
+
+#price {
+  color: $shadow;
+  font-size: 23px;
+  padding-top: 3px;
 }
 
 
@@ -25,6 +51,7 @@
 .mhresp {
   height: calc(100vh - 66px);
   overflow: scroll;
+  background-color: #F1F1F1;
 }
 
 .hidden {

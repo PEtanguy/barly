@@ -1,9 +1,11 @@
 <div class="container">
   <div class= "main">
-    <div class="bar-banner" style="background-image: url('<%= asset_path("bar_banner.jpeg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
-    <div class="bar-details">
-      <h3><%= @bar.name %></h3>
-      <p><%= @bar.address %></p>
+    <div id="top-holder">
+      <div class="bar-banner" style="background-image: url('<%= asset_path("bar_banner.jpeg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
+      <div class="bar-details">
+        <h3><%= @bar.name %></h3>
+        <p><%= @bar.address %></p>
+      </div>
     </div>
     <div class="drink-buttons-arthur" id="drinks-navbar">
       <a data-scroll href="#beer">Beers</a>
@@ -20,7 +22,7 @@
           <% end %>
      <% else %>
      <% end %>
-     
+
     <% if @bar.menu_items.where(category: 'Cocktail').any? %>
           <h1 id="cocktail">Cocktails</h1>
           <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
@@ -28,15 +30,15 @@
           <% end %>
     <% else %>
     <% end %>
-     
+
     <% if @bar.menu_items.where(category: 'Wine').any? %>
             <h1 id="wine">Wines</h1>
-            <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
+            <% @bar.menu_items.where(category: 'Wine').find_each do |menuitem| %>
               <%= render 'drink_card', menuitem: menuitem %>
             <% end %>
     <% else %>
     <% end %>
-    
+
     <% if @bar.menu_items.where(category: 'Mocktail').any? %>
             <h1 id="mocktail">Mocktails</h1>
             <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
@@ -44,8 +46,8 @@
             <% end %>
     <% else %>
     <% end %>
-      
-      
+
+
     <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
             <h1 id="soft_drink">Soft Drinks</h1>
             <% @bar.menu_items.where(category: 'Soft Drinks').find_each do |menuitem| %>

@@ -21,13 +21,16 @@ const drinksNavbar = document.getElementById("drinks-navbar")
 // var sticky = drinksNavbar.offsetTop;
 
 // function myFunction() {
+const beer = document.getElementById('beer');
+const banner = document.getElementById('top-holder')
+console.log(banner)
 const div = document.querySelector('.mhresp');
 if (div) {
-  div.addEventListener('scroll', () => {
-    if (window.scrollY >= 0.3*window.innerHeight) {
-      drinksNavbar.classList.add("sticky")
-    } else {
-      drinksNavbar.classList.remove("sticky");
+  div.addEventListener('scroll', (e) => {
+    banner.classList.add('zero')
+    console.log(e.path[0].scrollTop)
+    if (e.path[0].scrollTop == 0) {
+      banner.classList.remove('zero')
     }
   });
 }
@@ -36,3 +39,4 @@ if (div) {
 // window.onscroll = function() {myFunction()};
 
 // myFunction()
+
