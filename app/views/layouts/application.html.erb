@@ -14,7 +14,10 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% unless action_name == "home" %>
+    <% if action_name == "my_bar" %>
+    <%= render 'bars/admin-navbar' %>
+    <% end %>
+    <% unless action_name == "home" || "my_bar" %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
