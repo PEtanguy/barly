@@ -8,7 +8,7 @@
   margin: 10px;
 
   border-radius: 20px;
-  width: 100vw;
+  max-width: 100vw;
   height: 10vh;
 }
 
@@ -19,6 +19,7 @@
 }
 
 .card-product h2 {
+  font-family: $body-font;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -28,6 +29,7 @@
 }
 
 .card-product p {
+  font-family: $body-font;
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -52,5 +54,11 @@ h1 {
   font-size: 30px;
   font-family: $headers-font;
   margin-left: 4%;
+}
+
+.back-menu {
+  padding: 0;
+  margin: 0;
+  border-style: none;
 }
 
