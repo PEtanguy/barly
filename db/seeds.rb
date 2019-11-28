@@ -91,16 +91,11 @@ puts 'Creating bars'
     price: Faker::Number.decimal(l_digits: 1),
     description: Faker::Beer.style,
     bar: Bar.first,
-    category: ["Beer", "Wine", "Cocktails", "Mocktails", "Soft Drinks"].sample
+    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
     )
   end
 
-10.times do
-  Order.create(
-    bar: Bar.first,
-    basket: User.first.basket
-  )
-end
+
 
   puts 'All done!'
 

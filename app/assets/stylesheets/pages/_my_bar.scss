@@ -19,6 +19,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+
 h1, h2, h3 {
   font-weight: bold;
 }
@@ -174,4 +175,37 @@ a.chat-container {
   font-size: 16px;
   margin: 0;
 }
+
+
+// .wrapper, html, body {
+//     height: 100%;
+//     margin: 0;
+// }
+// .wrapper {
+//     display: flex;
+//     flex-direction: column;
+// }
+// #row1 {
+//     background-color: red;
+// }
+// #row2 {
+//     background-color: blue;
+// }
+// #row3 {
+//     background-color: green;
+//     flex:2;
+//     display: flex;
+// }
+// #col1 {
+//     background-color: yellow;
+//     flex: 0 0 240px;
+// }
+// #col2 {
+//     background-color: orange;
+//     flex: 1 1;
+// }
+// #col3 {
+//     background-color: purple;
+//     flex: 0 0 240px;
+// }
 
