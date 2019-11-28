@@ -20,7 +20,7 @@
           <% end %>
      <% else %>
      <% end %>
-     
+
     <% if @bar.menu_items.where(category: 'Cocktail').any? %>
           <h1 id="cocktail">Cocktails</h1>
           <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
@@ -28,15 +28,15 @@
           <% end %>
     <% else %>
     <% end %>
-     
+
     <% if @bar.menu_items.where(category: 'Wine').any? %>
             <h1 id="wine">Wines</h1>
-            <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
+            <% @bar.menu_items.where(category: 'wine').find_each do |menuitem| %>
               <%= render 'drink_card', menuitem: menuitem %>
             <% end %>
     <% else %>
     <% end %>
-    
+
     <% if @bar.menu_items.where(category: 'Mocktail').any? %>
             <h1 id="mocktail">Mocktails</h1>
             <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
@@ -44,8 +44,8 @@
             <% end %>
     <% else %>
     <% end %>
-      
-      
+
+
     <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
             <h1 id="soft_drink">Soft Drinks</h1>
             <% @bar.menu_items.where(category: 'Soft Drinks').find_each do |menuitem| %>
