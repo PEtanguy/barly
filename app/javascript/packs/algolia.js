@@ -6,7 +6,7 @@ const search = () => {
   input.addEventListener("keyup", (event) => {
     let keyword = input.value;
     console.log(keyword);
-    index.search(keyword, { hitsPerPage: 10, page: 0 })
+    index.search(keyword, { hitsPerPage: 3, page: 0 })
     .then(function searchDone(content) {
       console.log(content)
       results.innerHTML = '';
