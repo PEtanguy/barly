@@ -15,4 +15,8 @@ class BarPolicy < ApplicationPolicy
   def map?
     return true
   end
+
+  def my_bar?
+    return true
+  end
 end
