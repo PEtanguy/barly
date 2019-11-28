@@ -3,6 +3,10 @@ class OrdersController < ApplicationController
     @orders = policy_scope(Order)
   end
 
+  def bar_index
+    @orders = policy_scope(Order).where(bar: current_user.bar)
+  end
+
   def show
     @order = Order.find(params[:id])
     authorize @order

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+  authenticate :user do
+    if current_user.bar
+      root to: "bars#my_bar"
+    else
+      root to: 'pages#home'
+    end
+  end
   root to: 'pages#home'
-
 
 # BARS ROUTES
   # get "bars/:id", to: "bars#show"
@@ -14,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :bars, only: [ :show, :edit, :update, :delete ] do
     collection do
+      get "my_bar", to: "bars#my_bar"
       # get "local_bars", to: "bars#local_bars"
     end
     resources :menu_items
