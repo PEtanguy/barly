@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   after_create :send_welcome
-  has_many :bars
+  has_one :bar
 
   has_one :basket
 
