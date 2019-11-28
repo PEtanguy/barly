@@ -33,6 +33,7 @@ class BarsController < ApplicationController
 
   def update
     if @bar.update(bar_params)
+      Bar.algolia_reindex!
       redirect_to bar_path(@bar)
     else
       render :edit
