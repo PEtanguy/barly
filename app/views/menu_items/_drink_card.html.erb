@@ -1,14 +1,16 @@
-<div class="card-product">
-  <% if menuitem.drink_photo.attached? %>
-      <%= cl_image_tag(menuitem.drink_photo.key,
-      width: 200, height: 100, crop: :fill, class: "pic") %>
-    <% else %>
-      <%= cl_image_tag('barlycoa5vm',
-      width: 200, height: 100, crop: :fill) %>
-    <% end %>
-  <div class="card-product-infos">
-    <h2><%= menuitem.name %></h2>
-    <p><strong>£<%= menuitem.price %></strong></p>
 
+<%= link_to new_menu_item_basket_item_path(menuitem), remote: true do  %>
+  <div class="card-product">
+      <% if menuitem.drink_photo.attached? %>
+          <%= cl_image_tag(menuitem.drink_photo.key,
+          width: 200, height: 100, crop: :fill) %>
+        <% else %>
+          <%= cl_image_tag('barlycoa5vm',
+          width: 200, height: 100, crop: :fill) %>
+        <% end %>
+      <div class="card-product-infos">
+        <h2><%= menuitem.name %></h2>
+        <p><strong>£<%= menuitem.price %></strong></p>
+      </div>
   </div>
-</div>
+<% end %>

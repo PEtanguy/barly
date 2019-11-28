@@ -1,141 +1,59 @@
-
-<div class="container mhresp">
+<div class="container">
   <div class= "main">
-
-
- <div class="bar-banner" style="background-image: url('<%= asset_path("bar_banner.jpeg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
-
-<div class="bar-details">
-  <h3><%= @bar.name %></h3>
-  <p><%= @bar.address %></p>
-</div>
-<div class="drink-types">
-  <ul class="drink-buttons" list-style="none">
-    <a href="#beer"><button>Beers</button></a>
-    <a href="#cocktail"><button>Cocktails</button></a>
-    <a href="#wine"><button>Wines</button></a>
-    <a href="#mocktail"><button>Mocktails</button></a>
-    <a href="#soft_drink"><button>Soft Drinks</button></a>
-  </ul>
-</div>
-
+    <div class="bar-banner" style="background-image: url('<%= asset_path("bar_banner.jpeg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
+    <div class="bar-details">
+      <h3><%= @bar.name %></h3>
+      <p><%= @bar.address %></p>
+    </div>
+    <div class="drink-buttons-arthur" id="drinks-navbar">
+      <a data-scroll href="#beer">Beers</a>
+      <a data-scroll href="#cocktail">Cocktails</a>
+      <a data-scroll href="#wine">Wines</a>
+      <a data-scroll href="#mocktail">Mocktails</a>
+      <a data-scroll href="#soft_drink">Soft Drinks</a>
+    </div>
+    <div class="mhresp">
     <% if @bar.menu_items.where(category: 'Beer').any? %>
-
-
-                  <h2 id="beer">Beers</h2>
-                    <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
-                      <%= render 'drink_card', menuitem: menuitem %>
-                    <% end %>
-                  <br>
-                  <br>
-                  <br>
+          <h1 id="beer">Beers</h1>
+          <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
+            <%= render 'drink_card', menuitem: menuitem %>
+          <% end %>
+     <% else %>
+     <% end %>
+     
+    <% if @bar.menu_items.where(category: 'Cocktail').any? %>
+          <h1 id="cocktail">Cocktails</h1>
+          <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
+            <%= render 'drink_card', menuitem: menuitem %>
+          <% end %>
     <% else %>
     <% end %>
-
-
-    <% if @bar.menu_items.where(category: 'Cocktail').any? %>
-
-                  <h2 id="cocktail">Cocktails</h2>
-                  <ul>
-                    <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
-                    <li>
-                      <div >
-                        <% if  menuitem.drink_photo.attached? %>
-                          <%= cl_image_tag(menuitem.drink_photo.key,
-                          width: 200, height: 100, crop: :fill) %>
-                        <% else %>
-                          <%= cl_image_tag('barlycoa5vm',
-                          width: 200, height: 100, crop: :fill) %>
-                        <% end %>
-                        <%= menuitem.name %>
-                        <%= menuitem.price %>
-                        <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-                      </div>
-                      <% end %>
-                    </li>
-                  </ul>
-                  <br>
-                  <br>
-                  <br>
-  <% else %>
-  <% end %>
-
-  <% if @bar.menu_items.where(category: 'Wine').any? %>
-              <h2 id="wine">Wines</h2>
-              <ul>
-                <% @bar.menu_items.where(category: 'Wine').find_each do |menuitem| %>
-                <li>
-                  <div >
-                    <% if  menuitem.drink_photo.attached? %>
-                      <%= cl_image_tag(menuitem.drink_photo.key,
-                      width: 200, height: 100, crop: :fill) %>
-                    <% else %>
-                      <%= cl_image_tag('barlycoa5vm',
-                      width: 200, height: 100, crop: :fill) %>
-                    <% end %>
-                    <%= menuitem.name %>
-                    <%= menuitem.price %>
-                    <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-                  </div>
-                  <% end %>
-                </li>
-              </ul>
-              <br>
-              <br>
-              <br>
-  <% else %>
-  <% end %>
-
-  <% if @bar.menu_items.where(category: 'Mocktail').any? %>
-              <h2 id="mocktail">Mocktails</h2>
-              <ul>
-                <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
-                <li>
-                  <div >
-                    <% if  menuitem.drink_photo.attached? %>
-                      <%= cl_image_tag(menuitem.drink_photo.key,
-                      width: 200, height: 100, crop: :fill) %>
-                    <% else %>
-                      <%= cl_image_tag('barlycoa5vm',
-                      width: 200, height: 100, crop: :fill) %>
-                    <% end %>
-                    <%= menuitem.name %>
-                    <%= menuitem.price %>
-                    <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-                  </div>
-                  <% end %>
-                </li>
-              </ul>
-
-              <br>
-              <br>
-              <br>
-  <% else %>
-  <% end %>
-
-
-  <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
-            <h2 id="soft_drink">Soft Drinks</h2>
-            <ul>
-              <% @bar.menu_items.where(category: 'Soft Drink').find_each do |menuitem| %>
-              <li>
-                <div >
-                  <% if  menuitem.drink_photo.attached? %>
-                    <%= cl_image_tag(menuitem.drink_photo.key,
-                    width: 200, height: 100, crop: :fill) %>
-                  <% else %>
-                    <%= cl_image_tag('barlycoa5vm',
-                    width: 200, height: 100, crop: :fill) %>
-                  <% end %>
-                  <%= menuitem.name %>
-                  <%= menuitem.price %>
-                  <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-                </div>
-                <% end %>
-              </li>
-            </ul>
-  <% else %>
-  <% end %>
+     
+    <% if @bar.menu_items.where(category: 'Wine').any? %>
+            <h1 id="wine">Wines</h1>
+            <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
+              <%= render 'drink_card', menuitem: menuitem %>
+            <% end %>
+    <% else %>
+    <% end %>
+    
+    <% if @bar.menu_items.where(category: 'Mocktail').any? %>
+            <h1 id="mocktail">Mocktails</h1>
+            <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
+              <%= render 'drink_card', menuitem: menuitem %>
+            <% end %>
+    <% else %>
+    <% end %>
+      
+      
+    <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
+            <h1 id="soft_drink">Soft Drinks</h1>
+            <% @bar.menu_items.where(category: 'Soft Drinks').find_each do |menuitem| %>
+              <%= render 'drink_card', menuitem: menuitem %>
+            <% end %>
+    <% else %>
+    <% end %>
+</div>
   </div>
 
 
@@ -143,15 +61,24 @@
 
 
 
-
-  </div>
+  <!-- </div> -->
     <!-- JAVASCRIPT DYNAMIC MODULAR STICKY BASKET ITEM NEW -->
 
     <!-- EVENT LISTENER: DISPLAYING THE STICKY BASKET_ITEM ONLY ON CLICK -->
 
 
-        <div class="basket_item_field stickycool" id="basket_item">
+  <div class="basket_item_field stickycool" id="basket_item">
 
-        </div>
+  </div>
 
 </div>
+
+
+
+<!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]');
+</script> -->
+
+
