@@ -1,3 +1,52 @@
-<h1>My Bar</h1>
+<h1 style="color:black">My Bar</h1>
 
 <%= @bar.name %>
+<p style="color:black"><% @bar.orders.each do |order| %></p>
+  £13 table 4
+<% end %>
+
+
+
+
+
+<!-- create_table "bars", force: :cascade do |t|
+    t.text "address"
+    t.integer "capacity"
+    t.string "opening_time"
+    t.string "closing_time"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["user_id"], name: "index_bars_on_user_id"
+  end
+ -->
+
+
+
+<!-- create_table "orders", force: :cascade do |t|
+    t.bigint "table_id"
+    t.bigint "bar_id"
+    t.bigint "basket_id"
+    t.datetime "creation_time"
+    t.datetime "completion_time"
+    t.text "notes"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_orders_on_bar_id"
+    t.index ["basket_id"], name: "index_orders_on_basket_id"
+    t.index ["table_id"], name: "index_orders_on_table_id"
+  end -->
+
+
+<!--
+   create_table "baskets", force: :cascade do |t|
+    t.bigint "user_id"
+    t.float "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_baskets_on_user_id"
+  end -->
