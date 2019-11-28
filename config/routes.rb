@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   authenticate :user do
-    if current_user.bar
-      root to: "bars#my_bar"
-    else
-      root to: 'pages#home'
-    end
+    root to: "bars#my_bar"
   end
   root to: 'pages#home'
 
