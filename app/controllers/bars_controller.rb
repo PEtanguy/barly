@@ -61,7 +61,7 @@ class BarsController < ApplicationController
   end
 
   def my_bar
-    @bar = current_user.bar
+    @bar = Bar.first
     authorize @bar
   end
 end
