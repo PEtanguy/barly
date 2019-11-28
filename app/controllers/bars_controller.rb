@@ -61,6 +61,7 @@ class BarsController < ApplicationController
   end
 
   def my_bar
-    @bar = Bar.find_by_user(current_user)
+    @bar = current_user.bar
+    authorize @bar
   end
 end

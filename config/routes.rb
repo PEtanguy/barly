@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  authenticate :user do
+  authenticated :user do
     root to: "bars#my_bar"
   end
-  root to: 'pages#home'
+
+  unauthenticated :user do
+    root to: 'pages#home'
+  end
 
 # BARS ROUTES
   # get "bars/:id", to: "bars#show"
