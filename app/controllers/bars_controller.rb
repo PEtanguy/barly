@@ -59,4 +59,9 @@ class BarsController < ApplicationController
       }
     end
   end
+
+  def my_bar
+    @bar = Bar.first
+    authorize @bar
+  end
 end

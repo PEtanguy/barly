@@ -32,7 +32,8 @@ insertBasketItem = (data) => {
 
   <%= simple_form_for([@menu_item, @basket_item], remote: true) do |f| %>
     <%= f.input :quantity, as: :hidden, input_html: { value: 1 } %>
-    <button type='submit'>
+
+    <button type='submit', id="quantbask">
       Add to basket
     </button>
     <% if current_user.basket %>
@@ -67,7 +68,9 @@ plus = (data) => {
 minus = (data) => {
   buttonMinus.addEventListener("click", (event) => {
     event.preventDefault();
+    while (counter != 0) {
     counter -= 1;
+    }
     document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
     count_display.innerText = counter
 
@@ -89,6 +92,20 @@ exit = (data) => {
       basket_item_field.classList.add("hidden");
   });
 };
+quantity = document.getElementById('counter');
+bask = document.getElementById('quantbask');
+
+add_hidden = (data) => {
+  buttonMinus.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (count_display.innerHTML == 0) {
+        bask.classList.add("hidden");
+    };
+  });
+};
+
+add_hidden()
+
 exit()
 
 

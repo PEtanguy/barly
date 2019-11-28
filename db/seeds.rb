@@ -24,6 +24,10 @@ puts 'Creating user'
     dob: '01/01/1871')
 end
 
+Basket.create(
+  user: User.first
+)
+
 puts 'Done creating user'
 
 puts 'Creating bars'
@@ -91,6 +95,15 @@ puts 'Creating bars'
     )
   end
 
+30.times do
+  Order.create(
+    bar: Bar.first,
+    basket: User.first.basket
+  )
+end
+
   puts 'All done!'
+
+
 
 
