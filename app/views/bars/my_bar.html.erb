@@ -2,51 +2,81 @@
 
 <%= @bar.name %>
 <p style="color:black"><% @bar.orders.each do |order| %></p>
-  £13 table 4
+  £13: table 4
 <% end %>
 
 
+    <div class="vwrapper">
+        <div id="row1">
+            <h1 style="color:black">My Bar</h1>
+        </div>
+        <div id="row2">
+            <%= @bar.name %>
+<p style="color:black"><% @bar.orders.each do |order| %></p>
+  £13 table 4
+<% end %>
+        </div>
+        <div id="row3">
+            <div id="col1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse in ut cum eveniet odio vero, provident amet quod nihil facilis, consequuntur pariatur doloremque repellat quia nesciunt veritatis totam rerum, ducimus.
+            </div>
+            <div id="col2">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores quae esse autem voluptatem dolor sit facere ab fuga modi possimus magnam doloremque ex nesciunt, laboriosam laborum, cupiditate aspernatur perspiciatis.
+            </div>
+        </div>
+    </div>
 
 
 
-<!-- create_table "bars", force: :cascade do |t|
-    t.text "address"
-    t.integer "capacity"
-    t.string "opening_time"
-    t.string "closing_time"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.float "latitude"
-    t.float "longitude"
-    t.index ["user_id"], name: "index_bars_on_user_id"
-  end
- -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slack prototype</title>
+    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="d-flex slack-container">
+      <div class="organizations-sidebar">
+      </div>
 
 
 
-<!-- create_table "orders", force: :cascade do |t|
-    t.bigint "table_id"
-    t.bigint "bar_id"
-    t.bigint "basket_id"
-    t.datetime "creation_time"
-    t.datetime "completion_time"
-    t.text "notes"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["bar_id"], name: "index_orders_on_bar_id"
-    t.index ["basket_id"], name: "index_orders_on_basket_id"
-    t.index ["table_id"], name: "index_orders_on_table_id"
-  end -->
 
 
-<!--
-   create_table "baskets", force: :cascade do |t|
-    t.bigint "user_id"
-    t.float "total_price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_baskets_on_user_id"
-  end -->
+
+      <div class="conversations-sidebar">
+        <%  %>
+        <h1>Order 1</h1>
+        <h1>Order 2</h1>
+        <h1>Order 3</h1>
+        <h1>Order 4</h1>
+
+      </div>
+
+
+
+      <div class="chat-container">
+        <div class="chat-conversations">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

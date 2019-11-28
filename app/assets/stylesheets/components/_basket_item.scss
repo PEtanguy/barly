@@ -30,6 +30,12 @@ i {
   padding-top: 3px;
 }
 
+#basket_menu {
+  background-color: $primary;
+  position: sticky;
+  bottom: 0;
+
+}
 
 .stickycool {
   position: sticky;
