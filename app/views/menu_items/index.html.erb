@@ -19,106 +19,123 @@
   </ul>
 </div>
 
-
-    <h2 id="beer">Beers</h2>
-      <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
-        <%= render 'drink_card', menuitem: menuitem %>
-      <% end %>
-    <br>
-    <br>
-    <br>
-
-    <h2 id="cocktail">Cocktails</h2>
-    <ul>
-      <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
-      <li>
-        <div >
-          <% if  menuitem.drink_photo.attached? %>
-            <%= cl_image_tag(menuitem.drink_photo.key,
-            width: 200, height: 100, crop: :fill) %>
-          <% else %>
-            <%= cl_image_tag('barlycoa5vm',
-            width: 200, height: 100, crop: :fill) %>
-          <% end %>
-          <%= menuitem.name %>
-          <%= menuitem.price %>
-          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-        </div>
-        <% end %>
-      </li>
-    </ul>
-    <br>
-    <br>
-    <br>
-
-    <h2 id="wine">Wines</h2>
-    <ul>
-      <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
-      <li>
-        <div >
-          <% if  menuitem.drink_photo.attached? %>
-            <%= cl_image_tag(menuitem.drink_photo.key,
-            width: 200, height: 100, crop: :fill) %>
-          <% else %>
-            <%= cl_image_tag('barlycoa5vm',
-            width: 200, height: 100, crop: :fill) %>
-          <% end %>
-          <%= menuitem.name %>
-          <%= menuitem.price %>
-          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-        </div>
-        <% end %>
-      </li>
-    </ul>
-    <br>
-    <br>
-    <br>
+    <% if @bar.menu_items.where(category: 'Beer').any? %>
 
 
-    <h2 id="mocktail">Mocktails</h2>
-    <ul>
-      <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
-      <li>
-        <div >
-          <% if  menuitem.drink_photo.attached? %>
-            <%= cl_image_tag(menuitem.drink_photo.key,
-            width: 200, height: 100, crop: :fill) %>
-          <% else %>
-            <%= cl_image_tag('barlycoa5vm',
-            width: 200, height: 100, crop: :fill) %>
-          <% end %>
-          <%= menuitem.name %>
-          <%= menuitem.price %>
-          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-        </div>
-        <% end %>
-      </li>
-    </ul>
-
-    <br>
-    <br>
-    <br>
+                  <h2 id="beer">Beers</h2>
+                    <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
+                      <%= render 'drink_card', menuitem: menuitem %>
+                    <% end %>
+                  <br>
+                  <br>
+                  <br>
+    <% else %>
+    <% end %>
 
 
-    <h2 id="soft_drink">Soft Drinks</h2>
-    <ul>
-      <% @bar.menu_items.where(category: 'Soft Drinks').find_each do |menuitem| %>
-      <li>
-        <div >
-          <% if  menuitem.drink_photo.attached? %>
-            <%= cl_image_tag(menuitem.drink_photo.key,
-            width: 200, height: 100, crop: :fill) %>
-          <% else %>
-            <%= cl_image_tag('barlycoa5vm',
-            width: 200, height: 100, crop: :fill) %>
-          <% end %>
-          <%= menuitem.name %>
-          <%= menuitem.price %>
-          <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
-        </div>
-        <% end %>
-      </li>
-    </ul>
+    <% if @bar.menu_items.where(category: 'Cocktail').any? %>
+
+                  <h2 id="cocktail">Cocktails</h2>
+                  <ul>
+                    <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
+                    <li>
+                      <div >
+                        <% if  menuitem.drink_photo.attached? %>
+                          <%= cl_image_tag(menuitem.drink_photo.key,
+                          width: 200, height: 100, crop: :fill) %>
+                        <% else %>
+                          <%= cl_image_tag('barlycoa5vm',
+                          width: 200, height: 100, crop: :fill) %>
+                        <% end %>
+                        <%= menuitem.name %>
+                        <%= menuitem.price %>
+                        <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
+                      </div>
+                      <% end %>
+                    </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <br>
+  <% else %>
+  <% end %>
+
+  <% if @bar.menu_items.where(category: 'Wine').any? %>
+              <h2 id="wine">Wines</h2>
+              <ul>
+                <% @bar.menu_items.where(category: 'Wine').find_each do |menuitem| %>
+                <li>
+                  <div >
+                    <% if  menuitem.drink_photo.attached? %>
+                      <%= cl_image_tag(menuitem.drink_photo.key,
+                      width: 200, height: 100, crop: :fill) %>
+                    <% else %>
+                      <%= cl_image_tag('barlycoa5vm',
+                      width: 200, height: 100, crop: :fill) %>
+                    <% end %>
+                    <%= menuitem.name %>
+                    <%= menuitem.price %>
+                    <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
+                  </div>
+                  <% end %>
+                </li>
+              </ul>
+              <br>
+              <br>
+              <br>
+  <% else %>
+  <% end %>
+
+  <% if @bar.menu_items.where(category: 'Mocktail').any? %>
+              <h2 id="mocktail">Mocktails</h2>
+              <ul>
+                <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
+                <li>
+                  <div >
+                    <% if  menuitem.drink_photo.attached? %>
+                      <%= cl_image_tag(menuitem.drink_photo.key,
+                      width: 200, height: 100, crop: :fill) %>
+                    <% else %>
+                      <%= cl_image_tag('barlycoa5vm',
+                      width: 200, height: 100, crop: :fill) %>
+                    <% end %>
+                    <%= menuitem.name %>
+                    <%= menuitem.price %>
+                    <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
+                  </div>
+                  <% end %>
+                </li>
+              </ul>
+
+              <br>
+              <br>
+              <br>
+  <% else %>
+  <% end %>
+
+
+  <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
+            <h2 id="soft_drink">Soft Drinks</h2>
+            <ul>
+              <% @bar.menu_items.where(category: 'Soft Drink').find_each do |menuitem| %>
+              <li>
+                <div >
+                  <% if  menuitem.drink_photo.attached? %>
+                    <%= cl_image_tag(menuitem.drink_photo.key,
+                    width: 200, height: 100, crop: :fill) %>
+                  <% else %>
+                    <%= cl_image_tag('barlycoa5vm',
+                    width: 200, height: 100, crop: :fill) %>
+                  <% end %>
+                  <%= menuitem.name %>
+                  <%= menuitem.price %>
+                  <%= link_to 'Add to basket', new_menu_item_basket_item_path(menuitem), class: 'btn btn-primary btn_basket', remote: true  %>
+                </div>
+                <% end %>
+              </li>
+            </ul>
+  <% else %>
+  <% end %>
   </div>
 
 
