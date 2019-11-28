@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_163454) do
+ActiveRecord::Schema.define(version: 2019_11_28_120817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,16 @@ ActiveRecord::Schema.define(version: 2019_11_27_163454) do
     t.index ["template_item_id"], name: "index_menu_items_on_template_item_id"
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "quantity"
+    t.float "menu_item_price"
+    t.string "menu_item_name"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.bigint "table_id"
     t.bigint "bar_id"
@@ -114,9 +124,11 @@ ActiveRecord::Schema.define(version: 2019_11_27_163454) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["bar_id"], name: "index_orders_on_bar_id"
     t.index ["basket_id"], name: "index_orders_on_basket_id"
     t.index ["table_id"], name: "index_orders_on_table_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "tables", force: :cascade do |t|
@@ -162,8 +174,10 @@ ActiveRecord::Schema.define(version: 2019_11_27_163454) do
   add_foreign_key "employees", "users"
   add_foreign_key "menu_items", "bars"
   add_foreign_key "menu_items", "template_items"
+  add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "bars"
   add_foreign_key "orders", "baskets"
   add_foreign_key "orders", "tables"
+  add_foreign_key "orders", "users"
   add_foreign_key "tables", "bars"
 end
