@@ -59,4 +59,9 @@ class BarsController < ApplicationController
       }
     end
   end
+
+  def my_bar
+   @bar = Bar.find_by_user(current_user)
+
+  end
 end
