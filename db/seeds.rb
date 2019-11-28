@@ -95,12 +95,12 @@ puts 'Creating bars'
     )
   end
 
-30.times do
-  Order.create(
-    bar: Bar.first,
-    basket: User.first.basket
-  )
-end
+# 30.times do
+#   Order.create(
+#     bar: Bar.first,
+#     basket: User.first.basket
+#   )
+# end
 
   puts 'All done!'
 
