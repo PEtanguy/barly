@@ -5,3 +5,4 @@ while (basket_item_field.firstChild) {
 
 basket_item_field.insertAdjacentHTML('beforeend', '<div>Item added to basket</div>')
 setTimeout(function(){ basket_item_field.firstChild.remove(); }, 500);
+setTimeout(function(){ body.classList.remove("opaque"); }, 500);

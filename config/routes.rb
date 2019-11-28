@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  authenticated :user do
+    root to: "bars#my_bar"
+  end
 
+  unauthenticated :user do
+    root to: 'pages#home'
+  end
 
 # BARS ROUTES
   # get "bars/:id", to: "bars#show"
@@ -14,10 +19,11 @@ Rails.application.routes.draw do
 
   resources :bars, only: [ :show, :edit, :update, :delete ] do
     collection do
+      get "my_bar", to: "bars#my_bar"
       # get "local_bars", to: "bars#local_bars"
     end
     resources :menu_items
-    resources :orders, only: [ :index, :show, :new, :create]
+    resources :orders, only: [ :index, :new, :create]
     get "bars/:bar_id/orders/:id/make", to: "orders#make"
     get "bars/:bar_id/orders/:id/finish", to: "orders#finish"
   end
@@ -33,6 +39,7 @@ Rails.application.routes.draw do
     resources :baskets
   end
 
+  resources :orders, only: [:show]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

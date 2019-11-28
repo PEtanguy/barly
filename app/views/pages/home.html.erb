@@ -1,5 +1,8 @@
 <div class="my-banner" style="background-image: url('<%= asset_path("barly_gb.svg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
   <div class="my-wrapper">
+    <div class="footer-menu">
+    <%= link_to "Login", user_session_path %>
+  </div>
 
     <div class="my-logo" >
       <%= image_tag "Barly.png", class: "logo-img", width: 370 %>
@@ -32,6 +35,12 @@
     </div>
 
   </div>
+
+  <div class="footer-menu">
+    <%= link_to "Login", new_user_session_path %>
+  </div>
+
+
 </div>
 
 

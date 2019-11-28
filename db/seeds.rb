@@ -24,6 +24,10 @@ puts 'Creating user'
     dob: '01/01/1871')
 end
 
+Basket.create(
+  user: User.first
+)
+
 puts 'Done creating user'
 
 puts 'Creating bars'
@@ -87,10 +91,14 @@ puts 'Creating bars'
     price: Faker::Number.decimal(l_digits: 1),
     description: Faker::Beer.style,
     bar: Bar.first,
-    category: ["Beer", "Wine", "Cocktails", "Mocktails", "Soft Drinks"].sample
+    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
     )
   end
 
+
+
   puts 'All done!'
+
+
 
 

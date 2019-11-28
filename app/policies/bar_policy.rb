@@ -12,7 +12,12 @@ class BarPolicy < ApplicationPolicy
   def show?
     return true
   end
+
   def map?
+    return true
+  end
+
+  def my_bar?
     return true
   end
 end
