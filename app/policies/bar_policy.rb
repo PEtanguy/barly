@@ -12,6 +12,7 @@ class BarPolicy < ApplicationPolicy
   def show?
     return true
   end
+
   def map?
     return true
   end
