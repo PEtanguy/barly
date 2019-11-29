@@ -41,6 +41,15 @@ puts 'Creating bars'
     closing_time: '23:30',
     user: User.first
     )
+  50.times do
+  MenuItem.create(
+    name: Faker::Beer.name,
+    price: Faker::Number.decimal(l_digits: 1),
+    description: Faker::Beer.style,
+    bar: Bar.find(1),
+    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
+    )
+  end
 
 
   Bar.create(
@@ -52,6 +61,16 @@ puts 'Creating bars'
     user: User.first
     )
 
+  50.times do
+  MenuItem.create(
+    name: Faker::Beer.name,
+    price: Faker::Number.decimal(l_digits: 1),
+    description: Faker::Beer.style,
+    bar: Bar.find(2),
+    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
+    )
+  end
+
 
   Bar.create(
     name: "Rick's Speakeasy",
@@ -61,6 +80,15 @@ puts 'Creating bars'
     closing_time: '23:30',
     user: User.first
     )
+  50.times do
+  MenuItem.create(
+    name: Faker::Beer.name,
+    price: Faker::Number.decimal(l_digits: 1),
+    description: Faker::Beer.style,
+    bar: Bar.find(3),
+    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
+    )
+  end
 
 
   Bar.create(
