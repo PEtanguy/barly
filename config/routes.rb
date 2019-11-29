@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   end
 
   get '/basket', to: 'baskets#show'
-
+  get "/checkout", to: 'baskets#checkout'
 
   resources :users, only: [] do
     resources :baskets

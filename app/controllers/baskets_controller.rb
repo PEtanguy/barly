@@ -10,6 +10,12 @@ class BasketsController < ApplicationController
     authorize @basket
   end
 
+  def checkout
+    @basket = Basket.find(current_user.basket.id)
+    @bar = @basket.basket_items.first.menu_item.bar
+    authorize @basket
+  end
+
   # private
 
   # def basket_params
