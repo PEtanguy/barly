@@ -28,55 +28,13 @@
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Slack prototype</title>
-    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-
-    <div class="d-flex slack-container">
-      <div class="organizations-sidebar">
-      </div>
+<% Order.where(bar_id: current_user.bar.id).each do |order| %>
+  <div class="order">
+    <%= order.id %>
+    <%= order.creation_time %>
+  </div>
+<% end %>
 
 
 
 
-
-
-      <div class="conversations-sidebar">
-        <%  %>
-        <h1>Order 1</h1>
-        <h1>Order 2</h1>
-        <h1>Order 3</h1>
-        <h1>Order 4</h1>
-
-      </div>
-
-
-
-      <div class="chat-container">
-        <div class="chat-conversations">
-
-        </div>
-      </div>
-    </div>
-
-    <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-  </body>
-</html>

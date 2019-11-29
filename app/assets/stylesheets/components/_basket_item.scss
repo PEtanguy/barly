@@ -7,6 +7,10 @@
   opacity: 0.5;
 }
 
+.back-menu {
+  background-color: $white;
+}
+
 .adding-item {
   display: flex;
   justify-content: space-between;
@@ -22,6 +26,27 @@
 i {
   font-size: 23px;
   color: $primary;
+}
+
+.fa-plus-circle {
+  font-size: 27px;
+}
+
+.fa-minus-circle {
+  font-size: 27px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px;
+}
+
+#counter {
+  font-size: 23px;
+  font-family: $headers-font;
+  margin: 0 14px;
 }
 
 #price {
@@ -47,6 +72,7 @@ i {
   background-color: $white;
   color: $black;
   opacity: 0;
+  height: 26vh;
 }
 
 .btn_basket {
@@ -64,7 +90,20 @@ i {
   display: none;
 }
 
+#quantbask {
+  padding: 5px 60px;
+  font-family: $headers-font;
+  font-size: 23px;
+  color: $white;
+  background-color: $primary;
+  border-radius: 20px;
+  border-style: none;
+}
 
+#new_basket_item {
+  display: flex;
+  justify-content: center;
+}
 
 .style_basket_item {
   display: flex;

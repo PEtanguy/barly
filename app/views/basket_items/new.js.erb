@@ -18,36 +18,38 @@ while (basket_item_field.firstChild) {
 insertBasketItem = (data) => {
     basket_item =
     `
-  <div class="adding-item">
-    <button class="back-menu"><i class="fas fa-times" id="exit_cross"></i></button>
-    <%= @menu_item.name %>
-    <div id="price" data-price="<%= @menu_item.price %>"><%= @menu_item.price%></div>
-  </div>
+    <div class="adding-item">
+      <button class="back-menu"><i class="fas fa-times" id="exit_cross"></i></button>
+      <%= @menu_item.name %>
+      <div id="price" data-price="<%= @menu_item.price %>">£<%= @menu_item.price%></div>
+    </div>
 
 
-  <div class="actions">
-    <a class="btn round-bordered incrementer"  id="btnMinus" data-offset="-1"><i class="fas fa-minus-circle"></i></a>
-    <span id="counter" data-count="1">1</span>
+    <div class="actions">
+      <a class="btn round-bordered incrementer"  id="btnMinus" data-offset="-1"><i class="fas fa-minus-circle"></i></a>
+      <span id="counter" data-count="1">1</span>
 
 
 
-    <a class="btn round-bordered incrementer" id= "btnPlus"  data-offset="1"><i class="fas fa-plus-circle"></i></a>
-  </div>
+      <a class="btn round-bordered incrementer" id= "btnPlus"  data-offset="1"><i class="fas fa-plus-circle"></i></a>
+    </div>
 
 
-  <%= simple_form_for([@menu_item, @basket_item], remote: true) do |f| %>
-    <%= f.input :quantity, as: :hidden, input_html: { value: 1 } %>
 
-    <button type='submit', id="quantbask">
-      Add to basket
-    </button>
-    <% if current_user.basket %>
-      <%= link_to "Basket", user_basket_path(current_user, current_user.basket.id), class: "nav-link"  %>
+    <%= simple_form_for([@menu_item, @basket_item], remote: true) do |f| %>
+      <%= f.input :quantity, as: :hidden, input_html: { value: 1 } %>
 
-    <% else %>
+      <button type='submit', id="quantbask">
+        Add to basket
+      </button>
+      <% if current_user.basket %>
+        <%= link_to "Basket", user_basket_path(current_user, current_user.basket.id), class: "nav-link"  %>
+
+      <% else %>
+      <% end %>
+
     <% end %>
 
-  <% end %>
 `;
   basket_item_field.insertAdjacentHTML('beforeend', basket_item);
 };

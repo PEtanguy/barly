@@ -1,9 +1,6 @@
 .box_basket {
-  background-color: $primary;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 20px;
-  height: 80vh;
+  background-color: $white;
+  min-height: 100vh;
  }
 
 .item_main {
@@ -13,9 +10,19 @@
   border-radius: 20px;
   color: $black;
   background-color: $white;
-    padding: 20px;
+  padding: 20px;
+}
 
+.basket-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: $headers-font;
+  color: $black;
+  font-size: 29px;
+}
 
+.fa-times {
+  color: $primary;
 }
 
 .item_box{

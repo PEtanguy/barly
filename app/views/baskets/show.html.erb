@@ -1,9 +1,12 @@
 <div class= "container">
 
   <div class="box_basket">
-    <div>
-      <h1> Your Basket</h1>
-      <h2>Items:</h2>
+    <div class="basket-header">
+      My Basket
+      <%= link_to bar_menu_items_path(@bar) do %>
+        <i class="fas fa-times" id="back_cross"></i>
+      <% end %>
+
     </div>
         <div class="item_box">
           <% total= 0  %>
