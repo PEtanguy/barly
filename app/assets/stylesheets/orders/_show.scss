@@ -58,6 +58,11 @@
 
       }
 
+.order-direction i {
+  color: green !important;
+}
+
+
 }
 
 .order-direction h6 {
@@ -76,13 +81,13 @@
   align-items: center;
   padding: 5px;
   margin: 5px;
-  border-top: 1px solid #C8C8C8;
+  // border-top: 1px solid #C8C8C8;
   color: #696969;
 }
 
 
 .order-spacer {
-  border-top: 3px solid red;
+  border-top: 1px solid #C8C8C8;
 }
 
 .order-item_card_order {
