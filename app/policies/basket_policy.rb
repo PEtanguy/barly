@@ -8,4 +8,8 @@ class BasketPolicy < ApplicationPolicy
   def show?
     return true
   end
+
+  def checkout?
+    return true
+  end
 end
