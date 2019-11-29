@@ -30,8 +30,10 @@ insertBasketItem = (data) => {
       <span id="counter" data-count="1">1</span>
 
 
+
       <a class="btn round-bordered incrementer" id= "btnPlus"  data-offset="1"><i class="fas fa-plus-circle"></i></a>
     </div>
+
 
 
     <%= simple_form_for([@menu_item, @basket_item], remote: true) do |f| %>
@@ -57,15 +59,23 @@ buttonMinus = document.getElementById("btnMinus");
 count_display = document.getElementById("counter");
 exit_div = document.getElementById('exit_cross');
 
+price = document.getElementById("price").innerHTML;
+
 
 counter = 1
 plus = (data) => {
   buttonPlus.addEventListener("click", (event) => {
     event.preventDefault();
     counter += 1;
-    document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
+    console.log(document.getElementById('price'))
+    let new_price = counter * parseFloat(price, 10);
+    let n = new_price.toFixed(2);
+    document.getElementById('price').innerHTML = n;
+    console.log(counter * parseFloat(price, 10))
     count_display.innerText = counter;
     price.value = price + (counter * price)
+    // buttonPlus.classList.add('currently-loading')
+
   });
 };
 
@@ -75,7 +85,9 @@ minus = (data) => {
     while (counter != 0) {
     counter -= 1;
     }
-    document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
+    let new_price = counter * parseFloat(price, 10);
+    let n = new_price.toFixed(2);
+    document.getElementById('price').innerHTML = new_price;
     count_display.innerText = counter
 
   });
