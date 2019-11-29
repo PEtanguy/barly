@@ -43,8 +43,15 @@ const basket_add = document.querySelectorAll('.add_basket');
   basket_add.forEach(basket => {
     basket.addEventListener("click", (event) => {
       event.preventDefault();
-      console.log(event.currentTarget)
       event.currentTarget.firstElementChild.classList.add('magictime', 'tinDownOut')
+      const effect_on = document.querySelector('.tinDownOut');
+      setTimeout(function(){ effect_on.classList.add('second_one'); }, 1000);
+      setTimeout(function(){ effect_on.classList.remove('magictime', 'tinDownOut'); }, 1000);
+      const second_one = document.querySelector('.second_one');
+
+      setTimeout(function(){ effect_on.classList.add('magictime', 'swashIn'); }, 1000);
+
+
     });
 
   })

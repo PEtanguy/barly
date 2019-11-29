@@ -1,32 +1,45 @@
-<div class="my-banner" style="background-image: url('<%= asset_path("barly_gb.svg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
-  <div class="direction">
-    <h1><strong> Order Sent!</strong> </h1>
+<div class="container">
 
-    <h2> Order ID:  <%= @order.id  %>  </h2>
 
-    <div class= "order_and_gif">
-      <div class="order_content">
+
+  <div class="my-banner" style="background-image: url('<%= asset_path("barly_gb.svg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+    <div class="order-direction">
+         <h1><strong> Order Sent <i class=" order-icon fas fa-check-circle" style="color: #32CD32"></i></strong> </h1>
+
+      <h6> Your Order ID:  <%= @order.id  %>  </h6>
+
+      <div class= "order-order_and_gif">
+        <div class="order-order_content">
+          <div class="order-spacer">
+          </div>
           <% OrderItem.where(order: Order.last).each do |item| %>
-          <div class="item_card_order">
+          <div class="order-item_card_order">
             <div>
-                <%= item.quantity %> X
-                <br>
-            </div>
-
-            <div>
-                <%= item.menu_item_name %>
+              <%= item.quantity %> X
             </div>
             <div>
-                <%= item.menu_item_price %>
+              <%= item.menu_item_name %>
+            </div>
+            <div>
+              <%= item.menu_item_price %>
             </div>
           </div>
-          <br>
+
           <% end %>
+
+        </div>
+
+
+
+
       </div>
-      <img src="https://media.giphy.com/media/DRAIHiTMMsgww/giphy.gif" class="gif">
+
+
+
+
+
+
     </div>
-
-
-
   </div>
 </div>

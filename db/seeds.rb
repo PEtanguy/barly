@@ -114,16 +114,20 @@ puts 'Creating bars'
 
   puts 'Creating menu items'
 
-
+images = ["https://images.unsplash.com/photo-1504502350688-00f5d59bbdeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", "https://images.unsplash.com/photo-1551980362-5f5816fdf020?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", "https://images.unsplash.com/photo-1573624658129-3f7856192f19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", "https://images.unsplash.com/photo-1567143768138-9ec527a6363a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"]
 50.times do
-  MenuItem.create(
-    name: Faker::Beer.name,
-    price: Faker::Number.decimal(l_digits: 1),
-    description: Faker::Beer.style,
-    bar: Bar.first,
-    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
-    )
-  end
+  image = URI.open(images.sample)
+  menu_item = MenuItem.new(
+      name: Faker::Beer.name,
+      price: Faker::Number.decimal(l_digits: 1),
+      description: Faker::Beer.style,
+      bar: Bar.first,
+      category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
+      )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
 
 
 
