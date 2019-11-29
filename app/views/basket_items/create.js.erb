@@ -1,8 +1,9 @@
 basket_item_field = document.querySelector('.basket_item_field');
 while (basket_item_field.firstChild) {
+  console.log("hello")
   basket_item_field.firstChild.remove()
 }
-
 basket_item_field.insertAdjacentHTML('beforeend', '<div>Item added to basket</div>')
 setTimeout(function(){ basket_item_field.firstChild.remove(); }, 500);
+setTimeout(function(){ basket_item_field.classList.remove('shrink'); }, 500);
 setTimeout(function(){ body.classList.remove("layer"); }, 500);
