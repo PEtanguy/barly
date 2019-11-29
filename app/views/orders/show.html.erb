@@ -5,7 +5,7 @@
   <div class="my-banner" style="background-image: url('<%= asset_path("barly_gb.svg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
     <div class="order-direction">
-         <h1><strong> Order Sent <i class="fas fa-check-circle"></i></strong> </h1>
+         <h1><strong> Order Sent <i class=" order-icon fas fa-check-circle" style="color: #32CD32"></i></strong> </h1>
 
       <h6> Your Order ID:  <%= @order.id  %>  </h6>
 
@@ -25,7 +25,6 @@
               <%= item.menu_item_price %>
             </div>
           </div>
-          <% raise %>
 
           <% end %>
 
