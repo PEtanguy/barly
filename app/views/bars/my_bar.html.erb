@@ -29,10 +29,10 @@
 
 
 <% Order.where(bar_id: current_user.bar.id).each do |order| %>
-<div class="order">
-<%= order.id %>
-<%= order.creation_time %>
-</div>
+  <div class="order">
+    <%= order.id %>
+    <%= order.creation_time %>
+  </div>
 <% end %>
 
 
