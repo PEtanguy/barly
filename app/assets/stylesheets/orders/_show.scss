@@ -79,22 +79,35 @@
 // }
 
 
-// .droplet {
-//   animation: pulse 5s infinite;
-// }
+.droplet {
+  animation: pulse 3s infinite;
+}
 
-// @keyframes pulse {
-//   0% {
-//     background: black;
-//   }
-//   /* Adding a step in the middle */
-//   50% {
-//     background: white
-//   }
-//   100% {
-//     background: white;
-//   }
-// }
+@keyframes pulse {
+  // 15% {
+  //   background: white;
+  //   // color:white;
+  // }
+  0% {
+    background: white;
+    color:#d8ffd8;
+
+  }
+  /* Adding a step in the middle */
+  50% {
+    background: white;
+  }
+  100% {
+    background: white;
+  }
+  // }
+  // 50% {
+  //   background: white;
+  // }
+  // 100% {
+  //   background: white;
+  // }
+}
 
 
 
