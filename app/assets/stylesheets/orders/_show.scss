@@ -61,9 +61,42 @@
 .order-direction i {
   color: green !important;
 }
-
-
 }
+
+
+// .droplet {
+//   background: white;
+//   border-radius: 2% 50%;
+//   height: 10px;
+//   margin: 10px;
+//   transition: all 2s;
+//   transition-timing: ease-in-out;
+//   width: 10px;
+
+//   &:hover {
+//     transform: rotate(1080deg);
+//   }
+// }
+
+
+// .droplet {
+//   animation: pulse 5s infinite;
+// }
+
+// @keyframes pulse {
+//   0% {
+//     background: black;
+//   }
+//   /* Adding a step in the middle */
+//   50% {
+//     background: white
+//   }
+//   100% {
+//     background: white;
+//   }
+// }
+
+
 
 .order-direction h6 {
   margin: 30px;
