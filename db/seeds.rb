@@ -8,6 +8,7 @@
 
 require 'faker'
 MenuItem.destroy_all
+
 Bar.destroy_all
 User.destroy_all
 
@@ -112,6 +113,7 @@ puts 'Creating bars'
   puts 'Finished creating bars'
 
   puts 'Creating menu items'
+
 
 50.times do
   MenuItem.create(
