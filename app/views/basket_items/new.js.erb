@@ -30,6 +30,7 @@ insertBasketItem = (data) => {
     <span id="counter" data-count="1">1</span>
 
 
+
     <a class="btn round-bordered incrementer" id= "btnPlus"  data-offset="1"><i class="fas fa-plus-circle"></i></a>
   </div>
 
@@ -63,8 +64,11 @@ plus = (data) => {
     event.preventDefault();
     counter += 1;
     document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
+    console.log(counter * parseFloat(price, 10))
     count_display.innerText = counter;
     price.value = price + (counter * price)
+    // buttonPlus.classList.add('currently-loading')
+
   });
 };
 
