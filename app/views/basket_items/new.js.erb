@@ -3,6 +3,8 @@ body = document.querySelector('.main');
 basket_item_field.classList.remove("shrink");
 body.classList.add("layer");
 
+
+
 if (basket_item_field.classList.contains("hidden")) {
  basket_item_field.classList.remove("hidden")
 }
@@ -46,17 +48,16 @@ insertBasketItem = (data) => {
 
   <% end %>
 `;
-basket_item_field.insertAdjacentHTML('beforeend', basket_item);
+  basket_item_field.insertAdjacentHTML('beforeend', basket_item);
 };
-
 insertBasketItem()
-
 buttonPlus = document.getElementById("btnPlus");
 buttonMinus = document.getElementById("btnMinus");
 count_display = document.getElementById("counter");
-counter = 1
-price = document.getElementById("price").innerHTML;
+exit_div = document.getElementById('exit_cross');
 
+
+counter = 1
 plus = (data) => {
   buttonPlus.addEventListener("click", (event) => {
     event.preventDefault();
@@ -86,8 +87,7 @@ minus()
 setTimeout(function(){ basket_item_field.classList.add("shrink"); }, 500);
 
 
-exit_div = document.getElementById('exit_cross');
-exit = (data) => {
+closeBox = (data) => {
   exit_div.addEventListener("click", (event) => {
     event.preventDefault();
       body.classList.remove("layer");
@@ -106,7 +106,7 @@ add_hidden = (data) => {
   });
 };
 
-add_hidden()
 
-exit()
+add_hidden()
+closeBox()
 
