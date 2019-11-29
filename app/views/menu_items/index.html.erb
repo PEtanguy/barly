@@ -73,7 +73,7 @@
 
   </div>
 
-  <% if current_user.basket.basket_items.any? %>
+  <% if current_user&.basket&.basket_items&.any? %>
     <div id="basket_menu">
       <%= link_to 'Basket', basket_path(current_user.basket) %>
     </div>
