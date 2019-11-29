@@ -2,7 +2,7 @@
   <div class="card-product">
       <% if menuitem.drink_photo.attached? %>
           <%= cl_image_tag(menuitem.drink_photo.key,
-          width: 200, height: 100, crop: :fill) %>
+           crop: :fit) %>
         <% else %>
           <%= cl_image_tag('barlycoa5vm',
           width: 200, height: 100, crop: :fill) %>
