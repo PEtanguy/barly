@@ -77,7 +77,7 @@ plus = (data) => {
     document.getElementById('price').innerHTML = n;
     console.log(counter * parseFloat(price, 10))
     count_display.innerText = counter;
-    price.value = price + (counter * price)
+    // price.value = price + (counter * price)
     // buttonPlus.classList.add('currently-loading')
 
   });
@@ -91,7 +91,7 @@ minus = (data) => {
     }
     let new_price = counter * parseFloat(price, 10);
     let n = new_price.toFixed(2);
-    document.getElementById('price').innerHTML = new_price;
+    document.getElementById('price').innerHTML = n;
     count_display.innerText = counter
 
   });

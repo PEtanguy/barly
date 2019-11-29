@@ -43,7 +43,6 @@ const basket_add = document.querySelectorAll('.add_basket');
   basket_add.forEach(basket => {
     basket.addEventListener("click", (event) => {
       event.preventDefault();
-      basket_item_field.classList.remove("shrink");
       event.currentTarget.firstElementChild.classList.add('magictime', 'tinDownOut')
       const effect_on = document.querySelector('.tinDownOut');
       setTimeout(function(){ effect_on.classList.add('second_one'); }, 1000);
