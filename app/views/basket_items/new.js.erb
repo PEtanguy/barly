@@ -54,6 +54,10 @@ insertBasketItem = (data) => {
   basket_item_field.insertAdjacentHTML('beforeend', basket_item);
 };
 insertBasketItem()
+
+
+
+
 buttonPlus = document.getElementById("btnPlus");
 buttonMinus = document.getElementById("btnMinus");
 count_display = document.getElementById("counter");
@@ -109,6 +113,16 @@ closeBox = (data) => {
 };
 quantity = document.getElementById('counter');
 bask = document.getElementById('quantbask');
+
+
+// closeBox_added = (data) => {
+//   bask.addEventListener("click", (event) => {
+//     event.preventDefault();
+
+//       basket_item_field.classList.remove("shrink");
+//   });
+// };
+// closeBox_added()
 
 add_hidden = (data) => {
   buttonMinus.addEventListener("click", (event) => {
