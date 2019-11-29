@@ -42,11 +42,7 @@ insertBasketItem = (data) => {
       <button type='submit', id="quantbask">
         Add to basket
       </button>
-      <% if current_user.basket %>
-        <%= link_to "Basket", user_basket_path(current_user, current_user.basket.id), class: "nav-link"  %>
 
-      <% else %>
-      <% end %>
 
     <% end %>
 
