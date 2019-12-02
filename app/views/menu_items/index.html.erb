@@ -15,47 +15,42 @@
       <a data-scroll href="#soft_drink">Soft Drinks</a>
     </div>
     <div class="mhresp">
-    <% if @bar.menu_items.where(category: 'Beer').any? %>
-          <h1 id="beer">Beers</h1>
-          <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
-            <%= render 'drink_card', menuitem: menuitem %>
-          <% end %>
-     <% else %>
-     <% end %>
+      <% if @bar.menu_items.where(category: 'Beer').any? %>
+        <h1 id="beer">Beers</h1>
+        <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
+          <%= render 'drink_card', menuitem: menuitem %>
+        <% end %>
+      <% end %>
 
-    <% if @bar.menu_items.where(category: 'Cocktail').any? %>
-          <h1 id="cocktail">Cocktails</h1>
-          <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
-            <%= render 'drink_card', menuitem: menuitem %>
-          <% end %>
-    <% else %>
-    <% end %>
+      <% if @bar.menu_items.where(category: 'Cocktail').any? %>
+      <h1 id="cocktail">Cocktails</h1>
+        <% @bar.menu_items.where(category: 'Cocktail').find_each do |menuitem| %>
+          <%= render 'drink_card', menuitem: menuitem %>
+        <% end %>
+      <% end %>
 
-    <% if @bar.menu_items.where(category: 'Wine').any? %>
-            <h1 id="wine">Wines</h1>
-            <% @bar.menu_items.where(category: 'Wine').find_each do |menuitem| %>
-              <%= render 'drink_card', menuitem: menuitem %>
-            <% end %>
-    <% else %>
-    <% end %>
+      <% if @bar.menu_items.where(category: 'Wine').any? %>
+        <h1 id="wine">Wines</h1>
+        <% @bar.menu_items.where(category: 'Wine').find_each do |menuitem| %>
+          <%= render 'drink_card', menuitem: menuitem %>
+        <% end %>
+      <% end %>
 
-    <% if @bar.menu_items.where(category: 'Mocktail').any? %>
-            <h1 id="mocktail">Mocktails</h1>
-            <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
-              <%= render 'drink_card', menuitem: menuitem %>
-            <% end %>
-    <% else %>
-    <% end %>
+      <% if @bar.menu_items.where(category: 'Mocktail').any? %>
+        <h1 id="mocktail">Mocktails</h1>
+        <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
+          <%= render 'drink_card', menuitem: menuitem %>
+        <% end %>
+      <% end %>
 
 
-    <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
-            <h1 id="soft_drink">Soft Drinks</h1>
-            <% @bar.menu_items.where(category: 'Soft Drinks').find_each do |menuitem| %>
-              <%= render 'drink_card', menuitem: menuitem %>
-            <% end %>
-    <% else %>
-    <% end %>
-</div>
+      <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
+        <h1 id="soft_drink">Soft Drinks</h1>
+        <% @bar.menu_items.where(category: 'Soft Drinks').find_each do |menuitem| %>
+          <%= render 'drink_card', menuitem: menuitem %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
 
@@ -64,9 +59,9 @@
 
 
   <!-- </div> -->
-    <!-- JAVASCRIPT DYNAMIC MODULAR STICKY BASKET ITEM NEW -->
+  <!-- JAVASCRIPT DYNAMIC MODULAR STICKY BASKET ITEM NEW -->
 
-    <!-- EVENT LISTENER: DISPLAYING THE STICKY BASKET_ITEM ONLY ON CLICK -->
+  <!-- EVENT LISTENER: DISPLAYING THE STICKY BASKET_ITEM ONLY ON CLICK -->
 
 
   <div class="basket_item_field stickycool" id="basket_item">
@@ -74,9 +69,9 @@
   </div>
 
   <% if current_user&.basket&.basket_items&.any? %>
-    <div id="basket_menu">
-      <%= link_to 'Basket', basket_path(current_user.basket) %>
-    </div>
+  <div id="basket_menu">
+    <%= link_to 'Basket', basket_path(current_user.basket) %>
+  </div>
   <% end %>
 
 </div>

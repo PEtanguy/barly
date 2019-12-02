@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
         @order_item.quantity = item.quantity
         @order_item.menu_item_price = item.menu_item.price
         @order_item.menu_item_name = item.menu_item.name
+        @order_item.menu_item_category = item.menu_item.category
         @order_item.save!
       end
       redirect_to order_path(@order)
