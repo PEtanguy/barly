@@ -2,8 +2,14 @@
   <div class="py-4 px-3 mb-4 bg-dark">
     <div class="media d-flex align-items-center"><img src="https://res.cloudinary.com/tallyho/image/upload/v1575284675/Barly-white_oq5wxm.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail-hollow shadow-sm">
       <div class="media-body">
+
+<% if @bar %>
         <h4 class="m-0 text-light"><%= @bar.name %></h4>
-        <p class="font-weight-light text-muted mb-0">Dashboard</p>
+
+<% end %>
+
+        <p class="font-weight-light text-muted mb-0">Orders Dashboard</p>
+
       </div>
     </div>
   </div>
@@ -65,7 +71,7 @@ $('#adminmenu a').on('click', function(){
   } else
   applied = false;
 }
-});
+
 </script>
 
 <script>

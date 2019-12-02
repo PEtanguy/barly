@@ -16,7 +16,7 @@
   </head>
   <body>
     <% if action_name == "my_bar" || action_name == "my_bars" %>
-    <%= render 'bars/admin-navbar' %>
+      <%= render 'bars/admin-navbar' %>
     <% end %>
     <% unless action_name == "home" || "my_bar" %>
       <%= render 'shared/navbar' %>
