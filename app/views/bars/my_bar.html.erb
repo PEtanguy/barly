@@ -35,14 +35,19 @@
             <% @soft_drink = [] %>
             <% if item.menu_item_category == "Beer" %>
               <% @beer << item %>
+            <% end %>
             <% if item.menu_item_category == "Cocktail" %>
               <% @cocktail << item %>
+            <% end %>
             <% if item.menu_item_category == "Mocktail" %>
               <% @mocktail << item %>
+            <% end %>
             <% if item.menu_item_category == "Wine" %>
               <% @wine << item %>
+            <% end %>
             <% if item.menu_item_category == "Soft Drink" %>
               <% @soft_drink << item %>
+            <% end %>
             <% end %>
             <p class="item-quant"><strong><%= item.quantity %> x <%= item.menu_item_name %></strong> <%= item.menu_item_price %></p>
           <% end %>
@@ -50,9 +55,8 @@
       <button class="making">Making</button>
     </div>
   </div>
-  </div>
 </div>
-<% end %>
+
 
 
 
@@ -63,7 +67,3 @@
     });
   });
 </script>
-
-
-
-
