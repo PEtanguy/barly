@@ -1,7 +1,7 @@
 
 .vertical-nav {
-  min-width: 17rem;
-  width: 17rem;
+  min-width: 15rem;
+  width: 15rem;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -11,8 +11,8 @@
 }
 
 .page-content {
-  width: calc(100% - 17rem);
-  margin-left: 17rem;
+  width: calc(100% - 15rem);
+  margin-left: 15rem;
   transition: all 0.4s;
 }
 
@@ -54,7 +54,7 @@
 /* for toggle behavior */
 
 #sidebar.active {
-  margin-left: -17rem;
+  margin-left: -15rem;
 }
 
 #content.active {
@@ -64,7 +64,7 @@
 
 @media (max-width: 768px) {
   #sidebar {
-    margin-left: -17rem;
+    margin-left: -15rem;
   }
   #sidebar.active {
     margin-left: 0;
@@ -74,8 +74,8 @@
     margin: 0;
   }
   #content.active {
-    margin-left: 17rem;
-    width: calc(100% - 17rem);
+    margin-left: 15rem;
+    width: calc(100% - 15rem);
   }
 }
 
@@ -235,6 +235,22 @@ $lightGrey: #99A3BA;
     }
 }
 
+.spin img {
+-webkit-transition-duration: 2s;
+-moz-transition-duration: 2s;
+-o-transition-duration: 2s;
+transition-duration: 2s;
+-webkit-transition-property: -webkit-transform;
+-moz-transition-property: -moz-transform;
+-o-transition-property: -o-transform;
+transition-property: transform;
+}
+
+.spin img:hover {
+-webkit-transform:rotate(720deg);
+-moz-transform:rotate(720deg);
+-o-transform:rotate(720deg);
+}
 
 ////
 
