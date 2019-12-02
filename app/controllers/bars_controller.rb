@@ -62,7 +62,7 @@ class BarsController < ApplicationController
   end
 
   def my_bar
-    @bar = Bar.where(user: current_user).first
+    @bar = Bar.find(params[:id])
 
      # @bar = current_user.bar
     authorize @bar
