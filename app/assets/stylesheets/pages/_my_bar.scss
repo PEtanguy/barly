@@ -1,89 +1,73 @@
-// body, p {
-//   color: black;
-// }
-
-
-//
-
-
-
-// .wrapper, html, body {
-//     height: 100%;
-//     margin: 0;
-// }
-/* Importing components */
-// @import url("components/sidebars.css");
-// @import url("components/badge.css");
-// // @import url("components/chat.css");
-// @import url("components/messages.css");
-
-// /* Importing layouts */
-// @import url("layouts/slack.css");
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-
-
-h1, h2, h3 {
-  font-weight: bold;
-}
-h1 {
-  font-size: 30px;
-}
-h2 {
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-h3 {
-  font-size: 23px;
-}
-.padded {
-  padding: 30px 0;
-}
-
-.slack-container {
+.page-content {
+  width: calc(100vw - 17rem);
   height: 100vh;
+  margin-left: 17rem;
+  transition: all 0.4s;
 }
 
+h1 {
+  margin-left: 0;
+}
 
-.person, .channel {
+.traffic-cards {
+  height: 120px;
+  background: $black;
+  box-shadow: 15px 15px 15px 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
 }
 
-.person span, .channel span {
-  opacity: .5;
+.order-num {
+  margin: 0 0 0 7% !important;
+  font-family: $headers-font;
+  font-size: 24px;
+  color: $white;
 }
-.channel i {
+
+.order-info {
+  margin-left: 7%;
+  font-family: $body-font;
   font-size: 14px;
-  margin-right: 4px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
 }
-.wrapper {
-    display: flex;
-    flex-direction: column;
+
+.traffic-card-info {
+  display: inline-flex;
+  align-items: center;
 }
-#row1 {
-    background-color: red;
+
+.traffic-card-invoice {
+  color: $black;
+  font-family: $headers-font;
 }
-#row2 {
-    background-color: blue;
+
+.notes {
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #FFAEAE;
+  color: $tertiary;
+  padding: 27px;
+  display: flex;
+  justify-content: center;
 }
-#row3 {
-    background-color: green;
-    flex:2;
-    display: flex;
+
+.card-invoice {
+  box-shadow: 15px 15px 15px 15px rgba(0,0,0,0.2);
+  height: 71.5vh;
+  background-color: $white;
 }
-#col1 {
-    background-color: yellow;
-    flex: 0 0 240px;
+
+.order-details {
+  margin-left: 7%;
+  font-family: $body-font;
+  color: $black;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
 }
-#col2 {
-    background-color: orange;
-    flex: 1 1;
-}
-#col3 {
-    background-color: purple;
-    flex: 0 0 240px;
-}
+
 
