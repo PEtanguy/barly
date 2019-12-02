@@ -5,9 +5,11 @@
 
 <% if @bar %>
         <h4 class="m-0 text-light"><%= @bar.name %></h4>
+
 <% end %>
 
         <p class="font-weight-light text-muted mb-0">Orders Dashboard</p>
+
       </div>
     </div>
   </div>
@@ -15,36 +17,41 @@
   <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"><small>Date:</small> <%= Time.now.strftime("%d-%m-%Y") %>  <small>Time:</small> <%= Time.now.strftime("%H:%M:%S") %></p>
 
   <ul class="nav flex-column bg-dark mb-0">
-    <li class="nav-item">
-      <a href="#" class="admin-nav-link text-dark bg-light">
+    <li class="nav-item" id="adminmenu">
+      <a href="#live-orders" class="admin-nav-link text-dark bg-light">
                 <i class="fa fa-download mr-3 text-primary fa-fw"></i>
                 Live orders
             </a>
     </li>
-    <li class="nav-item">
-      <a href="#" class="admin-nav-link text-white">
+    <li class="nav-item" id="adminmenu">
+      <a href="#menu-items" class="admin-nav-link text-white">
                 <i class="fab fa fa-elementor mr-3 text-primary fa-fw"></i>
                 Menu items
             </a>
     </li>
-    <li class="nav-item">
-      <a href="#" class="admin-nav-link text-white">
+    <li class="nav-item" id="adminmenu">
+      <a href="#opening-times" class="admin-nav-link text-white">
                 <i class="far fa fa-clock mr-3 text-primary fa-fw"></i>
                 Opening times
             </a>
     </li>
-    <li class="nav-item">
-      <a href="#" class="admin-nav-link text-white">
+    <li class="nav-item" id="adminmenu">
+      <a href="#analytics" class="admin-nav-link text-white">
                 <i class="fa fa-chart-bar mr-3 text-primary fa-fw"></i>
                 Analytics
             </a>
     </li>
-    <div class="separator white"></div>
+    <li class="nav-item" id="adminmenu">
+      <a href="/bars/my_bars" class="admin-nav-link text-white">
+                <i class="fa fa-bars mr-3 text-primary fa-fw"></i>
+                My bars
+            </a>
+    </li>
+    <div class="separator bg-light"></div>
     <br />
     <li class="no-underline">
-      <a href="#" class="admin-nav-link text-white ml-3">
-                <label class="switch">
-        <input type="checkbox">
+                <label class="switch ml-3">
+        <input type="checkbox" id="tog">
         <span>
             <em></em>
             <strong></strong>
@@ -54,3 +61,29 @@
     </li>
   </ul>
 </div>
+<script type="text/javascript">
+  if (!applied) {
+$('#adminmenu a').on('click', function(){
+    $('#adminmenu a.current').removeClass('current');
+    $(this).addClass('text-dark bg-light');
+     applied = true;
+
+  } else
+  applied = false;
+}
+
+</script>
+
+<script>
+  var x = document.getElementById("tog");
+  x.addEventListener('click', (e) => {
+    if (x.checked) {
+      console.log('y')
+      x.checked = true
+    } else {
+      console.log('n')
+
+      x.checked = false
+    }
+  });
+</script>
