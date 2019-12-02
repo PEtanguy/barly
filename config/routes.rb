@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   authenticated :user do
-    root to: "bars#my_bar"
+    root to: "bars#my_bars"
   end
 
   unauthenticated :user do
@@ -14,12 +14,20 @@ Rails.application.routes.draw do
   # patch "bars/:id", to: "bars#update"
   # delete "bars/:id", to: "bars#destroy"
 
-    get "map", to: "bars#map"
+    # get "map", to: "bars#map"
     # get "local_bars", to: "bars#local_bars"
+
+
+    #NEW ROUTE FOR BARS INDEX
+
+
+
+
 
   resources :bars, only: [ :show, :edit, :update, :delete ] do
     collection do
-      get "my_bar", to: "bars#my_bar"
+      get "my_bar/:id", to: "bars#my_bar", as: "my_bar"
+      get "my_bars", to: "bars#my_bars"
       # get "local_bars", to: "bars#local_bars"
     end
     resources :menu_items

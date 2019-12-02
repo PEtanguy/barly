@@ -35,8 +35,8 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Jack's Pub",
-    address: 'WC2N 4HS',
+    name: "Lamb & Flag",
+    address: '33 Rose St, Covent Garden, London WC2E 9EB',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
