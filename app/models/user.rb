@@ -7,6 +7,8 @@ class User < ApplicationRecord
   after_create :send_welcome
 
   has_many :orders
+  has_many :admins
+  has_many :bars, through: :admins
   has_one :bar
 
   has_one :basket
