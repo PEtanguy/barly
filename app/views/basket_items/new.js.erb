@@ -1,9 +1,9 @@
 basket_item_field = document.getElementById('basket_item');
-body = document.querySelector('.main');
+body = document.querySelector('.opacitize');
 basket_item_field.classList.remove("shrink");
 body.classList.add("layer");
 
-
+<%= item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item)[0].quantity %>
 
 if (basket_item_field.classList.contains("hidden")) {
  basket_item_field.classList.remove("hidden")
@@ -21,13 +21,13 @@ insertBasketItem = (data) => {
     <div class="adding-item">
       <button class="back-menu"><i class="fas fa-times" id="exit_cross"></i></button>
       <%= @menu_item.name %>
-      <div id="price" data-price="<%= @menu_item.price %>">£<%= @menu_item.price%></div>
+      <div id="price" data-price="<%= @menu_item.price %>">£<%= item_quantity * @menu_item.price %></div>
     </div>
 
 
     <div class="actions">
       <a class="btn round-bordered incrementer"  id="btnMinus" data-offset="-1"><i class="fas fa-minus-circle"></i></a>
-      <span id="counter" data-count="1">1</span>
+      <span id="counter" data-count="1"><%= item_quantity %></span>
 
 
 
@@ -36,8 +36,8 @@ insertBasketItem = (data) => {
 
 
 
-    <%= simple_form_for([@menu_item, @basket_item], remote: true) do |f| %>
-      <%= f.input :quantity, as: :hidden, input_html: { value: 1 } %>
+    <%= simple_form_for([@menu_item, @basket_item], input_html: {id:"form_value_quant"})  do |f| %>
+      <%= f.input :quantity, as: :hidden, input_html: { value: item_quantity, id:"input_quant"} %>
 
       <button type='submit', id="quantbask">
         Add to basket
@@ -59,17 +59,17 @@ buttonMinus = document.getElementById("btnMinus");
 count_display = document.getElementById("counter");
 exit_div = document.getElementById('exit_cross');
 
-price = document.getElementById("price").innerHTML;
+var price = document.getElementById("price").dataset.price;
 
-
-counter = 1
+counter = <%= current_user.basket.basket_items.where(menu_item_id: @menu_item)[0].quantity %>
+console.log(counter);
 plus = (data) => {
   buttonPlus.addEventListener("click", (event) => {
     event.preventDefault();
     counter += 1;
     console.log(document.getElementById('price'))
     let new_price = counter * parseFloat(price, 10);
-    let n = new_price.toFixed(2);
+    let n = `£ ${new_price.toFixed(2)} `;
     document.getElementById('price').innerHTML = n;
     console.log(counter * parseFloat(price, 10))
     count_display.innerText = counter;
@@ -82,11 +82,13 @@ plus = (data) => {
 minus = (data) => {
   buttonMinus.addEventListener("click", (event) => {
     event.preventDefault();
-    while (counter != 0) {
+    if (counter != 0) {
     counter -= 1;
+
     }
+
     let new_price = counter * parseFloat(price, 10);
-    let n = new_price.toFixed(2);
+    let n = `£ ${new_price.toFixed(2)} `;
     document.getElementById('price').innerHTML = n;
     count_display.innerText = counter
 
@@ -111,14 +113,28 @@ quantity = document.getElementById('counter');
 bask = document.getElementById('quantbask');
 
 
-// closeBox_added = (data) => {
-//   bask.addEventListener("click", (event) => {
-//     event.preventDefault();
+input_quantity = document.getElementById("input_quant").value;
+form_value_quant = document.getElementById("new_basket_item")
 
-//       basket_item_field.classList.remove("shrink");
-//   });
-// };
-// closeBox_added()
+closeBox_added = (data) => {
+  bask.addEventListener("click", (event) => {
+
+    event.preventDefault();
+
+      // give input a class
+      // done
+      // target the input
+      // done
+      // update the value with the counter
+      document.getElementById("input_quant").value = counter;
+
+      // submit the form
+      basket_item_field.classList.remove("shrink");
+      body.classList.remove("layer");
+      form_value_quant.submit();
+  });
+};
+closeBox_added()
 
 add_hidden = (data) => {
   buttonMinus.addEventListener("click", (event) => {
@@ -128,8 +144,16 @@ add_hidden = (data) => {
     };
   });
 };
+rem_hidden = (data) => {
+  buttonPlus.addEventListener("click", (event) => {
+    event.preventDefault();
+
+        bask.classList.remove("hidden");
+  });
+};
 
 
 add_hidden()
+rem_hidden()
 closeBox()
 

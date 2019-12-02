@@ -5,20 +5,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: height 0.5s;
 }
 
 #top-holder {
+  // position: sticky;
+  // top: 0px;
   transition: height 0.5s;
-  height: 40vh;
+  // height: 40vh;
+
 }
+// .zero {
+//   height: 0px !important;
+//   overflow: hidden;
+// }
 .zero {
-  height: 0px !important;
-  overflow: hidden;
+  height: 15vh !important ;
+  // transition: height 0.5s;
+
 }
+
+
 
 .bar-details {
   padding: 2% 0 2% 2%;
-  height: 10vh;
+  // height: 10vh;
   width: 100vw;
   background-color: $white;
   color: $black;

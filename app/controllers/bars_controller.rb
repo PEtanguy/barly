@@ -1,6 +1,4 @@
 class BarsController < ApplicationController
-
-
   def index
     authorize @bar
     @bars = Bar.all
