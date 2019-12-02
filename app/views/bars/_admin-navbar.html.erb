@@ -1,39 +1,54 @@
 <div class="vertical-nav bg-dark" id="sidebar">
-  <div class="py-4 px-3 mb-4 bg-light">
-    <div class="media d-flex align-items-center"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+  <div class="py-4 px-3 mb-4 bg-dark">
+    <div class="media d-flex align-items-center"><img src="https://res.cloudinary.com/tallyho/image/upload/v1575284675/Barly-white_oq5wxm.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail-hollow shadow-sm">
       <div class="media-body">
-        <h4 class="m-0">Barly</h4>
-        <p class="font-weight-light text-muted mb-0">Live orders</p>
+        <h4 class="m-0 text-light"><%= @bar.name %></h4>
+        <p class="font-weight-light text-muted mb-0">Orders Dashboard</p>
       </div>
     </div>
   </div>
 
-  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"><small>Date:</small> <%= Time.now.strftime("%d-%m-%Y") %>  <small>Time:</small> <%= Time.now.strftime("%H:%M:%S") %></p>
 
   <ul class="nav flex-column bg-dark mb-0">
     <li class="nav-item">
-      <a href="#" class="nav-link text-white bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                Home
+      <a href="#" class="admin-nav-link text-dark bg-light">
+                <i class="fa fa-download mr-3 text-primary fa-fw"></i>
+                Live orders
             </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link text-white">
-                <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                About
+      <a href="#" class="admin-nav-link text-white">
+                <i class="fab fa fa-elementor mr-3 text-primary fa-fw"></i>
+                Menu items
             </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link text-white">
-                <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
-                Services
+      <a href="#" class="admin-nav-link text-white">
+                <i class="far fa fa-clock mr-3 text-primary fa-fw"></i>
+                Opening times
             </a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link text-white">
-                <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
-                Gallery
+      <a href="#" class="admin-nav-link text-white">
+                <i class="fa fa-chart-bar mr-3 text-primary fa-fw"></i>
+                Analytics
             </a>
+    </li>
+    <div class="separator white"></div>
+    <br />
+    <li class="no-underline">
+      <a href="#" class="admin-nav-link text-white ml-3">
+                <label class="switch">
+        <input type="checkbox">
+        <span>
+            <em></em>
+            <strong></strong>
+        </span>
+    </label>
+     </a>
     </li>
   </ul>
-</div>
+
+  </div>
+
