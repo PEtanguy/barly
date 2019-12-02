@@ -44,10 +44,12 @@ Rails.application.routes.draw do
   get "/checkout", to: 'baskets#checkout'
 
   resources :users, only: [] do
+    get "/list/", to: 'orders#list', as: "list"
     resources :baskets
   end
 
   resources :orders, only: [:show]
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

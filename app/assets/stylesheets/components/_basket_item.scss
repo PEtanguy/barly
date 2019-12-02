@@ -1,6 +1,7 @@
 .shrink {
   opacity: 1 !important;
   transition: opacity 1s;
+  padding: 15px;
 }
 
 .layer {
@@ -54,11 +55,30 @@ i {
   font-size: 23px;
   padding-top: 3px;
 }
-
-#basket_menu {
-  background-color: $primary;
+#basket_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: sticky;
   bottom: 0;
+  background-color: $primary;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  // width: 80%;
+
+// .basket_item_field {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+
+// }
+
+.colored_icon {
+  color: $white;
+
+}
 
 }
 
@@ -72,7 +92,13 @@ i {
   background-color: $white;
   color: $black;
   opacity: 0;
-  height: 26vh;
+  z-index: 1;
+  // padding: 15px 0;
+  // height: 26vh;
+}
+
+.stickycool-edit {
+  bottom: 300px;
 }
 
 .btn_basket {

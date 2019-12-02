@@ -23,15 +23,16 @@ const drinksNavbar = document.getElementById("drinks-navbar")
 
 // function myFunction() {
 const beer = document.getElementById('beer');
-const banner = document.getElementById('top-holder')
-console.log(banner)
+// const banner = document.getElementById('top-holder')
+const bannerImage = document.querySelector('.bar-banner')
+// console.log(banner)
 const div = document.querySelector('.mhresp');
 if (div) {
   div.addEventListener('scroll', (e) => {
-    banner.classList.add('zero')
+    bannerImage.classList.add('zero')
     console.log(e.path[0].scrollTop)
     if (e.path[0].scrollTop == 0) {
-      banner.classList.remove('zero')
+      bannerImage.classList.remove('zero')
     }
   });
 }
