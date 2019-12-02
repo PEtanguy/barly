@@ -20,4 +20,8 @@ class BarPolicy < ApplicationPolicy
   def my_bar?
     return true
   end
+
+  def my_bars?
+      return true
+    end
 end

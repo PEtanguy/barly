@@ -1,0 +1,19 @@
+.bar:nth-child(odd){
+    background-color:#A9A9A9;
+}
+
+.bar:nth-child(even){
+    background-color:#E0E0E0;
+}
+
+.bar {
+  padding: 18px;
+}
+
+.my_bars {
+  width: 50%;
+}
+
+// .bar {
+//   background-color: red;
+// }

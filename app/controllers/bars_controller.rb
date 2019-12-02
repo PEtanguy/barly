@@ -63,8 +63,16 @@ class BarsController < ApplicationController
 
   def my_bar
 
+
     @bar = Bar.where(user: current_user).first
      # @bar = current_user.bar
     authorize @bar
+  end
+
+  def my_bars
+    @bars = Bar.where(user: current_user)
+
+     # @bar = current_user.bar
+    authorize @bars
   end
 end

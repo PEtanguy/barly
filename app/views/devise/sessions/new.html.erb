@@ -7,9 +7,9 @@
     <div class="form-container">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
-        <%= f.input :email, label: false, placeholder: 'Email',  required: false, autofocus: true,
+        <%= f.input :email, label: false, placeholder: 'Email*',  required: false, autofocus: true,
         input_html: { autocomplete: "email" } %>
-        <%= f.input :password, label: false, placeholder: 'Password',
+        <%= f.input :password, label: false, placeholder: 'Password*',
         required: false,
         input_html: { autocomplete: "current-password" } %>
 
