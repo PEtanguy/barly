@@ -1,82 +1,96 @@
-basket_item_field = document.querySelectorAll('.edit_basket_item');
-// body = document.querySelector('.main');
-// basket_item_field.classList.remove("shrink");
+basket_item_field = document.getElementById('basket_item');
+body = document.querySelector('.opacitize');
+basket_item_field.classList.remove("shrink");
 // body.classList.add("layer");
 
-// if (basket_item_field.classList.contains("hidden")) {
-//  basket_item_field.classList.remove("hidden")
-// }
+<%= item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item)[0].quantity %>
 
 
+if (basket_item_field.classList.contains("hidden")) {
+  basket_item_field.classList.remove("hidden")
+}
 
 while (basket_item_field.firstChild) {
   basket_item_field.firstChild.remove()
 }
 
 insertBasketItem = (data) => {
-    basket_item =
+    my_basket_item =
     `
-  <div class="adding-item">
-
-    <button class="back-menu"><i class="fas fa-times" id="exit_cross"></i></button>
-    <%= @basket_item.menu_item.name %>
-    <div id="price" data-price="<%= @basket_item.menu_item.price %>"><%= @basket_item.menu_item.price%></div>
-  </div>
-
-
-  <div class="actions">
-    <a class="btn round-bordered incrementer"  id="btnMinus" data-offset="-1"><i class="fas fa-minus-circle"></i></a>
-    <span id="counter" data-count="1">1</span>
+    <div class="adding-item">
+      <button class="back-menu"><i class="fas fa-times" id="exit_cross"></i></button>
+      <%= @basket_item.menu_item.name %>
+      <div id="price" data-price="<%= @basket_item.menu_item.price %>">£<%= @menu_item.price%></div>
+    </div>
 
 
-    <a class="btn round-bordered incrementer" id= "btnPlus"  data-offset="1"><i class="fas fa-plus-circle"></i></a>
-  </div>
+    <div class="actions">
+      <a class="btn round-bordered incrementer"  id="btnMinus" data-offset="-1"><i class="fas fa-minus-circle"></i></a>
+      <span id="counter" data-count="<%= @basket_item.quantity %>"><%= item_quantity %></span>
 
 
-  <%= simple_form_for([@basket_item.menu_item, @basket_item], remote: true) do |f| %>
-    <%= f.input :quantity, as: :hidden, input_html: { value: 1 } %>
 
-    <button type='submit', id="quantbask">
-      Add to basket
-    </button>
-    <% if current_user.basket %>
-      <%= link_to "Basket", user_basket_path(current_user, current_user.basket.id), class: "nav-link"  %>
+      <a class="btn round-bordered incrementer" id= "btnPlus"  data-offset="1"><i class="fas fa-plus-circle"></i></a>
+    </div>
 
-    <% else %>
+
+
+    <%= simple_form_for([@menu_item, @basket_item], input_html: {id: "form_value_quant"})  do |f| %>
+      <%= f.input :quantity, as: :hidden, input_html: { value: @basket_item.quantity.to_i, id:"input_quant"} %>
+      <%= f.input :basket_item_id, as: :hidden, input_html: { value: item_quantity } %>
+
+      <button type='submit' id="quantbask">
+        Update
+      </button>
+
+
     <% end %>
 
-  <% end %>
 `;
-  basket_item_field.insertAdjacentHTML('beforeend', basket_item);
-      // body.classList.remove("layer");
-
+  basket_item_field.insertAdjacentHTML('beforeend', my_basket_item);
 };
-
 insertBasketItem()
+
+
+
 
 buttonPlus = document.getElementById("btnPlus");
 buttonMinus = document.getElementById("btnMinus");
 count_display = document.getElementById("counter");
-counter = 1
-price = document.getElementById("price").innerHTML;
+exit_div = document.getElementById('exit_cross');
+
+// price = document.getElementById("price").innerHTML;
+var price = document.getElementById("price").dataset.price;
+
+counter = <%= current_user.basket.basket_items.where(menu_item_id: @menu_item)[0].quantity %>
 
 plus = (data) => {
   buttonPlus.addEventListener("click", (event) => {
     event.preventDefault();
     counter += 1;
-    document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
+    console.log(document.getElementById('price'))
+    let new_price = counter * parseFloat(price, 10);
+    let n = `£ ${new_price.toFixed(2)} `;
+    document.getElementById('price').innerHTML = n;
+    console.log(counter * parseFloat(price, 10))
     count_display.innerText = counter;
-    price.value = price + (counter * price)
+    // price.value = price + (counter * price)
+    // buttonPlus.classList.add('currently-loading')
+
   });
 };
 
 minus = (data) => {
   buttonMinus.addEventListener("click", (event) => {
     event.preventDefault();
-    while (counter != 0) {
+    if (counter != 0) {
     counter -= 1;
+
     }
-    document.getElementById('price').innerHTML = counter * parseFloat(price, 10);
+
+    let new_price = counter * parseFloat(price, 10);
+    let n = new_price.toFixed(2);
+    document.getElementById('price').innerHTML = n;
     count_display.innerText = counter
 
   });
@@ -89,16 +103,40 @@ minus()
 setTimeout(function(){ basket_item_field.classList.add("shrink"); }, 500);
 
 
-exit_div = document.getElementById('exit_cross');
-exit = (data) => {
+closeBox = (data) => {
   exit_div.addEventListener("click", (event) => {
     event.preventDefault();
-      body.classList.remove("layer");
+      // body.classList.remove("layer");
       basket_item_field.classList.add("hidden");
   });
 };
 quantity = document.getElementById('counter');
 bask = document.getElementById('quantbask');
+
+
+input_quantity = document.getElementById("input_quant").value;
+
+closeBox_added = (data) => {
+  bask.addEventListener("click", (event) => {
+// form_value_quant = document.getElementById("new_basket_item")
+    event.preventDefault();
+
+  form_value_quant = document.getElementById(event.currentTarget.parentElement.id)
+
+      // give input a class
+      // done
+      // target the input
+      // done
+      // update the value with the counter
+      document.getElementById("input_quant").value = counter;
+
+      // submit the form
+      basket_item_field.classList.remove("shrink");
+      // body.classList.remove("layer");
+      form_value_quant.submit();
+  });
+};
+closeBox_added()
 
 add_hidden = (data) => {
   buttonMinus.addEventListener("click", (event) => {
@@ -109,7 +147,17 @@ add_hidden = (data) => {
   });
 };
 
-add_hidden()
+rem_hidden = (data) => {
+  buttonPlus.addEventListener("click", (event) => {
+    event.preventDefault();
 
-exit()
+        bask.classList.remove("hidden");
+  });
+};
+
+
+
+rem_hidden()
+add_hidden()
+closeBox()
 

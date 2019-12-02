@@ -1,43 +1,69 @@
 <div class="page-content p-5" id="content">
-    <h1 class="display-4 text-black"><%= @bar.name %></h1>
-    <div class="traffic-cards">
-      <div class="traffic-card-info">
-        <% @bar.orders.each do |order| %>
-          <h2 class="order-num">#<%= order.id %></h2>
-          <p class="order-info">
-            <% total = 0 %> <%= order.order_items.count %> Items <% order.order_items.each do |item| %>
-            <% total += item.menu_item_price %>
-            <% end %>
-            (£<%= total.round(2) %>)</p>
-          <% end %>
-      </div>
-    </div>
-    <div class="card-invoice">
-          <div class="traffic-card-invoice">
-            <% @bar.orders.each do |order| %>
-              <%= order.id %>
-              Order Time: <%= order.created_at %>
-              Customer: <%= order.user_id %>
-          </div>
-          <div class="notes">
-            <%= order.notes %>
-          </div>
-          <div class="order-details">
-            <% order.order_items.each do |item| %>
-              <%= item.quantity %> x
-              <%= item.menu_item_name %>
-              <%= item.menu_item_price %>
-              <% end %>
-          </div>
+  <% counter = 0 %>
+  <% @bar.orders.each do |order| %>
+  <% counter += 1 %>
+  <div class="row">
+  <div class="traffic-cards column" id="trigger<%= counter %>">
+    <div class="traffic-card-info">
+      <h2 class="order-num">#<%= order.id %></h2>
+      <p class="order-info">
+        <% total = 0 %> <%= order.order_items.count %> Items <% order.order_items.each do |item| %>
+        <% total += item.menu_item_price %>
         <% end %>
+        (£<%= total.round(2) %>)</p>
       </div>
     </div>
+    <% end %>
+      <% @bar.orders.each do |order| %>
+    <div class="card-invoice column d-none" id="content<%= counter %>">
+      <div class="card-wrapper">
+        <div class="traffic-card-invoice">
+          <div>
+            <p class="order-tag"><i class="fas fa-tag"></i> ORDER NUMBER: <strong>#<%= order.id %></strong></p>
+          </div>
+          <p class="order-time"><i class="fas fa-clock"></i> at <strong><%= order.created_at.strftime("%H:%M%p") %></strong></p>
+          <p class="note-alert"><i class="fas fa-comment-alt"></i> NOTES: <strong><%= order.notes %></strong></p>
+        </div>
+      </div>
+        <div class="order-details">
+          <p class="details"><i class="fas fa-glass-cheers"></i> DETAILS:</p>
+          <% order.order_items.each do |item| %>
+            <% @beer = [] %>
+            <% @cocktail = [] %>
+            <% @mocktail = [] %>
+            <% @wine = [] %>
+            <% @soft_drink = [] %>
+            <% if item.menu_item_category == "Beer" %>
+              <% @beer << item %>
+            <% end %>
+            <% if item.menu_item_category == "Cocktail" %>
+              <% @cocktail << item %>
+            <% end %>
+            <% if item.menu_item_category == "Mocktail" %>
+              <% @mocktail << item %>
+            <% end %>
+            <% if item.menu_item_category == "Wine" %>
+              <% @wine << item %>
+            <% end %>
+            <% if item.menu_item_category == "Soft Drink" %>
+              <% @soft_drink << item %>
+            <% end %>
+            <% end %>
+            <p class="item-quant"><strong><%= item.quantity %> x <%= item.menu_item_name %></strong> <%= item.menu_item_price %></p>
+          <% end %>
+        </div>
+      <button class="making">Making</button>
+    </div>
+  </div>
 </div>
 
 
-<% Order.where(bar_id: current_user.bar.id).each do |order| %>
-  <div class="order">
-    <%= order.id %>
-    <%= order.creation_time %>
-  </div>
-<% end %>
+
+
+<script type="text/javascript">
+  document.querySelectorAll(".traffic-cards").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      document.getElementById(`content${trigger.id.split("trigger")[1]}`).classList.toggle("d-none")
+    });
+  });
+</script>

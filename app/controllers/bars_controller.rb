@@ -1,6 +1,4 @@
 class BarsController < ApplicationController
-
-
   def index
     authorize @bar
     @bars = Bar.all
@@ -62,8 +60,7 @@ class BarsController < ApplicationController
   end
 
   def my_bar
-    @bar = Bar.find(params[:id])
-
+    @bar = Bar.where(params[:id])
      # @bar = current_user.bar
     authorize @bar
   end

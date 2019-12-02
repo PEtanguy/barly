@@ -8,6 +8,10 @@ class OrderPolicy < ApplicationPolicy
     return true
   end
 
+  def list?
+    return true
+  end
+
   def show?
     record.user == user
   end

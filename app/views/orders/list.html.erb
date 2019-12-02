@@ -1,0 +1,31 @@
+<h1>Your Orders:</h1>
+
+
+
+<h2> Active Orders:</h2>
+<% @orders.where(status: "pending").each do |order| %>
+  <div class="card" style="color: black">
+    ID: <%= order.id %>
+    Notes: <%= order.notes %>
+
+  </div>
+<% end %>
+
+<% @orders.where(status: "pending").each do |order| %>
+  <div class="card" style="color: black">
+    ID: <%= order.id %>
+    Notes: <%= order.notes %>
+
+
+  </div>
+<% end %>
+
+<h2>Past Orders:</h2>
+
+<% @orders.where(status: "pending").each do |order| %>
+  <div class="card" style="color: black">
+    ID: <%= order.id %>
+    Notes: <%= order.notes %>
+
+  </div>
+<% end %>

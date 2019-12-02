@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_item_params)
     @bar = Bar.find(params[:bar_id])
     @order.bar = @bar
+    @order.status = 'pending'
     @order.user = current_user
     @order.basket = current_user.basket
     if @order.save!
@@ -30,6 +31,7 @@ class OrdersController < ApplicationController
         @order_item.quantity = item.quantity
         @order_item.menu_item_price = item.menu_item.price
         @order_item.menu_item_name = item.menu_item.name
+        @order_item.menu_item_category = item.menu_item.category
         @order_item.save!
       end
       redirect_to order_path(@order)
@@ -38,6 +40,11 @@ class OrdersController < ApplicationController
     end
     # en js faire un create.js.erb qui va nous afficher le basket avec option d'ajouter
     authorize @order
+  end
+
+  def list
+    @orders = Order.where(user_id: current_user.id)
+    authorize @orders
   end
 
   def order_item_params
