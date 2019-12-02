@@ -12,7 +12,7 @@ const search = () => {
       results.innerHTML = '';
       content.hits.forEach((bar) => {
         // const list = `<%= link_to "${bar.name}", "/map_path" %>`;
-        const list = `<li class="list-inline search-results"><a href="bars/${bar.id}/menu_items">${bar.name} ~ ${bar.address}</a></li>`;
+        const list = `<li class="list-inline search-results"><a href="bars/${bar.id}/menu_items">${bar.name}</a></li>`;
         results.insertAdjacentHTML("beforeend", list);
       });
     })
