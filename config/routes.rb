@@ -17,9 +17,17 @@ Rails.application.routes.draw do
     get "map", to: "bars#map"
     # get "local_bars", to: "bars#local_bars"
 
+
+    #NEW ROUTE FOR BARS INDEX
+
+
+
+
+
   resources :bars, only: [ :show, :edit, :update, :delete ] do
     collection do
       get "my_bar", to: "bars#my_bar"
+      get "my_bars", to: "bars#my_bars"
       # get "local_bars", to: "bars#local_bars"
     end
     resources :menu_items
