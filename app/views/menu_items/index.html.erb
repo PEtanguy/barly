@@ -68,9 +68,11 @@
   <!-- EVENT LISTENER: DISPLAYING THE STICKY BASKET_ITEM ONLY ON CLICK -->
 
 
-  <div class="basket_item_field stickycool" id="basket_item">
-  </div>
-                          <div class="basket_item_field stickycool" id="basket_item"></div>
+                        <div class="basket_item_field stickycool" id="basket_item"></div>
+
+
+
+</div>
 
                         <% if current_user&.basket&.basket_items&.any? %>
                           <%= link_to user_basket_path(current_user, current_user.basket), id:"basket_wrapper" do %>
@@ -82,10 +84,6 @@
                             </div>
                            <% end %>
                         <% end %>
-
-
-</div>
-
 
 
 <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>

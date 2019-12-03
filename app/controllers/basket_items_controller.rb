@@ -2,6 +2,11 @@ class BasketItemsController < ApplicationController
   def new
     @basket_item = BasketItem.new
     @menu_item = MenuItem.find(params[:menu_item_id])
+    if current_user.basket.basket_items.where(menu_item_id: @menu_item.id).present?
+      @item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item.id)[0].quantity
+    else
+      @item_quantity = 1
+    end
     authorize @basket_item
     respond_to do |format|
       format.js
@@ -26,8 +31,9 @@ class BasketItemsController < ApplicationController
 
   def edit
     @basket_item = BasketItem.find(params[:id])
-    @menu_item = MenuItem.find(params[:menu_item_id])
+    @menu_item = MenuItem.find(@basket_item.menu_item.id)
     authorize @basket_item
+    @item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item)[0].quantity
     respond_to do |format|
       format.js
     end
@@ -38,7 +44,6 @@ class BasketItemsController < ApplicationController
     if @basket_item.update(basket_item_params)
       authorize @basket_item
       redirect_to basket_path
-      # redirect_to basket_item_path(@basket_item)
     else
       render :edit
     end
