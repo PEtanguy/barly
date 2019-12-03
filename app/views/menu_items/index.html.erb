@@ -9,9 +9,10 @@
       <%= link_to "Admin Settings", my_bars_bars_path, class: "btn btn-info" if current_user.bars.include?(@bar) %>
     </div>
     <div class="drink-buttons-arthur" id="drinks-navbar">
-      <a data-scroll href="#beer">Beers</a>
+      <a data-scroll href="#beer">Beer</a>
       <a data-scroll href="#cocktail">Cocktails</a>
-      <a data-scroll href="#wine">Wines</a>
+      <a data-scroll href="#wine">Wine</a>
+      <a data-scroll href="#spirits">Spirits</a>
       <a data-scroll href="#mocktail">Mocktails</a>
       <a data-scroll href="#soft_drink">Soft Drinks</a>
     </div>
@@ -19,7 +20,7 @@
     <div class="mhresp">
                       <div class="opacitize">
                       <% if @bar.menu_items.where(category: 'Beer').any? %>
-                            <h1 id="beer">Beers</h1>
+                            <h1 id="beer">Beer</h1>
                             <% @bar.menu_items.where(category: 'Beer').find_each do |menuitem| %>
                               <%= render 'drink_card', menuitem: menuitem %>
                             <% end %>
@@ -35,7 +36,7 @@
                       <% end %>
 
                       <% if @bar.menu_items.where(category: 'Wine').any? %>
-                              <h1 id="wine">Wines</h1>
+                              <h1 id="wine">Wine</h1>
                               <% @bar.menu_items.where(category: 'Wine').find_each do |menuitem| %>
                                 <%= render 'drink_card', menuitem: menuitem %>
                               <% end %>
