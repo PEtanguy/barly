@@ -4,7 +4,7 @@ basket_item_field.classList.remove("shrink");
 // body.classList.add("layer");
 
 
-<%= item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item)[0].quantity %>
+<%#= item_quantity = current_user.basket.basket_items.find_by(menu_item_id: @menu_item)[0].quantity %>
 
 
 if (basket_item_field.classList.contains("hidden")) {
@@ -21,13 +21,13 @@ insertBasketItem = (data) => {
     <div class="adding-item">
       <button class="back-menu"><i class="fas fa-times" id="exit_cross"></i></button>
       <%= @basket_item.menu_item.name %>
-      <div id="price" data-price="<%= @basket_item.menu_item.price %>">£<%= @menu_item.price%></div>
+      <div id="price" data-price="<%= @basket_item.menu_item.price %>">£<%= @basket_item.menu_item.price * @basket_item.quantity %></div>
     </div>
 
 
     <div class="actions">
       <a class="btn round-bordered incrementer"  id="btnMinus" data-offset="-1"><i class="fas fa-minus-circle"></i></a>
-      <span id="counter" data-count="<%= @basket_item.quantity %>"><%= item_quantity %></span>
+      <span id="counter" data-count="<%= @basket_item.quantity %>"><%= @basket_item.quantity %></span>
 
 
 
@@ -38,7 +38,6 @@ insertBasketItem = (data) => {
 
     <%= simple_form_for([@menu_item, @basket_item], input_html: {id: "form_value_quant"})  do |f| %>
       <%= f.input :quantity, as: :hidden, input_html: { value: @basket_item.quantity.to_i, id:"input_quant"} %>
-      <%= f.input :basket_item_id, as: :hidden, input_html: { value: item_quantity } %>
 
       <button type='submit' id="quantbask">
         Update
@@ -90,7 +89,7 @@ minus = (data) => {
     }
 
     let new_price = counter * parseFloat(price, 10);
-    let n = new_price.toFixed(2);
+    let n = `£ ${new_price.toFixed(2)} `;
     document.getElementById('price').innerHTML = n;
     count_display.innerText = counter
 
