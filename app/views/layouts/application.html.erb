@@ -19,7 +19,7 @@
     <% if action_name == "my_bar" || action_name == "my_bars" %>
       <%= render 'bars/admin-navbar' %>
     <% end %>
-    <% unless action_name == "home" || "my_bar" %>
+    <% unless action_name == "home" || action_name == "my_bar" %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
