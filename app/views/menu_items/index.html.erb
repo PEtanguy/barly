@@ -5,6 +5,7 @@
     <div class="bar-details">
       <h3><%= @bar.name %></h3>
       <p><%= @bar.address %></p>
+
       <%= link_to "Admin Settings", my_bars_bars_path, class: "btn btn-info" if current_user.bars.include?(@bar) %>
     </div>
     <div class="drink-buttons-arthur" id="drinks-navbar">
