@@ -1,7 +1,6 @@
 .page-content {
   width: calc(100vw - 17rem);
   height: 100vh;
-  margin-left: 17rem;
   transition: all 0.4s;
 }
 
@@ -11,7 +10,6 @@ h1 {
 
 .traffic-cards {
   height: 10vh;
-  max-width: 43%;
   background: $dark;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   display: flex;
@@ -42,6 +40,7 @@ h1 {
   margin-bottom: 1vh;
   padding: 40px;
   width: 27vw;
+  height: 76px;
 }
 
 .traffic-card-invoice {
@@ -63,8 +62,8 @@ h1 {
 
 .card-invoice {
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
-  height: 91vh;
-  width: 47vw;
+  height: 88vh;
+  width: 38vw;
   background-color: $white;
   margin-left: 1vw;
 }
@@ -86,6 +85,14 @@ h1 {
 }
 
 .order-tag {
+  font-family: $headers-font;
+  font-weight: 200;
+  color: $black;
+  margin: 0;
+  font-size: 25px;
+}
+
+.order-id {
   font-family: $headers-font;
   font-weight: 200;
   color: $black;
@@ -144,5 +151,31 @@ h1 {
   font-size: 25px;
 }
 
+.status {
+  background-color: $dark;
+  height: 76px;
+  padding: 10px 12px;
+}
 
+.traffic-light {
+  background-color: $secondary;
+  border-radius: 34px;
+  color: $dark;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.fa-circle {
+  color: $dark;
+}
+
+.status-text {
+  font-size: 16px;
+  margin: auto;
+  padding: 6px;
+}
 
