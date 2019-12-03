@@ -23,6 +23,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+#nokigiri
+gem 'nokogiri', '~> 1.6', '>= 1.6.7.2'
+
 #LetterOpener
 gem 'letter_opener', group: :development
 

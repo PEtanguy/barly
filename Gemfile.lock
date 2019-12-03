@@ -248,6 +248,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   letter_opener
   listen (~> 3.0.5)
+  nokogiri (~> 1.6, >= 1.6.7.2)
   pg (~> 0.21)
   pry-byebug
   pry-rails

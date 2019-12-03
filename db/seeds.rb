@@ -6,9 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
-MenuItem.destroy_all
+# require 'open-uri'
+# require 'nokogiri'
 
+require 'faker'
+
+MenuItem.destroy_all
+Admin.destroy_all
+Basket.destroy_all
 Bar.destroy_all
 User.destroy_all
 
@@ -128,10 +133,30 @@ images = ["https://images.unsplash.com/photo-1504502350688-00f5d59bbdeb?ixlib=rb
   menu_item.save
 end
 
+puts 'Creating admins'
+
+Bar.all.each do |b|
+  Admin.create(user: User.first, bar: b, first_name: User.first.email)
+end
+
+puts 'Finished creating admins'
 
 
 
   puts 'All done!'
+
+
+
+#   pub = ''
+# url = "https://en.wikipedia.org/wiki/List_of_pubs_in_London#{pub}"
+
+# html_file = open(url).read
+# html_doc = Nokogiri::HTML(html_file)
+
+# html_doc.search('.m_titre_resultat a').each do |element|
+#   puts element.text.strip
+#   puts element.attribute('href').value
+# end
 
 
 
