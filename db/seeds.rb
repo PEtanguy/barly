@@ -22,13 +22,6 @@ User.destroy_all
 
 puts 'Creating user'
 
-1.times do
-  User.create(
-    email: 'izzy@gmail.com',
-    password: '123456',
-    gender: 'female',
-    dob: '01/06/1990')
-end
 
 1.times do
   User.create(
@@ -36,6 +29,17 @@ end
     password: '123456',
     gender: 'male',
     dob: '06/01/1990')
+  
+ end
+
+1.times do
+  User.create(
+
+    email: 'issy@gmail.com',
+    password: '123456',
+    gender: 'female',
+    dob: '01/02/1991')
+
 end
 
 Basket.create(
@@ -70,6 +74,7 @@ puts 'Creating bars'
 
 
   Bar.create(
+
     name: "The Owl & The Pussycat",
     address: 'W13 9RT',
     capacity: '100',
@@ -90,8 +95,9 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Broken Drum",
-    address: 'DA15 9PT',
+
+    name: "The Grapes",
+    address: 'E148BP',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -111,8 +117,9 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Little Green Dragon",
-    address: 'N21 2AD',
+
+    name: "Wenlock Arms",
+    address: 'N17TA',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -120,8 +127,9 @@ puts 'Creating bars'
     )
 
   Bar.create(
-    name: "Snooty Fox",
-    address: 'N5 2NN' ,
+
+    name: "The North Star",
+    address: 'E113AI' ,
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
