@@ -5,6 +5,7 @@
     <div class="bar-details">
       <h3><%= @bar.name %></h3>
       <p><%= @bar.address %></p>
+
       <%= link_to "Admin Settings", my_bars_bars_path, class: "btn btn-info" if current_user.bars.include?(@bar) %>
     </div>
     <div class="drink-buttons-arthur" id="drinks-navbar">
@@ -75,17 +76,29 @@
 
 </div>
 
-                        <% if current_user&.basket&.basket_items&.any? %>
 
-                          <%= link_to user_basket_path(current_user, current_user.basket), id:"basket_wrapper" do %>
-                            <div >
-                              <div >
-                                <i class="fas fa-shopping-basket colored_icon"></i>
-                                <div class="basket_text">Basket</div>
-                              </div>
-                            </div>
-                           <% end %>
-                        <% end %>
+  <% if current_user&.basket&.basket_items&.any? %>
+  <% total = 0 %>
+  <% counter = 0 %>
+  <% current_user.basket.basket_items.each do |item|%>
+  <% counter += 1 %>
+  <% total += item.menu_item.price %>
+  <% current_user.basket.total_price %>
+  <% end %>
+    <%= link_to user_basket_path(current_user, current_user.basket), id:"basket_wrapper" do %>
+      <!-- <div > -->
+        <div class="basket-styling">
+
+          <div class="basket_text">
+            <p class="basket-items"><strong><%= current_user.basket.basket_items.count %></strong></p>
+            <p class="view">View Basket</p>
+            <p class="basket-total"><strong>£<%= total.round(2) %></strong></p>
+          </div>
+        </div>
+      <!-- </div> -->
+     <% end %>
+  <% end %>
+
 
 
 <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
