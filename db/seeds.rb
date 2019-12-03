@@ -24,10 +24,18 @@ puts 'Creating user'
 
 1.times do
   User.create(
-    email: 'test@barly.io',
+    email: 'izzy@gmail.com',
+    password: '123456',
+    gender: 'female',
+    dob: '01/06/1990')
+end
+
+1.times do
+  User.create(
+    email: 'ben@gmail.com',
     password: '123456',
     gender: 'male',
-    dob: '01/01/1871')
+    dob: '06/01/1990')
 end
 
 Basket.create(
@@ -41,8 +49,8 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Lamb & Flag",
-    address: '33 Rose St, Covent Garden, London WC2E 9EB',
+    name: "River Alehouse",
+    address: 'SE10 0RJ',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -62,8 +70,8 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Tilly's Bar",
-    address: 'SE1 7RW',
+    name: "The Owl & The Pussycat",
+    address: 'W13 9RT',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -82,8 +90,8 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Rick's Speakeasy",
-    address: 'WC2N 6DU',
+    name: "Broken Drum",
+    address: 'DA15 9PT',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -103,8 +111,8 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Pierre's Winery",
-    address: 'WC1H 0XG',
+    name: "Little Green Dragon",
+    address: 'N21 2AD',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -112,8 +120,8 @@ puts 'Creating bars'
     )
 
   Bar.create(
-    name: "Lenny's Latenight",
-    address: 'WC2E 8PS' ,
+    name: "Snooty Fox",
+    address: 'N5 2NN' ,
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -130,7 +138,7 @@ images = ["https://images.unsplash.com/photo-1504502350688-00f5d59bbdeb?ixlib=rb
   menu_item = MenuItem.new(
       name: Faker::Beer.name,
       # price: rand(3.0...6.0).round(2),
-      price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
+      [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
       description: Faker::Beer.style,
       bar: Bar.first,
       category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
