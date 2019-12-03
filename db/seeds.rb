@@ -29,7 +29,7 @@ puts 'Creating user'
     password: '123456',
     gender: 'male',
     dob: '06/01/1990')
-  
+
  end
 
 1.times do
@@ -146,7 +146,7 @@ images = ["https://images.unsplash.com/photo-1504502350688-00f5d59bbdeb?ixlib=rb
   menu_item = MenuItem.new(
       name: Faker::Beer.name,
       # price: rand(3.0...6.0).round(2),
-      [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
+      price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
       description: Faker::Beer.style,
       bar: Bar.first,
       category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
