@@ -33,13 +33,25 @@ class OrdersController < ApplicationController
         @order_item.menu_item_name = item.menu_item.name
         @order_item.menu_item_category = item.menu_item.category
         @order_item.save!
+        item.delete
+
       end
+
+
       redirect_to order_path(@order)
     # else
       # render :new
     end
     # en js faire un create.js.erb qui va nous afficher le basket avec option d'ajouter
     authorize @order
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    @order.update(order_params)
+    authorize @order
+
+
   end
 
   def list
@@ -49,5 +61,9 @@ class OrdersController < ApplicationController
 
   def order_item_params
     params.require(:order).permit(:table_id, :notes)
+  end
+
+  def order_params
+    params.require(:order).permit(:status, :id)
   end
 end

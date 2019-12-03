@@ -52,7 +52,7 @@ class BasketItemsController < ApplicationController
   def delete
     @basket_item = BasketItem.find(params[:id])
     @basket_item.destroy
-    redirect_to root_path
+    # redirect_to root_path
     authorize @basket_item
   end
 

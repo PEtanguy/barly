@@ -16,6 +16,11 @@ class BasketsController < ApplicationController
     authorize @basket
   end
 
+  def delete
+    @basket = Basket.find(current_user.basket.id)
+    @basket.destroy
+    authorize @basket
+  end
   # private
 
   # def basket_params
