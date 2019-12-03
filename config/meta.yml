@@ -1,0 +1,5 @@
+meta_product_name: "Barly"
+meta_title: "Barly - you didn't come here to queue"
+meta_description: "Skip the queue at the bar by ordering drinks from your phone"
+meta_image: "barly-logo.jpg" # should exist in `app/assets/images/`
+twitter_account: "@barlyio"   # required for Twitter Cards

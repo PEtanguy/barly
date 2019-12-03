@@ -7,42 +7,42 @@
         <h4 class="m-0 text-light"><%= @bar.name %></h4>
 <% end %>
 
-        <p class="font-weight-light text-muted mb-0">Dashboard</p>
+        <p class="font-weight-light text-muted mb-0 minty">Dashboard</p>
 
       </div>
     </div>
   </div>
 
-  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"><small>Date:</small> <%= Time.now.strftime("%d-%m-%Y") %>  <small>Time:</small> <span id="time"></span></p>
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0 ml-1"><small>Date:</small> <%= Time.now.strftime("%d-%m-%Y") %> - <small>Time:</small> <span id="time"></span></p>
 
   <ul class="nav flex-column bg-dark mb-0">
     <li class="nav-item" id="adminmenu">
-     <a href="/bars/my_bar" class="admin-nav-link text-dark bg-light">
-                <i class="fa fa-sign-in-alt mr-3 text-primary fa-fw"></i>
+     <a href="/bars/my_bar/CHANGEHERE" class="admin-nav-link text-dark bg-light">
+                <i class="fa fa-sign-in-alt mr-3 text-primary fa-fw fa-lg"></i>
                 Live orders
             </a>
     </li>
     <li class="nav-item" id="adminmenu">
       <a href="#menu-items" class="admin-nav-link text-white">
-                <i class="fas fa fa-beer mr-3 text-primary fa-fw"></i>
+                <i class="fas fa fa-beer mr-3 text-primary fa-fw fa-lg"></i>
                 Menu items
             </a>
     </li>
     <li class="nav-item" id="adminmenu">
       <a href="#opening-times" class="admin-nav-link text-white">
-                <i class="far fa fa-clock mr-3 text-primary fa-fw"></i>
+                <i class="far fa fa-clock mr-3 text-primary fa-fw fa-lg"></i>
                 Opening times
             </a>
     </li>
     <li class="nav-item" id="adminmenu">
       <a href="#analytics" class="admin-nav-link text-white">
-                <i class="fa fa-chart-bar mr-3 text-primary fa-fw"></i>
+                <i class="fa fa-chart-bar mr-3 text-primary fa-fw fa-lg"></i>
                 Analytics
             </a>
     </li>
     <li class="nav-item" id="adminmenu">
       <a href="/bars/my_bars" class="admin-nav-link text-white">
-                <i class="fa fa-bars mr-3 text-primary fa-fw"></i>
+                <i class="fa fa-bars mr-3 text-primary fa-fw fa-lg"></i>
                 My bars
             </a>
     </li>
@@ -59,30 +59,26 @@
     </li>
   </ul>
 </div>
-<!-- <script type="text/javascript">
+
+<script type="text/javascript">
+
   if (!applied) {
     $('#adminmenu a').on('click', function(){
-    $('#adminmenu a.current').removeClass('current');
-    $(this).addClass('text-dark bg-light');
-     applied = true;
+      $('#adminmenu a.current').removeClass('current');
+      $(this).addClass('text-dark bg-light');
+      applied = true;
+    });
   } else {
-  applied = false;
-
+    applied = false;
   }
-}
+</script>
 
-</script> -->
 
 <script>
   var x = document.getElementById("tog");
   x.addEventListener('click', (e) => {
     if (x.checked) {
-      console.log('y')
       x.checked = true
-    } else {
-      console.log('n')
-
-      x.checked = false
     }
   });
 </script>
