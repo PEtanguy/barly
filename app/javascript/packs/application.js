@@ -32,7 +32,7 @@ if (div) {
   div.addEventListener('scroll', (e) => {
     bannerImage.classList.add('zero')
     bannerText.classList.add('zero-text')
-    console.log(e.path[0].scrollTop)
+
     if (e.path[0].scrollTop == 0) {
       bannerImage.classList.remove('zero')
       bannerText.classList.remove('zero-text')
@@ -44,7 +44,7 @@ if (div) {
 
 const basket_add = document.querySelectorAll('.add_basket');
 ((data) => {
-  console.log('called')
+
   basket_add.forEach(basket => {
     basket.addEventListener("click", (event) => {
       event.preventDefault();
@@ -61,6 +61,9 @@ const basket_add = document.querySelectorAll('.add_basket');
 
   })
 })()
+
+
+
 
 // };
 

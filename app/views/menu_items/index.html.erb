@@ -76,6 +76,7 @@
 </div>
 
                         <% if current_user&.basket&.basket_items&.any? %>
+
                           <%= link_to user_basket_path(current_user, current_user.basket), id:"basket_wrapper" do %>
                             <div >
                               <div >

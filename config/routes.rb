@@ -49,7 +49,7 @@ Rails.application.routes.draw do
     resources :baskets
   end
 
-  resources :orders, only: [:show]
+  resources :orders, only: [:show, :update]
 
 
 

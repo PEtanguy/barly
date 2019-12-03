@@ -13,7 +13,8 @@
         <div class="order-order_content">
           <div class="order-spacer">
           </div>
-          <% OrderItem.where(order: Order.last).each do |item| %>
+
+          <% @order.order_items.each do |item| %>
           <div class="order-item_card_order">
             <div>
               <%= item.quantity %> X

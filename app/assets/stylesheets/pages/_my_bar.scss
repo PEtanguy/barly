@@ -158,7 +158,8 @@ h1 {
 }
 
 .traffic-light {
-  background-color: $secondary;
+  background-color: $primary;
+  transition: background-color 0.5s;
   border-radius: 34px;
   color: $dark;
   border-style: none;
@@ -168,6 +169,19 @@ h1 {
   cursor: pointer;
   text-decoration: none;
 }
+
+.orange {
+background-color: $secondary;
+transition: background-color 0.5s;
+}
+
+.green {
+  background-color: limegreen;
+  transition: background-color 0.5s;
+}
+
+
+
 
 .fa-circle {
   color: $dark;
