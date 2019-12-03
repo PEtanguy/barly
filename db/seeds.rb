@@ -24,10 +24,10 @@ puts 'Creating user'
 
 1.times do
   User.create(
-    email: 'test@barly.io',
+    email: 'issy@gmail.com',
     password: '123456',
-    gender: 'male',
-    dob: '01/01/1871')
+    gender: 'female',
+    dob: '01/02/1991')
 end
 
 Basket.create(
@@ -59,8 +59,8 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Tilly's Bar",
-    address: 'SE1 7RW',
+    name: "The Harp",
+    address: '47 Chandos Pl, Charing Cross, London WC2N 4HS',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -79,8 +79,8 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Rick's Speakeasy",
-    address: 'WC2N 6DU',
+    name: "The Grapes",
+    address: 'E148BP',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -98,8 +98,8 @@ puts 'Creating bars'
 
 
   Bar.create(
-    name: "Pierre's Winery",
-    address: 'WC1H 0XG',
+    name: "Wenlock Arms",
+    address: 'N17TA',
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
@@ -107,8 +107,8 @@ puts 'Creating bars'
     )
 
   Bar.create(
-    name: "Lenny's Latenight",
-    address: 'WC2E 8PS' ,
+    name: "The North Star",
+    address: 'E113AI' ,
     capacity: '100',
     opening_time: '15:00',
     closing_time: '23:30',
