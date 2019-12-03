@@ -3,7 +3,10 @@ body = document.querySelector('.opacitize');
 basket_item_field.classList.remove("shrink");
 body.classList.add("layer");
 
-<%= item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item)[0].quantity %>
+
+
+
+<%= item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item.id)[0].quantity %>
 
 if (basket_item_field.classList.contains("hidden")) {
  basket_item_field.classList.remove("hidden")
