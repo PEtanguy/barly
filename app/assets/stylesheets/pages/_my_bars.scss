@@ -1,17 +1,34 @@
-.bar:nth-child(odd){
-    background-color:#A9A9A9;
-}
+// .bar:nth-child(odd){
+//     background-color:#E8E8E8;
+// }
 
-.bar:nth-child(even){
-    background-color:#E0E0E0;
-}
+// .bar:nth-child(even){
+//     background-color:#F5F5F5;
+// }
 
 .bar {
   padding: 18px;
+  color: black;
+  border-top: 1px solid #B0B0B0;
 }
 
 .my_bars {
+  background-color: white;
   width: 50%;
+  color: black;
+}
+
+.bar_index_heading{
+  color: #A9A9A9;
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+.bar_index_names {
+  a {
+    color:#FF6A6A;
+  }
 }
 
 // .bar {
