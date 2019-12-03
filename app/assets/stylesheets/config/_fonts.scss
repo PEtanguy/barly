@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald:200,300,400");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu:300,400,500");
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "sans-serif";
-$headers-font: "Oswald","sans-serif";
+$body-font: "Ubuntu", "300", "sans-serif";
+$headers-font: "Ubuntu","sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
