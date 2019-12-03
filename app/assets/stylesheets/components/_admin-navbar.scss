@@ -1,62 +1,258 @@
 
-// BAR MANAGER ADMIN NAVBAR
-.admin-navbar-lewagon {
-  justify-content: space-between;
-  background: $black;
-  height: 100%;
-  width: 90px;
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+.vertical-nav {
+  min-width: 15rem;
+  width: 15rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
   left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
 }
 
-.admin-navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.page-content {
+  width: calc(100% - 15rem);
+  margin-left: 15rem;
+  transition: all 0.4s;
 }
 
-.admin-navbar-lewagon .navbar-brand img {
-  width: 40px;
+.img-thumbnail-hollow {
+    padding: 0.25rem;
+    /* background-color: #F1F1F1; */
+    border: 1px solid #dee2e6;
+    border-radius: 2px;
+    max-width: 100%;
+    height: auto;
 }
 
-// MAIN NAVBAR
-
-.sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 80px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: $black; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+.admin-nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    line-height: 5em;
 }
 
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
+.admin-nav-link a {
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
+
+.next-door {
+   display: inline-block;
+    width:100%;
+  }
+
+.nav-item a:hover {
+    background-color: #54575a;
+    color: #FFF;
+    text-decoration: none;
 }
 
-/* Style page content */
-// .main {
-//   margin-left: 160px; /* Same as the width of the sidebar */
-//   padding: 0px 10px;
-// }
+.no-underline label {
+  text-decoration: none;
+}
 
-// /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-// @media screen and (max-height: 450px) {
-//   .sidenav {padding-top: 15px;}
-//   .sidenav a {font-size: 18px;}
-// }
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -15rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -15rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 15rem;
+    width: calc(100% - 15rem);
+  }
+}
+
+//////
+
+$lightGrey: #99A3BA;
+
+.switch {
+    height: 24px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    input {
+        display: none;
+        & + span {
+            padding-left: 50px;
+            min-height: 24px;
+            line-height: 24px;
+            display: block;
+            color: $lightGrey;
+            position: relative;
+            vertical-align: middle;
+            white-space: nowrap;
+            transition: color .3s ease;
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                border-radius: 12px;
+            }
+            &:before {
+                top: 0;
+                left: 0;
+                width: 42px;
+                height: 24px;
+                background: #E4ECFA;
+                transition: all .3s ease;
+            }
+            &:after {
+                width: 18px;
+                height: 18px;
+                background: #fff;
+                top: 3px;
+                left: 3px;
+                box-shadow: 0 1px 3px rgba(#121621, .1);
+                transition: all .45s ease;
+            }
+            em {
+                width: 8px;
+                height: 7px;
+                background: $lightGrey;
+                position: absolute;
+                left: 8px;
+                bottom: 7px;
+                border-radius: 2px;
+                display: block;
+                z-index: 1;
+                transition: all .45s ease;
+                &:before {
+                    content: '';
+                    width: 2px;
+                    height: 2px;
+                    border-radius: 1px;
+                    background: #fff;
+                    position: absolute;
+                    display: block;
+                    left: 50%;
+                    top: 50%;
+                    margin: -1px 0 0 -1px;
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                    border: 1px solid $lightGrey;
+                    border-bottom: 0;
+                    width: 6px;
+                    height: 4px;
+                    left: 1px;
+                    bottom: 6px;
+                    position: absolute;
+                    z-index: 1;
+                    transform-origin: 0 100%;
+                    transition: all .45s ease;
+                    transform: rotate(-35deg) translate(0, 1px);
+                }
+            }
+            strong {
+                font-weight: normal;
+                text-decoration: none;
+                position: relative;
+                display: block;
+                top: 1px;
+                &:before,
+                &:after {
+                    font-size: 14px;
+                    font-weight: 500;
+                    text-decoration: none;
+                    display: block;
+                    font-family: 'Mukta Malar', Arial;
+                    -webkit-backface-visibility: hidden;
+                }
+                &:before {
+                    content: 'Open for orders';
+                    transition: all .3s ease .2s;
+                    text-decoration: none!important;
+                }
+                &:after {
+                    content: 'Closed for orders';
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    text-decoration: none;
+                    left: 0;
+                    top: 0;
+                    color: $primary;
+                    transition: all .3s ease;
+                    transform: translate(2px, 0);
+                }
+            }
+        }
+        &:checked {
+            & + span {
+                &:before {
+                    background: rgba($primary, .35);
+                }
+                &:after {
+                    background: #fff;
+                    transform: translate(18px, 0);
+                }
+                em {
+                    transform: translate(18px, 0);
+                    background: $primary;
+                    &:after {
+                        border-color: $primary;
+                        transform: rotate(0deg) translate(0, 0);
+                    }
+                }
+                strong {
+                    &:before {
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all .3s ease;
+                        transform: translate(-2px, 0);
+                    }
+                    &:after {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translate(0, 0);
+                        transition: all .3s ease .2s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.spin img {
+-webkit-transition-duration: 2s;
+-moz-transition-duration: 2s;
+-o-transition-duration: 2s;
+transition-duration: 2s;
+-webkit-transition-property: -webkit-transform;
+-moz-transition-property: -moz-transform;
+-o-transition-property: -o-transform;
+transition-property: transform;
+}
+
+.spin img:hover {
+-webkit-transform:rotate(720deg);
+-moz-transform:rotate(720deg);
+-o-transform:rotate(720deg);
+}
+
+////
+
 
 

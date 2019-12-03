@@ -1,38 +1,107 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sidenav">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "Barly_dark.png" %>
-  <% end %>
+<div class="vertical-nav bg-dark" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-dark">
+    <div class="media d-flex align-items-center spin"><img src="https://res.cloudinary.com/tallyho/image/upload/v1575307989/Barly-big_pes3zd.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail-hollow shadow-sm">
+      <div class="media-body">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<% if @bar %>
+        <h4 class="m-0 text-light"><%= @bar.name %></h4>
+<% end %>
 
+        <p class="font-weight-light text-muted mb-0">Dashboard</p>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "/", class: "nav-link" %>
-          <% if current_user.basket %>
-            <%= link_to "Basket", user_basket_path(current_user, current_user.basket.id), class: "nav-link"  %>
-          <% else %>
-          <% end %>
-        </li>
-        <li class="nav-item">
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+      </div>
+    </div>
   </div>
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"><small>Date:</small> <%= Time.now.strftime("%d-%m-%Y") %>  <small>Time:</small> <span id="time"></span></p>
+
+  <ul class="nav flex-column bg-dark mb-0">
+    <li class="nav-item" id="adminmenu">
+     <a href="/bars/my_bar" class="admin-nav-link text-dark bg-light">
+                <i class="fa fa-sign-in-alt mr-3 text-primary fa-fw"></i>
+                Live orders
+            </a>
+    </li>
+    <li class="nav-item" id="adminmenu">
+      <a href="#menu-items" class="admin-nav-link text-white">
+                <i class="fas fa fa-beer mr-3 text-primary fa-fw"></i>
+                Menu items
+            </a>
+    </li>
+    <li class="nav-item" id="adminmenu">
+      <a href="#opening-times" class="admin-nav-link text-white">
+                <i class="far fa fa-clock mr-3 text-primary fa-fw"></i>
+                Opening times
+            </a>
+    </li>
+    <li class="nav-item" id="adminmenu">
+      <a href="#analytics" class="admin-nav-link text-white">
+                <i class="fa fa-chart-bar mr-3 text-primary fa-fw"></i>
+                Analytics
+            </a>
+    </li>
+    <li class="nav-item" id="adminmenu">
+      <a href="/bars/my_bars" class="admin-nav-link text-white">
+                <i class="fa fa-bars mr-3 text-primary fa-fw"></i>
+                My bars
+            </a>
+    </li>
+    <hr>
+    <li class="no-underline">
+                <label class="switch ml-4">
+        <input type="checkbox" id="tog">
+        <span>
+            <em></em>
+            <strong></strong>
+        </span>
+    </label>
+     </a>
+    </li>
+  </ul>
 </div>
+<script type="text/javascript">
+  if (!applied) {
+$('#adminmenu a').on('click', function(){
+    $('#adminmenu a.current').removeClass('current');
+    $(this).addClass('text-dark bg-light');
+     applied = true;
+
+  } else
+  applied = false;
+}
+
+</script>
+
+<script>
+  var x = document.getElementById("tog");
+  x.addEventListener('click', (e) => {
+    if (x.checked) {
+      console.log('y')
+      x.checked = true
+    } else {
+      console.log('n')
+
+      x.checked = false
+    }
+  });
+</script>
+
+<script>
+  (function () {
+    function checkTime(i) {
+        return (i < 10) ? "0" + i : i;
+    }
+
+    function startTime() {
+        var today = new Date(),
+            h = checkTime(today.getHours()),
+            m = checkTime(today.getMinutes()),
+            s = checkTime(today.getSeconds());
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout(function () {
+            startTime()
+        }, 500);
+    }
+    startTime();
+})();
+</script>
