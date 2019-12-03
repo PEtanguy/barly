@@ -1,32 +1,35 @@
 .box_basket {
-  background-color: $white;
+  background-color: #F1F1F1;
   height: 100vh;
   max-width: 100vw;
  }
 
  .subtotal {
   font-family: $headers-font;
-  font-size: 20px;
+  font-size: 18px;
   color: $black;
+  border-top: 1px solid #e8ebeb;
+  border-bottom: 1px solid #e8ebeb;
+  background-color: white;
  }
 
  .items-total {
   font-family: $headers-font;
-  font-size: 20px;
+  font-size: 18px;
   color: $black;
   display: flex;
   justify-content: space-between;
-  margin: 10px 14px;
+  margin: 10px 0px;
  }
 
 .sub {
-  margin: 10px 14px;
+  margin: 20px 14px 0;
   display: flex;
   justify-content: space-between;
 }
 
 .service {
-  margin: 10px 14px;
+  margin: 0px 14px 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -44,15 +47,17 @@
   flex: 1 0 auto;
   align-items: center;
   justify-content: space-between;
-  border-radius: 20px;
+  border-radius: 5px;
   color: $black;
   background-color: $white;
   padding: 20px;
-  font-size: 20px;
+  font-size: 18px;
   width: 200px;
   border-style: solid;
   border-color: #e8ebeb;
   border-width: 1px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  height: 129px;
 }
 
 
@@ -64,6 +69,10 @@
   color: $black;
   font-size: 29px;
   padding: 24px 16px;
+  margin: 0 0 10px 0;
+  background-color: white;
+  border-bottom: 1px solid #e8ebeb;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
 .order-footer {
@@ -74,6 +83,8 @@
   border-top-style: solid;
   border-top-color: #e8ebeb;
   border-top-width: 1px;
+  box-shadow: 4px 0 4px rgba(0,0,0,0.2);
+  background-color: white;
 }
 
 .order {
@@ -82,7 +93,7 @@
   width: 90%;
   color: $white;
   background-color: $primary;
-  border-radius: 20px;
+  border-radius: 5px;
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -94,22 +105,25 @@
 
 .back {
   padding: 5px 0;
-  margin: 7% 7%;
-  width: 86%;
-  color: $white;
-  background-color: $primary;
-  border-radius: 20px;
+  margin: 2% 7% 12% 7.4%;
+  width: 85%;
+  background-color: $white;
+  color: #FF6B6B;
+  border-radius: 5px;
   font-size: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
-    // a {
-    //   font-family: $headers-font;
-    // }
+  border: 2px solid $primary;
+    a {
+      font-family: $headers-font;
+      color: #FF6B6B !important;
+    }
 }
 
 label {
   color: $black;
+  font-size: 18px;
 }
 
 .fa-times {
@@ -133,6 +147,7 @@ label {
 #order-navbar {
   width: 100vw;
   overflow: scroll;
+  padding-bottom: 10px;
 }
 .scroller {
   margin-left: 4%;
