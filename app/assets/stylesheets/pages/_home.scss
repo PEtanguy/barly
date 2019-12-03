@@ -99,7 +99,6 @@ i {
   display: flex;
   flex-direction: column;
   height: 35vh;
-  justify-content: space-evenly;
 }
 
 #results {
@@ -107,18 +106,13 @@ i {
   list-style-type: none;
 }
 .search-results {
-  font-size: 200%;
+  font-size: 20px;
   font-weight: bold;
   border-bottom: 1px solid $white;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  animation: blinker 1s linear infinite;
+  line-height: 22px;
+  padding: 10px 12px;
 }
-@keyframes blinker {
-  50% {
-    opacity: 0.5;
-  }
-}
+
 
 .search-results a:hover {
   color: #00CCBC;
@@ -127,7 +121,7 @@ i {
 }
 
 #search_query {
-  border-radius: 20px;
+  border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
   border: 1px solid $white;
   height: 60px;

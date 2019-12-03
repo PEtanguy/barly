@@ -16,6 +16,13 @@
     <% end %>
       <% @bar.orders.each do |order| %>
     <div class="card-invoice column d-none" id="content<%= counter %>">
+      <div class="status">
+        <p class="traffic-light"><i class="far fa-circle"></i></p>
+        <p class="status-text">
+
+        Preparing</p>
+        <button class="button">MARK AS COMPLETED</button>
+      </div>
       <div class="card-wrapper">
         <div class="traffic-card-invoice">
           <div>
@@ -48,15 +55,14 @@
             <% if item.menu_item_category == "Soft Drink" %>
               <% @soft_drink << item %>
             <% end %>
-            <% end %>
             <p class="item-quant"><strong><%= item.quantity %> x <%= item.menu_item_name %></strong> <%= item.menu_item_price %></p>
           <% end %>
         </div>
       <button class="making">Making</button>
     </div>
   </div>
+  </div>
 </div>
-
 
 
 
@@ -67,3 +73,7 @@
     });
   });
 </script>
+
+<% end %>
+
+
