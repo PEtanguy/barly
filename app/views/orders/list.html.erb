@@ -1,31 +1,38 @@
-<h1>Your Orders:</h1>
+<div class="container">
+
+      <h1>Your Orders:</h1>
 
 
 
-<h2> Active Orders:</h2>
-<% @orders.where(status: "pending").each do |order| %>
-  <div class="card" style="color: black">
-    ID: <%= order.id %>
-    Notes: <%= order.notes %>
+      <h2> Active Orders:</h2>
+      <% @orders.where(status: "pending").each do |order| %>
+        <div class="card" style="color: black">
+          #<%= order.id %>
+          Notes: <%= order.notes %>
 
-  </div>
-<% end %>
+        </div>
+      <% end %>
 
-<% @orders.where(status: "pending").each do |order| %>
-  <div class="card" style="color: black">
-    ID: <%= order.id %>
-    Notes: <%= order.notes %>
+      <% @orders.where(status: "pending").each do |order| %>
+        <div class="card" style="color: black">
+          #<%= order.id %>
+          Notes: <%= order.notes %>
 
 
-  </div>
-<% end %>
+        </div>
+      <% end %>
 
-<h2>Past Orders:</h2>
+      <h2>Past Orders:</h2>
 
-<% @orders.where(status: "pending").each do |order| %>
-  <div class="card" style="color: black">
-    ID: <%= order.id %>
-    Notes: <%= order.notes %>
+      <% @orders.where(status: "pending").each do |order| %>
+        <div class="card" style="color: black">
+          #<%= order.id %>
+          Notes: <%= order.notes %>
 
-  </div>
-<% end %>
+        </div>
+      <% end %>
+
+
+      <div>
+      </div>
+</div>

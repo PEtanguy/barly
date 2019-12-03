@@ -25,14 +25,18 @@ const drinksNavbar = document.getElementById("drinks-navbar")
 const beer = document.getElementById('beer');
 // const banner = document.getElementById('top-holder')
 const bannerImage = document.querySelector('.bar-banner')
+const bannerText = document.querySelector('.bar-details')
 // console.log(banner)
 const div = document.querySelector('.mhresp');
 if (div) {
   div.addEventListener('scroll', (e) => {
     bannerImage.classList.add('zero')
+    bannerText.classList.add('zero-text')
     console.log(e.path[0].scrollTop)
     if (e.path[0].scrollTop == 0) {
       bannerImage.classList.remove('zero')
+      bannerText.classList.remove('zero-text')
+
     }
   });
 }
