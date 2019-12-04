@@ -52,6 +52,9 @@
                                           <i class="far fa-check-circle" style="color: limegreen;"></i>
                                           <p class="completed_text">Completed</p>
                                       </div>
+                                      <div class="completed-container">
+                                          <p><%= order.updated_at.strftime("at %I:%M%p") %> </p>
+                                      </div>
 
                                       <% end %>
 
