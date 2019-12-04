@@ -2,6 +2,7 @@ class BasketItemsController < ApplicationController
   def new
     @basket_item = BasketItem.new
     @menu_item = MenuItem.find(params[:menu_item_id])
+    @basket = current_user.basket || Basket.create(user: current_user)
     if current_user.basket.basket_items.where(menu_item_id: @menu_item.id).present?
       @item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item.id)[0].quantity
     else
@@ -49,7 +50,7 @@ class BasketItemsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @basket_item = BasketItem.find(params[:id])
     @basket_item.destroy
     # redirect_to root_path
