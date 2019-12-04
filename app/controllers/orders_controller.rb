@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
     @order.status = 'pending'
     @order.user = current_user
     @order.basket = current_user.basket
+
     if @order.save!
       @order.basket.basket_items.each do |item|
         @order_item = OrderItem.new
@@ -60,10 +61,10 @@ class OrdersController < ApplicationController
   end
 
   def order_item_params
-    params.require(:order).permit(:table_id, :notes)
+    params.require(:order).permit(:notes)
   end
 
   def order_params
-    params.require(:order).permit(:status, :id)
+    params.require(:order).permit(:status, :id, :table_id)
   end
 end
