@@ -122,7 +122,7 @@
   margin: 2% 7% 12% 7.4%;
   width: 85%;
   background-color: $white;
-  color: #FF6B6B;
+  color: $primary;
   border-radius: 5px;
   font-size: 22px;
   display: flex;
@@ -131,7 +131,7 @@
   border: 2px solid $primary;
     a {
       font-family: $headers-font;
-      color: #FF6B6B !important;
+      color: $primary !important;
     }
 }
 

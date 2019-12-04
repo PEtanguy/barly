@@ -10,6 +10,7 @@
 
                                   <div class="traffic-cards column" id="trigger<%= triggerCounter %>">
                                     <div class="traffic-card-info">
+
                                       <h2 class="order-num">#<%= order.id %></h2>
                                         <p class="order-name"><%= order.basket.user.first_name %></p>
                                         <p class="order-info">
@@ -42,11 +43,11 @@
                                     <div class="status">
                                       <% if order.status == "pending" %>
 
-                                              <button class="traffic-light traffic-light-pending" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
+                                              <button class="traffic-light traffic-light-pending bg-danger" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
                                                          <p class="status-text">Pending</p></button>
                                       <% elsif order.status == "making" %>
 
-                                               <button class="traffic-light orange" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
+                                               <button class="traffic-light orange " data-id="<%= order.id %>"><i class="fas fa-circle"></i>
                                                          <p class="status-text">Making</p></button>
                                       <% elsif order.status == "done" %>
                                       <div class="completed-container">
@@ -63,6 +64,7 @@
                                     <div class="card-wrapper">
                                       <div class="traffic-card-invoice ">
                                         <div>
+                                           <p><%= order.user.first_name %> <%= order.user.last_name %> </p>
                                           <p class="order-tag"><i class="fas fa-tag"></i> ORDER NUMBER: <strong>#<%= order.id %></strong></p>
                                         </div>
                                         <p class="order-time"><i class="fas fa-clock"></i> at <strong><%= order.created_at.strftime("%H:%M%p") %></strong></p>
