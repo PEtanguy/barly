@@ -63,6 +63,7 @@
 #price {
   color: $shadow;
   font-size: 18px;
+  padding: auto;
 }
 
 #basket_wrapper {
@@ -202,4 +203,12 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
+.selected_item_menu{
+position: static;
+position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 

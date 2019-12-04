@@ -10,9 +10,9 @@ if (document.querySelector('.sw-button')) {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Your order has sent',
+      title: 'Order sent',
       showConfirmButton: false,
-      timer: 1800
+      timer:1800
     })
   });
 }
