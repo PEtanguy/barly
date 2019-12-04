@@ -1,47 +1,47 @@
   <div class="angled">
-<div class="order-container">
+    <div class="order-container">
 
-  <!-- <div class="my-banner" style="background-image: url('<%= asset_path("barly_gb.svg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"> -->
-    <div class="order-my-banner">
-    <div class="order-direction">
-         <h1><strong> Order Sent <i class="droplet order-icon fas fa-check-circle" style="color: #32CD32"></i></strong> </h1>
+      <!-- <div class="my-banner" style="background-image: url('<%= asset_path("barly_gb.svg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"> -->
+        <div class="order-my-banner">
+          <div class="order-direction">
+           <h1><strong> Order Sent <i class="droplet order-icon fas fa-check-circle" style="color: #32CD32"></i></strong> </h1>
 
-      <h6> Your Order ID:  <%= @order.id  %>  </h6>
+           <h6> Your Order ID:  <%= @order.id  %>  </h6>
 
-      <div class= "order-order_and_gif">
-        <div class="order-order_content">
-          <div class="order-spacer">
+           <div class= "order-order_and_gif">
+            <div class="order-order_content">
+              <div class="order-spacer">
+              </div>
+
+              <% @order.order_items.each do |item| %>
+              <div class="order-item_card_order">
+                <div>
+                  <%= item.quantity %> X
+                </div>
+                <div>
+                  <%= item.menu_item_name %>
+                </div>
+                <div>
+                  <%= item.menu_item_price %>
+                </div>
+
+              </div>
+              <% end %>
+              <h4> Total: </h4>
+
+            </div>
+
+
+
           </div>
 
-          <% @order.order_items.each do |item| %>
-          <div class="order-item_card_order">
-            <div>
-              <%= item.quantity %> X
-            </div>
-            <div>
-              <%= item.menu_item_name %>
-            </div>
-            <div>
-              <%= item.menu_item_price %>
-            </div>
 
-          </div>
-          <% end %>
-          <h4> Total: </h4>
+
+
+
 
         </div>
-
-
-
       </div>
-
-
-
-
-
-
     </div>
-  </div>
-</div>
 
   </div>
