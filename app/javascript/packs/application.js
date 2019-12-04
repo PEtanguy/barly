@@ -3,6 +3,20 @@ import { initMapbox } from '../plugins/init_mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'magic.css/dist/magic.min.css'
+import Swal from 'sweetalert2'
+
+if (document.querySelector('.sw-button')) {
+  document.querySelector('.sw-button').addEventListener('click', () => {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Your order has sent',
+      showConfirmButton: false,
+      timer: 1800
+    })
+  });
+}
+
 // import $ from 'jquery'
 // import 'slick-carousel'
 // import 'slick-carousel/slick/slick.css'
