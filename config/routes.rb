@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   resources :menu_items, only: [] do
     resources :basket_items
   end
+  get '/basket_item/:id/remove', to: 'baskets#destroyredirect', as: "redirect"
+
 
   get '/basket', to: 'baskets#show'
   get "/checkout", to: 'baskets#checkout'
