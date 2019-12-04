@@ -5,8 +5,103 @@
       <% @bar.orders.each do |order| %>
 
 
+                                  <% triggerCounter += 1 %>
 
-      <% triggerCounter += 1 %>
+                                  <div class="traffic-cards column" id="trigger<%= triggerCounter %>">
+                                    <div class="traffic-card-info">
+
+                                      <h2 class="order-num">#<%= order.id %></h2>
+                                        <p class="order-name"><%= order.basket.user.first_name %></p>
+                                        <p class="order-info">
+                                        <% total = 0 %> <%= order.order_items.count %> Items <% order.order_items.each do |item| %>
+                                          <% total += item.menu_item_price %>
+                                        <% end %>
+                                        (£<%= total.round(2) %>)
+                                      </p>
+                                    </div>
+                                  </div>
+                                <% end %>
+                              </div>
+                              <div class="card-invoice column">
+                                <% contentCounter = 0 %>
+                                <% @bar.orders.each do |order| %>
+                                  <%= simple_form_for(order, html: {class: "d-none"}) do |f| %>
+                                    <%= f.input :status, input_html: {value: "making"} %>
+                                    <%= f.input :order_id, input_html: {value: order.id} %>
+                                    <%= f.submit id:"submit_making#{order.id}" %>
+                                  <% end %>
+
+                                  <%= simple_form_for(order, html: {class: "d-none"}) do |f| %>
+                                    <%= f.input :status, input_html: {value: "done"} %>
+                                    <%= f.input :order_id, input_html: {value: order.id} %>
+                                    <%= f.submit id:"submit_done#{order.id}" %>
+                                  <% end %>
+
+                                  <% contentCounter += 1 %>
+                                  <div class="trafficContent d-none" id="content<%= contentCounter %>">
+                                    <div class="status">
+                                      <% if order.status == "pending" %>
+
+                                              <button class="traffic-light traffic-light-pending bg-danger" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
+                                                         <p class="status-text">Pending</p></button>
+                                      <% elsif order.status == "making" %>
+
+                                               <button class="traffic-light orange " data-id="<%= order.id %>"><i class="fas fa-circle"></i>
+                                                         <p class="status-text">Making</p></button>
+                                      <% elsif order.status == "done" %>
+                                      <div class="completed-container">
+                                          <i class="far fa-check-circle" style="color: limegreen;"></i>
+                                          <p class="completed_text">Completed</p>
+                                      </div>
+                                      <div class="completed-container">
+                                          <p><%= order.updated_at.strftime("at %I:%M%p") %> </p>
+                                      </div>
+
+                                      <% end %>
+
+                                    </div>
+                                    <div class="card-wrapper">
+                                      <div class="traffic-card-invoice ">
+                                        <div>
+                                           <p><%= order.user.first_name %> <%= order.user.last_name %> </p>
+                                          <p class="order-tag"><i class="fas fa-tag"></i> ORDER NUMBER: <strong>#<%= order.id %></strong></p>
+                                        </div>
+                                        <p class="order-time"><i class="fas fa-clock"></i> at <strong><%= order.created_at.strftime("%H:%M%p") %></strong></p>
+                                        <p class="note-alert"><i class="fas fa-comment-alt"></i> NOTES:
+                                          <br>
+                                          <div class="notes-box">
+                                            <strong><%= order.notes %></strong></p>
+                                          </div>
+
+
+                                      </div>
+                                    </div>
+                                    <div class="order-details ">
+                                      <p class="details"><i class="fas fa-glass-cheers"></i> DETAILS:</p>
+                                      <div class="notes-box">
+                                      <% order.order_items.each do |item| %>
+                                        <% @beer = [] %>
+                                        <% @cocktail = [] %>
+                                        <% @mocktail = [] %>
+                                        <% @wine = [] %>
+                                        <% @soft_drink = [] %>
+                                        <% if item.menu_item_category == "Beer" %>
+                                          <% @beer << item %>
+                                        <% end %>
+                                        <% if item.menu_item_category == "Cocktail" %>
+                                          <% @cocktail << item %>
+                                        <% end %>
+                                        <% if item.menu_item_category == "Mocktail" %>
+                                          <% @mocktail << item %>
+                                        <% end %>
+                                        <% if item.menu_item_category == "Wine" %>
+                                          <% @wine << item %>
+                                        <% end %>
+                                        <% if item.menu_item_category == "Soft Drink" %>
+                                          <% @soft_drink << item %>
+                                        <% end %>
+                                        <p class="item-quant"><strong><%= item.quantity %> x <%= item.menu_item_name %></strong> <%= item.menu_item_price %></p>
+
 
       <div class="traffic-cards column" id="trigger<%= triggerCounter %>">
         <div class="traffic-card-info">

@@ -29,7 +29,8 @@ puts 'Creating user'
     password: '123456',
     gender: 'male',
     dob: '06/01/1990',
-    first_name: 'Ben')
+    first_name: 'Ben',
+    last_name: 'Boom')
  end
 
 1.times do
@@ -39,7 +40,8 @@ puts 'Creating user'
     password: '123456',
     gender: 'female',
     dob: '01/02/1991',
-    first_name: 'Issy')
+    first_name: 'Issy',
+    last_name: "Mackintosh")
 end
 
 Basket.create(
