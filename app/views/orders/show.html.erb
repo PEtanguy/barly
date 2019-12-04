@@ -19,53 +19,53 @@ Swal.fire({
 })
 </script>
 
-
-
-
-
-<div class="angled">
-  <div class="order-container">
-
-    <!-- <div class="my-banner" style="background-image: url('<%= asset_path("barly_gb.svg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"> -->
-      <div class="order-my-banner">
-        <div class="order-direction">
-         <!-- <h1><strong> Order Sent <i class="droplet order-icon fas fa-check-circle" style="color: #32CD32"></i></strong> </h1> -->
-
-         <div class="your-status">
-           traffic system here
-         </div>
-         <h6> Your Order ID:  <%= @order.id  %>  </h6>
-
-
-         <div class= "order-order_and_gif">
-          <div class="order-order_content">
-            <div class="order-spacer">
-            </div>
-            <% total = 0  %>
-            <% @order.order_items.each do |item| %>
-            <% total += item.quantity * item.menu_item_price  %>
-            <div class="order-item_card_order">
-              <div>
-                <%= item.quantity %> x
-              </div>
-              <div>
-                <%= item.menu_item_name %>
-              </div>
-              <div>
-                <%= item.menu_item_price %>
-              </div>
-
-            </div>
-            <% end %>
-            <h4>Total: £<%= total.round(2) + 0.5 %></h4>
-          </div>
-          <div class="all-orders">
-          <%= link_to user_list_path(current_user) do %>
-            View All Orders
-          <% end %>
+<div class="order-page">
+  <div class="angled">
+    <div class="order-summary">
+      <h1><strong> Order Sent <i class="fas fa-check"></i></strong> </h1>
+      <% if @order.status == "pending" %>
+        <div class="progress">
+          <div class="progress-bar bg-danger" role="progressbar" style="width: 33%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
+        <div class="recieved">Your order has been recieved!</div>
+      <% elsif @order.status == "making" %>
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: 66%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
+        <div class="recieved">Your drinks are being made!</div>
+      <% else %>
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="recieved">Your drinks are on the way!</div>
+      <% end %>
+    </div>
+    <div class="order-bar">
+      <i class="fas fa-map-marker-alt"></i>
+      <div class="current-bar"><%= @order.bar.name %><br><%= @order.bar.address %></div>
+    </div>
+    <div class="list-order">
+      <% total = 0  %>
+      <% @order.order_items.each do |item| %>
+      <% total += item.quantity * item.menu_item_price  %>
+      <div class="totals">
+        <div class="how"><strong><%= item.quantity %> x</strong>
+        <%= item.menu_item_name %></div>
+        <div class="cost">£<%= item.menu_item_price %></div>
+      </div>
+      <% end %>
+      <div class="bill-total">
+        <div class="how">Total:</div>
+        <div class="cost">£<%= total.round(2) + 0.5 %></div>
+      </div>
+    </div>
+    <div class="view-orders">
+      <div class="order">
+        <%= link_to user_list_path(current_user) do %>
+          View All Orders
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
