@@ -1,10 +1,35 @@
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill9/dist/polyfill.js"></script>
+
+
+
+
+
+<script>
+Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: 'Your order has sent',
+  showConfirmButton: false,
+  timer: 2000
+})
+</script>
+
+
+
+
+
 <div class="angled">
   <div class="order-container">
 
     <!-- <div class="my-banner" style="background-image: url('<%= asset_path("barly_gb.svg") %>'); background-repeat: no-repeat; background-size: cover; background-position: center;"> -->
       <div class="order-my-banner">
         <div class="order-direction">
-         <h1><strong> Order Sent <i class="droplet order-icon fas fa-check-circle" style="color: #32CD32"></i></strong> </h1>
+         <!-- <h1><strong> Order Sent <i class="droplet order-icon fas fa-check-circle" style="color: #32CD32"></i></strong> </h1> -->
 
          <div class="your-status">
            traffic system here
