@@ -1,8 +1,8 @@
-.page-content {
-  width: calc(100vw - 15rem);
-  height: 100vh;
-  transition: all 0.4s;
-}
+// .page-content {
+//   width: calc(100vw - 15rem);
+//   height: 100vh;
+//   transition: all 0.4s;
+// }
 
 h1 {
   margin-left: 0.5vh;
@@ -15,8 +15,8 @@ h1 {
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-bottom: 4px;
-  // justify-content: space-evenly;
+  border-bottom: 1px solid $dark;
+  cursor: pointer;
 }
 
 .order-num {
@@ -24,6 +24,19 @@ h1 {
   font-family: $headers-font;
   font-size: 24px;
   color: $white;
+}
+
+.status-update-pending i {
+  color: $redy;
+  padding: 10px;
+}
+.status-update-making i {
+  color: $orangy;
+  padding: 10px;
+}
+.status-update-complete i {
+  color: $greeny;
+  padding: 10px;
 }
 
 .order-info {
@@ -47,6 +60,17 @@ h1 {
   margin-bottom: 0;
 }
 
+.order-num-info {
+  font-size: 150%;
+  font-weight: bold;
+  color: $dark;
+}
+
+.order-created {
+  font-size: 150%;
+  font-weight: normal;
+}
+
 .traffic-card-info {
   display: inline-flex;
   align-items: center;
@@ -58,7 +82,8 @@ h1 {
 .traffic-card-invoice {
   color: $black;
   font-family: $headers-font;
-  padding: 20px;
+  padding: 20px 15px 20px 5px;
+  flex-grow: 1;
 }
 
 .notes {
@@ -73,29 +98,60 @@ h1 {
 }
 
 .card-invoice {
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
-  height: 88vh;
-  width: 38vw;
   background-color: $white;
-  margin-left: 1vw;
+  flex-grow: 1;
 }
 
 .notes-box {
-  background-color: #c9c9c9;
-  margin-top: 20px;
-  width: 400px;
+  background-color: #F9D9D9;
+  // margin: 20px;
+  width: 100%;
   padding: 20px;
   border-radius: 5px;
+    p {
+    color: #F50707;
+    text-align: center;
+    margin-top: 0.5em!important;
+    margin-bottom: 0.5em!important;
+    }
 }
-.order-details {
-  margin-left: 35px;
+
+.notes-order {
+  background-color: $palegrey;
+  padding: 20px 15px 20px 5px;
+  flex-grow: 1;
+  border-radius: 5px;
+  // display: flex;
+    p {
+    color: $dark;
+    font-weight: normal;
+    font-size: 1.2em;
+    text-align: left;
+    }
+    span {
+      text-align: right;
+    }
+}
+
+.notes-order .pull-right {
+  font-family: $body-font;
+  font-size: 12px;
+  line-height: 1.4;
   margin-bottom: 0;
-  font-family: $headers-font;
-  font-weight: 200;
-  color: $black;
-  font-size: 24px;
+  margin-top: 8px;
+  text-decoration: none;
+  color: $text-muted;
+  text-align: right;
+}
+
+.order-details {
+  margin: 20px;
+  font-weight: normal;
+  margin-bottom: 0;
+  color: $dark;
   line-height: 1.4;
   padding-right: 20px;
+  padding-bottom: 100px;
 }
 
 .completed-container {
@@ -161,7 +217,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 14px;
+  padding: 20px;
 }
 
 .item-quant {
