@@ -47,6 +47,11 @@
 
                                                <button class="traffic-light orange" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
                                                          <p class="status-text">Making</p></button>
+                                      <% elsif order.status == "done" %>
+                                      <div class="completed-container">
+                                          <i class="far fa-check-circle" style="color: limegreen;"></i>
+                                          <p class="completed_text">Completed</p>
+                                      </div>
 
                                       <% end %>
 
@@ -57,13 +62,18 @@
                                           <p class="order-tag"><i class="fas fa-tag"></i> ORDER NUMBER: <strong>#<%= order.id %></strong></p>
                                         </div>
                                         <p class="order-time"><i class="fas fa-clock"></i> at <strong><%= order.created_at.strftime("%H:%M%p") %></strong></p>
-                                        <p class="note-alert"><i class="fas fa-comment-alt"></i> NOTES: <strong><%= order.notes %></strong></p>
-                                        <p><%= order.status%></p><p><%= order.id%></p>
+                                        <p class="note-alert"><i class="fas fa-comment-alt"></i> NOTES:
+                                          <br>
+                                          <div class="notes-box">
+                                            <strong><%= order.notes %></strong></p>
+                                          </div>
+
 
                                       </div>
                                     </div>
-                                    <div class="order-details">
+                                    <div class="order-details ">
                                       <p class="details"><i class="fas fa-glass-cheers"></i> DETAILS:</p>
+                                      <div class="notes-box">
                                       <% order.order_items.each do |item| %>
                                         <% @beer = [] %>
                                         <% @cocktail = [] %>
@@ -88,6 +98,7 @@
                                         <p class="item-quant"><strong><%= item.quantity %> x <%= item.menu_item_name %></strong> <%= item.menu_item_price %></p>
 
             <% end %>
+                                      </div>
           </div>
         </div>
       <% end %>
