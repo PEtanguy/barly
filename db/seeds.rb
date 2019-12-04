@@ -234,7 +234,7 @@ end
 end
 
 1.times do
-  image = URI.open('https://www.haskells.com/media/catalog/product/cache/1/image/816x1200/040ec09b1e35df139433887a97daa66f/6/1/615252_0_1_1_1.jpg')
+  image = URI.open('https://www.gerrys.uk.com/content/images/thumbs/0003392_chateau-fourcas-hosten-listrac-medoc-75cl_256.png')
   menu_item = MenuItem.new(
     name: "Beaune Bichot",
     price: 65,
