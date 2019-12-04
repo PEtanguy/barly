@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
 
       end
 
-
+      sleep 3
       redirect_to order_path(@order)
     # else
       # render :new
