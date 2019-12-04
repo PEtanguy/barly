@@ -2,8 +2,8 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import 'magic.css/dist/magic.min.css'
-import Swal from 'sweetalert2'
+import 'magic.css/dist/magic.min.css';
+import Swal from 'sweetalert2';
 
 if (document.querySelector('.sw-button')) {
   document.querySelector('.sw-button').addEventListener('click', () => {
