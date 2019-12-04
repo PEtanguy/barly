@@ -28,7 +28,8 @@ puts 'Creating user'
     email: 'ben@gmail.com',
     password: '123456',
     gender: 'male',
-    dob: '06/01/1990')
+    dob: '06/01/1990'
+    first_name: 'Ben')
 
  end
 
@@ -38,7 +39,8 @@ puts 'Creating user'
     email: 'issy@gmail.com',
     password: '123456',
     gender: 'female',
-    dob: '01/02/1991')
+    dob: '01/02/1991'
+    first_name: 'Issy')
 
 end
 

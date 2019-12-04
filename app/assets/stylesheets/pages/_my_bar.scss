@@ -1,5 +1,5 @@
 .page-content {
-  width: calc(100vw - 17rem);
+  width: calc(100vw - 15rem);
   height: 100vh;
   transition: all 0.4s;
 }
@@ -10,12 +10,13 @@ h1 {
 
 .traffic-cards {
   height: 10vh;
-  background: $dark;
+  background: $midgrey;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   cursor: pointer;
   margin-bottom: 4px;
+  // justify-content: space-evenly;
 }
 
 .order-num {
@@ -30,7 +31,18 @@ h1 {
   font-family: $body-font;
   font-size: 14px;
   line-height: 1.4;
-  opacity: .7;
+  color: $dark;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.order-name {
+  margin-left: 10px;
+  font-family: $body-font;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #00998d;
+  font-weight: bold;
   margin-bottom: 0;
 }
 

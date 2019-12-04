@@ -16,6 +16,10 @@
   transition: all 0.4s;
 }
 
+#time {
+  color: $white!important;
+}
+
 .img-thumbnail-hollow {
     padding: 0.25rem;
     /* background-color: #F1F1F1; */
@@ -28,7 +32,7 @@
 .admin-nav-link {
     display: block;
     padding: 0.5rem 1rem;
-    line-height: 5em;
+    line-height: 4em;
 }
 
 .admin-nav-link a {
