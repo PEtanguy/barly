@@ -43,6 +43,13 @@ insertBasketItem = (data) => {
         Update
       </button>
 
+      <%= link_to menu_item_basket_item_path(),:method => "delete" do %>
+          <button type='submit' id="destroy_item" class="hidden">
+            Remove Item
+          </button>
+      <% end  %>
+
+
 
     <% end %>
 
@@ -88,6 +95,7 @@ minus = (data) => {
 
     }
 
+
     let new_price = counter * parseFloat(price, 10);
     let n = `£ ${new_price.toFixed(2)} `;
     document.getElementById('price').innerHTML = n;
@@ -112,6 +120,7 @@ closeBox = (data) => {
 };
 quantity = document.getElementById('counter');
 bask = document.getElementById('quantbask');
+destroy_item = document.getElementById('destroy_item');
 
 
 input_quantity = document.getElementById("input_quant").value;
@@ -143,7 +152,11 @@ add_hidden = (data) => {
     event.preventDefault();
     if (count_display.innerHTML == 0) {
         bask.classList.add("hidden");
+        destroy_item.classList.remove("hidden");
+
     };
+
+
   });
 };
 
@@ -152,6 +165,8 @@ rem_hidden = (data) => {
     event.preventDefault();
 
         bask.classList.remove("hidden");
+        destroy_item.classList.add("hidden")
+
   });
 };
 

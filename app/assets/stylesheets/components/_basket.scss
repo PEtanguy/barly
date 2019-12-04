@@ -13,6 +13,16 @@
   background-color: white;
  }
 
+  .empty_basket{
+    color: $primary;
+
+
+  }
+  .empty_basket_div {
+    align-items: center;
+    justify: center;
+  }
+
  .items-total {
   font-family: $headers-font;
   font-size: 18px;

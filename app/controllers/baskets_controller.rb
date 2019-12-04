@@ -6,7 +6,10 @@ class BasketsController < ApplicationController
 
   def show
     @basket = Basket.find(current_user.basket.id) || Basket.create(user: current_user)
-    @bar = @basket.basket_items.first.menu_item.bar
+    if @basket.basket_items.any?
+      @bar = @basket.basket_items.first.menu_item.bar
+
+    end
     authorize @basket
   end
 

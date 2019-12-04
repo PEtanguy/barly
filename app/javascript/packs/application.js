@@ -29,6 +29,7 @@ const bannerText = document.querySelector('.bar-details')
 // console.log(banner)
 const div = document.querySelector('.mhresp');
 if (div) {
+
   div.addEventListener('scroll', (e) => {
     bannerImage.classList.add('zero')
     bannerText.classList.add('zero-text')
@@ -39,6 +40,8 @@ if (div) {
 
     }
   });
+
+
 }
 
 
