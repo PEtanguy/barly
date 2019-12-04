@@ -16,6 +16,7 @@ h1 {
   align-items: center;
   cursor: pointer;
   border-bottom: 1px solid $dark;
+  cursor: pointer;
 }
 
 .order-num {
@@ -23,6 +24,19 @@ h1 {
   font-family: $headers-font;
   font-size: 24px;
   color: $white;
+}
+
+.status-update-pending i {
+  color: $redy;
+  padding: 10px;
+}
+.status-update-making i {
+  color: $orangy;
+  padding: 10px;
+}
+.status-update-complete i {
+  color: $greeny;
+  padding: 10px;
 }
 
 .order-info {

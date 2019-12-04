@@ -10,6 +10,44 @@
 
       <div class="traffic-cards column" id="trigger<%= triggerCounter %>">
         <div class="traffic-card-info">
+
+
+
+
+
+          <% if order.status == "pending" %>
+
+
+                    <div class="quick-status<%= triggerCounter %> status-update-pending">
+                    <i class="fas fa-circle quick-status<%= triggerCounter %> status-update-pending"> </i>
+                    </div>
+
+          <% elsif order.status == "making" %>
+
+                    <div class="quick-status<%= triggerCounter %> status-update-making">
+                   <i class="fas fa-circle"> </i>
+                    </div>
+
+
+          <% elsif order.status == "done" %>
+
+                     <div class="quick-status<%= triggerCounter %> status-update-complete">
+                   <i class="fas fa-circle quick-status<%= triggerCounter %> status-update-complete"> </i>
+                    </div>
+
+          <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
           <h2 class="order-num">#<%= order.id %></h2>
           <p class="order-name"><%= order.basket.user.first_name %></p>
           <p class="order-info">
@@ -42,22 +80,26 @@
         <div class="status">
           <% if order.status == "pending" %>
 
-          <button class="traffic-light traffic-light-pending" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
-           <p class="status-text">Pending</p></button>
-           <% elsif order.status == "making" %>
 
-           <button class="traffic-light orange" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
-             <p class="status-text">Making</p></button>
-             <% elsif order.status == "done" %>
-             <div class="completed-container">
-              <i class="far fa-check-circle" style="color: limegreen;"></i>
-              <p class="completed_text">Completed</p>
-            </div>
-            <div class="completed-container">
-              <p><%= order.updated_at.strftime("at %I:%M%p") %> </p>
-            </div>
+                  <button class="traffic-light traffic-light-pending" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
+                   <p class="status-text">Pending</p></button>
 
-            <% end %>
+          <% elsif order.status == "making" %>
+
+                   <button class="traffic-light orange" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
+                     <p class="status-text">Making</p></button>
+
+
+         <% elsif order.status == "done" %>
+                     <div class="completed-container">
+                      <i class="far fa-check-circle" style="color: limegreen;"></i>
+                      <p class="completed_text">Completed</p>
+                    </div>
+                    <div class="completed-container">
+                      <p><%= order.updated_at.strftime("at %I:%M%p") %> </p>
+                    </div>
+
+          <% end %>
 
           </div>
           <div class="card-wrapper">
@@ -142,15 +184,18 @@
 
   const traffic_light = document.querySelectorAll('.traffic-light-pending');
 
+
 add_orange = (data) => {
 
   traffic_light.forEach(button => {
-    console.log('found traffic-light div')
     button.addEventListener("click", (event) => {
 
       event.preventDefault();
 
       event.currentTarget.classList.add('orange');
+      let traffic_light_parent = document.querySelector(`.quick-status${button.dataset.id}`);
+      traffic_light_parent.classList.add('orange');
+
       document.querySelectorAll('.traffic-light')
       document.getElementById(`submit_making${button.dataset.id}`).click()
 
@@ -168,8 +213,14 @@ add_orange = (data) => {
               document.getElementById(`submit_done${button.dataset.id}`).click()
               button.children[1].innerHTML = "Done!"
               event.currentTarget.classList.add('green')
+              let traffic_light_parent = document.querySelector(`.quick-status${button.dataset.id}`);
+                    traffic_light_parent.classList.add('green');
+
+
               let trafficContent = document.getElementById(`content${button.dataset.id}`);
-              setTimeout(function(){ trafficContent.classList.add('magictime', 'swashOut'); }, 1500);
+              // setTimeout(function(){ trafficContent.classList.add('magictime', 'swashOut'); }, 1500);
+              // setTimeout(function(){ traffic_light_parent.classList.add('magictime', 'swashOut'); }, 1500);
+
 
             });
 
@@ -194,7 +245,9 @@ add_orange = (data) => {
                       button.children[1].innerHTML = "Done!"
                       event.currentTarget.classList.add('green')
                       let trafficContent = document.getElementById(`content${button.dataset.id}`);
-                      setTimeout(function(){ trafficContent.classList.add('magictime', 'swashOut'); }, 1500);
+                      // setTimeout(function(){ trafficContent.classList.add('magictime', 'swashOut'); }, 1500);
+                      let traffic_light_parent = document.querySelector(`.quick-status${button.dataset.id}`);
+                    traffic_light_parent.classList.add('green');
                     });
 
                   })
