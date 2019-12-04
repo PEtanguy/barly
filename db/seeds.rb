@@ -72,9 +72,9 @@ puts 'Creating bars'
   #   )
   # end
 
-  ######## Jack's seed menu items ####################
+  ######## Beer seed menu items ####################
 
-  10.times do
+  1.times do
   image = URI.open('https://pbs.twimg.com/media/DL7htjXVoAAsvz0.jpg')
   menu_item = MenuItem.new(
     name: "London Pride",
@@ -88,8 +88,20 @@ puts 'Creating bars'
   menu_item.save
 end
 
+######## Wine seed menu items ####################
+
+
+######## Cocktails seed menu items ####################
+
+
+######## Spirits seed menu items ####################
+
+
+######## Soft drinks seed menu items ####################
+
 
 #######################################################
+
   Bar.create(
 
     name: "The Owl & The Pussycat",
