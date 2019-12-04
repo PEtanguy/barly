@@ -175,6 +175,104 @@ end
 
 ######## Wine seed menu items ####################
 
+1.times do
+  image = URI.open('https://explorewines.dk/wp-content/uploads/2018/09/Domaine-du-Grezas.png')
+  menu_item = MenuItem.new(
+    name: "Cotes Du Rhone Domaine Grezas",
+    price: 27.50,
+    abv: "11.2%",
+    description: "A wonderful blend of Grenache, Syrah and Carignan",
+    bar: Bar.first,
+    category: "Wine"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://www.10international.com/wp-content/uploads/2014/07/RioDelReyCrianza-2017-660x1024.jpg')
+  menu_item = MenuItem.new(
+    name: "Rioja Crianza Rio Del Rey",
+    price: 27.50,
+    abv: "12.00%",
+    description: "Lightly oaked. Food friendly and very approachable",
+    bar: Bar.first,
+    category: "Wine"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://darwina.pl/16203/cruz-alta-gran-reserva-malbec.jpg')
+  menu_item = MenuItem.new(
+    name: "Cruz Alta Malbec",
+    price: 26,
+    abv: "11.5%",
+    description: "Smooth with spice & perfect for a meal",
+    bar: Bar.first,
+    category: "Wine"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://www.gerrys.uk.com/content/images/thumbs/0003392_chateau-fourcas-hosten-listrac-medoc-75cl_256.png')
+  menu_item = MenuItem.new(
+    name: "Medoc CH Fourcas Hosten",
+    price: 44,
+    abv: "11.0%",
+    description: "A mature Bourgeiose from a great year",
+    bar: Bar.first,
+    category: "Wine"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://www.haskells.com/media/catalog/product/cache/1/image/816x1200/040ec09b1e35df139433887a97daa66f/6/1/615252_0_1_1_1.jpg')
+  menu_item = MenuItem.new(
+    name: "Beaune Bichot",
+    price: 65,
+    abv: "10.0%",
+    description: "A developed Burgundian classic, lovely texture",
+    bar: Bar.first,
+    category: "Wine"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+
+1.times do
+  image = URI.open('https://www.nectar.net/productimages/win1009-leonard-road-chardonnay-3884836_t@2x.jpg')
+  menu_item = MenuItem.new(
+    name: "Leonard Road Chardonnay",
+    price: 22,
+    abv: "10.0%",
+    description: "Un-oaked and youthful, luscious tropical fruit",
+    bar: Bar.first,
+    category: "Wine"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Riebeek Chenin Blanc",
+    price: 22.50,
+    abv: "10.0%",
+    description: "Lots of tropical fruit. ",
+    bar: Bar.first,
+    category: "Wine"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
 
 ######## Cocktails seed menu items ####################
 
@@ -183,6 +281,8 @@ end
 
 
 ######## Soft drinks seed menu items ####################
+
+
 
 
 #######################################################
