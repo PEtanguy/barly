@@ -14,8 +14,11 @@
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  min-width: 120px;
   object-fit: cover;
+  -webkit-box-shadow:0 0 15px rgba(0,0,0,0.3);
+   -moz-box-shadow:0 0 15px rgba(0,0,0,0.3);
+   box-shadow:0 0 15px rgba(0,0,0,0.3);
 }
 
 .card-product h2 {
@@ -24,13 +27,13 @@
   font-weight: bold;
   margin: 0;
   text-decoration: none;
-
+  padding-top: 7px;
   color: $black;
 }
 
 .card-product p {
   font-family: $body-font;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   margin-bottom: 0;
   margin-top: 8px;

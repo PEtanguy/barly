@@ -88,6 +88,91 @@ puts 'Creating bars'
   menu_item.save
 end
 
+1.times do
+  image = URI.open('https://cdn.shopify.com/s/files/1/0834/8747/products/TSP_180322-349.jpg?v=1523454316')
+  menu_item = MenuItem.new(
+    name: "Oliver's Island",
+    price: 5.05,
+    abv: "3.8%",
+    description: "A refreshing golden ale brewed with malt & hops in perfect balance with citrus and tropical fruit notes & a crisp satisfying bite",
+    bar: Bar.first,
+    category: "Beer"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://www.lambandflagcoventgarden.co.uk/-/media/Sites/Microsites/L/The-Lamb-and-Flag-_-P154/Images/2017-new-images/GalleryDrink/12DrinkPoured.jpg')
+  menu_item = MenuItem.new(
+    name: "Seafarers",
+    price: 4.50,
+    abv: "3.6%",
+    description: "Faintly fruity on the nose, this light amber beer sails a steady course through welldeveloped malt character towards a satisfying, hoppy finish",
+    bar: Bar.first,
+    category: "Beer"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://i.pinimg.com/originals/3d/95/8d/3d958dcc9ed740ea00a04c12c91c1c61.jpg')
+  menu_item = MenuItem.new(
+    name: "ESB",
+    price: 5.20,
+    abv: "5.5%",
+    description: "Rich mahogany in colour, ESB tempts with aromas of orange marmalade, balanced
+by soft malt toffee. The hops impart grassy, peppery notes alongside hints of citrus fruit
+– while the Pale Ale and Crystal malts bring distinctive biscuity flavours. A smooth, delicate bitterness lingers on the palate to give a supreme finish.",
+    bar: Bar.first,
+    category: "Beer"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://cdn-b.william-reed.com/var/wrbm_gb_hospitality/storage/images/publications/hospitality/morningadvertiser.co.uk/article/2018/03/12/fuller-s-we-won-t-blanket-our-pubs-with-dark-star-beer/2768552-1-eng-GB/Fuller-s-We-won-t-blanket-our-pubs-with-Dark-Star-beer_wrbm_large.jpg')
+  menu_item = MenuItem.new(
+    name: "Darkstar Hophead",
+    price: 5.10,
+    abv: "3.8%",
+    description: "An extremely clean-drinking pale golden ale with a strong floral aroma and elderflower notes from the Cascade hops. This beer is full-bodied and full-flavoured yet gentle
+enough to make it a favourite session beer.",
+    bar: Bar.first,
+    category: "Beer"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://www.posocialclub.co.uk/wp-content/uploads/2016/11/asmy_gkipa2015_073midres.jpg')
+  menu_item = MenuItem.new(
+    name: "Green King IPA",
+    price: 5.15,
+    abv: "3.6%",
+    bar: Bar.first,
+    category: "Beer"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://i2-prod.essexlive.news/incoming/article2025552.ece/ALTERNATES/s615b/0_Heres-how-you-get-get-a-free-pint-in-London-this-Thursday-1.jpg')
+  menu_item = MenuItem.new(
+    name: "Abbot Ale",
+    price: 5.20,
+    abv: "5%",
+    bar: Bar.first,
+    category: "Beer"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
 ######## Wine seed menu items ####################
 
 
