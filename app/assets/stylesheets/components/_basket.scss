@@ -19,8 +19,12 @@
 
   }
   .empty_basket_div {
+    display: flex;
+    flex-direction: columns;
     align-items: center;
     justify: center;
+    margin-left: 45px;
+    margin-top: 45px;
   }
 
  .items-total {
