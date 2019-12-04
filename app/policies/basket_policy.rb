@@ -12,4 +12,6 @@ class BasketPolicy < ApplicationPolicy
   def checkout?
     return true
   end
+
+
 end

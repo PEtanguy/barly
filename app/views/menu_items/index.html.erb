@@ -82,8 +82,8 @@
   <% total = 0 %>
   <% counter = 0 %>
   <% current_user.basket.basket_items.each do |item|%>
-  <% counter += 1 %>
-  <% total += item.menu_item.price %>
+  <% counter += item.quantity %>
+  <% total += (item.quantity * item.menu_item.price) %>
   <% current_user.basket.total_price %>
   <% end %>
     <%= link_to user_basket_path(current_user, current_user.basket), id:"basket_wrapper" do %>
@@ -91,7 +91,7 @@
         <div class="basket-styling">
 
           <div class="basket_text">
-            <p class="basket-items"><strong><%= current_user.basket.basket_items.count %></strong></p>
+            <p class="basket-items"><strong><%= counter %></strong></p>
             <p class="view">View Basket</p>
             <p class="basket-total"><strong>£<%= total.round(2) %></strong></p>
           </div>

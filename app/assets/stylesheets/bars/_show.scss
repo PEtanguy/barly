@@ -23,11 +23,12 @@ $transition-speed: 0.4s;
 // }
 .zero {
   height: 15vh !important;
-  // transition: height 0.5s;
+  transition: height $transition-speed;
 
 }
 .zero-text {
   height: 50px !important;
+  transition: height $transition-speed;
 
   h3 {
     font-size: 1.5rem !important;
