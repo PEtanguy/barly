@@ -1,40 +1,41 @@
-<div class="container">
-  <div class="angled" style="top: -10px">
-
-  <h1 class="user_order_heading">Your Orders:</h1>
-
-
-
-  <h2 class="user_order_heading"> Active Orders:</h2>
-  <% @orders.where(status: "pending").each do |order| %>
-  <div style="color: black">
-    #<%= order.id %>
-    Notes: <%= order.notes %>
-
-  </div>
-  <% end %>
-
-  <% @orders.where(status: "pending").each do |order| %>
-  <div style="color: black">
-    #<%= order.id %>
-    Notes: <%= order.notes %>
-
-
-  </div>
-  <% end %>
-
-  <h2 class="user_order_heading">Past Orders:</h2>
-
-  <% @orders.where(status: "pending").each do |order| %>
-  <div  style="color: black">
-    #<%= order.id %>
-    Notes: <%= order.notes %>
-
-  </div>
-  <% end %>
-
-
-  <div>
-  </div>
+<div class="order-page">
+  <div class="angled">
+    <div class="order-summary">
+      <h1><strong>Your Orders</strong> </h1>
+      </div>
+      <div class="bill-total">
+        <strong>Active Orders</strong>
+      </div>
+      <div class="totals">
+        <% total = 0 %>
+        <% @orders.where(status: "making" || "pending").each do |order| %>
+          <div class="how">#<%= order.id %></div>
+          <% order.order_items.each do |item| %>
+            <% total += item.quantity * item.menu_item_price  %>
+          <% end %>
+          <div class="cost">£<%= total.round(2) + 0.5 %></div>
+        <% end %>
+      </div>
+      <div class="bill-total">
+        <strong>Past Orders</strong>
+      </div>
+      <div class="totals">
+        <% total = 0 %>
+        <% @orders.where(status: "done").each do |order| %>
+          <div class="how">#<%= order.id %></div>
+          <% order.order_items.each do |item| %>
+            <% total += item.quantity * item.menu_item_price  %>
+          <% end %>
+          <div class="cost">£<%= total.round(2) + 0.5 %></div>
+        <% end %>
+      </div>
+      <div class="view-orders">
+        <div class="order">
+          <%= link_to order_path(current_user) do %>
+            Back
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
