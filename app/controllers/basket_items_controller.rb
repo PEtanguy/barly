@@ -37,6 +37,7 @@ class BasketItemsController < ApplicationController
     @item_quantity = current_user.basket.basket_items.where(menu_item_id: @menu_item)[0].quantity
     respond_to do |format|
       format.js
+
     end
   end
 
@@ -50,12 +51,16 @@ class BasketItemsController < ApplicationController
     end
   end
 
+
+
   def destroy
     @basket_item = BasketItem.find(params[:id])
     @basket_item.destroy
     # redirect_to root_path
     authorize @basket_item
+
   end
+
 
   private
 

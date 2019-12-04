@@ -21,6 +21,11 @@
             £<%=(item.quantity * item.menu_item.price).round(2) %>
             <% total += item.quantity * item.menu_item.price  %>
 
+
+      <% else %>
+          <div class="empty_basket_div">
+            <h3 class="empty_basket">Your Basket is Empty!</h3>
+
           </div>
           <% end %>
           <% end %>
