@@ -65,12 +65,24 @@ puts 'Creating bars'
     name: Faker::Beer.name,
     # price: Faker::Number.normal(mean: 5, standard_deviation: 1.5),
     # price: rand(3.0...6.0).round(2),
-    price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
+    price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49, 6.55, 5,20, 5.20, 5.20].sample,
     description: Faker::Beer.style,
     bar: Bar.find(1),
-    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
+    category: ["Beer", "Wine", "Cocktails", "Spirits", "Soft Drink"].sample
     )
   end
+
+  # Jack's seed menu items
+  menu_item = MenuItem.new(
+  MenuItem.create(
+    name: "London Pride ~ 4.1%",
+    price: [ 4.95 ],
+    description: "Rich & smooth, London Pride has a good malty base with a blend of hop character, easy drinking with great body & a fruity, satisfying finish",
+    bar: Bar.find(1),
+    category: ["Beer"]
+    )
+
+
 
 
   Bar.create(
