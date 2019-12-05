@@ -44,6 +44,7 @@
 .order-page {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .recieved {
@@ -79,17 +80,20 @@
     }
 }
 
+.all-orders-scroll {
+  height: 45vh;
+  overflow: scroll;
+}
+
 .order-bar {
   display: flex;
   background-color: $white;
   color: $black;
   border: 1px solid #e8ebeb;
   padding: 20px;
-  margin-bottom: 10px;
     .current-bar {
       margin-left: 10px;
     }
-
     .fas {
       margin-top: 8px;
     }
@@ -111,9 +115,11 @@
   background-color: $white;
   color: $black;
   border: 1px solid #e8ebeb;
-  padding: 15px;
-  margin-top: 10px;
   justify-content: space-between;
+    .order-titles {
+      padding: 15px;
+      margin-bottom: 0;
+    }
 }
 
 .view-orders {

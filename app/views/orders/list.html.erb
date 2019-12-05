@@ -1,70 +1,66 @@
 <div class="order-page">
   <div class="angled">
-    <p class="back-home"><%= link_to root_path do %>
+    <p class="back-home">
+      <%= link_to root_path do %>
         <i class="fas fa-home"></i>
-      <% end %></p>
+      <% end %>
+    </p>
     <div class="order-summary">
       <h1><strong>Your Orders</strong> </h1>
       </div>
-
       <!-- Active -->
       <div class="bill-total">
-        <strong>Active Orders</strong>
-
-
-
-      <div class="totals">
-                      <% @orders.where(status: "making").each do |order| %>
-                      <div class="card-order-list">
-                              <div class="how">#<%= order.id %></div>
-                                <% order.order_items.each do |item| %>
-                                <% total = 0 %>
-                                  <% total += item.quantity * item.menu_item_price  %>
-                                <% end %>
-                                <div class="cost">£<%= total.round(2) + 0.5 %></div>
-                      </div>
-                      <% end %>
-      </div>
-
-
-
-      <div class="totals">
-        <% @orders.where(status: "pending").each do |order| %>
-                    <div class="how">#<%= order.id %> Status: <%= order.status.capitalize %></div>
-                      <% total = 0 %>
-                      <% order.order_items.each do |item| %>
-
+        <p class="order-titles"><strong>Active Orders</strong></p>
+        <div class="all-orders-scroll">
+          <% if @orders.where(status: "making").any? %>
+            <div class="totals">
+              <% @orders.where(status: "making").each do |order| %>
+                <div class="card-order-list">
+                  <div class="how">#<%= order.id %></div>
+                  <% order.order_items.each do |item| %>
+                  <% total = 0 %>
+                    <% total += item.quantity * item.menu_item_price  %>
+                  <% end %>
+                  <div class="cost">£<%= total.round(2) + 0.5 %></div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+          <% if @orders.where(status: "pending").any? %>
+            <div class="totals">
+              <% @orders.where(status: "pending").each do |order| %>
+                <div class="how">#<%= order.id %> Status: <%= order.status.capitalize %></div>
+                <% total = 0 %>
+                <% order.order_items.each do |item| %>
+                  <% total += item.quantity * item.menu_item_price  %>
+                <% end %>
+                <div class="cost">£<%= total.round(2) + 0.5 %></div>
+              <% end %>
+            </div>
+          <% end %>
+          <!-- Passive -->
+          <div class="bill-total">
+            <p class="order-titles"><strong>Past Orders</strong></p>
+            <% if @orders.where(status: "making").any? %>
+              <div class="totals">
+                <% total = 0 %>
+                <% @orders.where(status: "done").each do |order| %>
+                  <div class="how">#<%= order.id %></div>
+                    <% order.order_items.each do |item| %>
                       <% total += item.quantity * item.menu_item_price  %>
                     <% end %>
-                    <div class="cost">£<%= total.round(2) + 0.5 %></div>
-                  <% end %>
-      </div>
-
-
-      <!-- Passive -->
-      <div class="bill-total">
-        <strong>Past Orders</strong>
-
-
-
-      <div class="totals">
-        <% total = 0 %>
-        <% @orders.where(status: "done").each do |order| %>
-          <div class="how">#<%= order.id %></div>
-          <% order.order_items.each do |item| %>
-            <% total += item.quantity * item.menu_item_price  %>
-          <% end %>
-          <div class="cost">£<%= total.round(2) + 0.5 %></div>
-        <% end %>
-      </div>
-
-            </div>
-      <div class="view-orders">
-        <div class="order">
-          <%= link_to order_path(@orders.where(status: "pending").last) do %>
-            Back
+                  <div class="cost">£<%= total.round(2) + 0.5 %></div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
-          <% end %>
+        <div class="view-orders">
+          <div class="order">
+            <%= link_to order_path(@orders.where(status: "pending").last) do %>
+              Back
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
