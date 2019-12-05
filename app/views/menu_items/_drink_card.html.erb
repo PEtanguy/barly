@@ -1,6 +1,7 @@
 <%= link_to new_menu_item_basket_item_path(menuitem), class: "add_basket", remote: true do  %>
   <div class="card-product">
       <% if menuitem.drink_photo.attached? %>
+
           <%= cl_image_tag(menuitem.drink_photo.key,
            crop: :fit) %>
         <% else %>
