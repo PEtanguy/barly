@@ -42,7 +42,7 @@ class BasketItemsController < ApplicationController
   end
 
   def update
-    @basket_item = BasketItem.find(params[:basket_item][:basket_item_id].to_i)
+    @basket_item = BasketItem.find(params[:id])
     if @basket_item.update(basket_item_params)
       authorize @basket_item
       redirect_to basket_path
