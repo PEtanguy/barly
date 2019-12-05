@@ -5,9 +5,10 @@ $transition-speed: 0.4s;
   width: 100vw;
   overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   transition: height $transition-speed;
+  padding: 30px 20px;
 }
 
 #top-holder {
