@@ -11,80 +11,80 @@
     </div>
     <!-- Active -->
     <div class="bill-total">
-      <p class="order-titles"><strong>Active Orders</strong></p>
-                              <div class="all-orders-scroll">
-                                <% if @orders.where(status: "making").any? %>
-                                        <div class="totals">
-                                                    <% @orders.where(status: "making").each do |order| %>
-                                                              <%= link_to order_path(order) do %>
-
-                                                                          <div class="card-order-list">
-                                                                            <div class="how"><strong>#<%= order.id %></strong>
-                                                                            <% total = 0 %>
-                                                                            <% order.order_items.each do |item| %>
-                                                                              <% total += item.quantity * item.menu_item_price  %>
-                                                                            <% end %>
-                                                                            £<%= total.round(2) + 0.5 %>
-                                                                          </div>
-                                                                            <div class="amber"><i class="fas fa-circle"></i></div>
-                                                                          </div>
-                                                              <% end %>
-                                                    <% end %>
-                                        </div>
-
-                                <% end %>
-
-
-                                <% if @orders.where(status: "pending").any? %>
-                                          <div class="totals">
-                                                    <% @orders.where(status: "pending").each do |order| %>
-                                                              <%= link_to order_path(order) do %>
-                                                                      <div class="card-order-list">
-                                                                                <div class="card-order-list">
-                                                                                  <div class="how"><strong>#<%= order.id %></strong>
-                                                                                  <% total = 0 %>
-                                                                                  <% order.order_items.each do |item| %>
-                                                                                    <% total += item.quantity * item.menu_item_price  %>
-                                                                                  <% end %>
-                                                                                  £<%= total.round(2) + 0.5 %></div>
-                                                                                  <div class="red"><i class="fas fa-circle"></i></div>
-                                                                                </div>
-                                                              <% end %>
-                                                    <% end %>
-                                          </div>
+      <p class="order-titles">
+        <strong>Active Orders</strong>
+      </p>
+      <div class="all-orders-scroll">
+        <% if @orders.where(status: "making").any? %>
+          <div class="totals">
+            <% @orders.where(status: "making").each do |order| %>
+              <%= link_to order_path(order) do %>
+                <div class="card-order-list">
+                  <div class="how"><strong>#<%= order.id %></strong>
+                  <% total = 0 %>
+                  <% order.order_items.each do |item| %>
+                    <% total += item.quantity * item.menu_item_price  %>
+                  <% end %>
+                  £<%= total.round(2) + 0.5 %>
+                </div>
+                  <div class="amber"><i class="fas fa-circle"></i></div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
 
 
-
-
-                                <% end %>
+        <% if @orders.where(status: "pending").any? %>
+          <div class="totals">
+            <% @orders.where(status: "pending").each do |order| %>
+              <%= link_to order_path(order) do %>
+                  <div class="card-order-list">
+                    <div class="how"><strong>#<%= order.id %></strong>
+                      <% total = 0 %>
+                      <% order.order_items.each do |item| %>
+                        <% total += item.quantity * item.menu_item_price  %>
+                      <% end %>
+                      £<%= total.round(2) + 0.5 %>
+                    </div>
+                    <div class="red"><i class="fas fa-circle"></i></div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
                                 <!-- Passive -->
-                                      <div class="bill-total">
-                                        <p class="order-titles"><strong>Past Orders</strong></p>
+        <div class="bill-total">
 
 
-                                              <% if @orders.where(status: "done").any? %>
-                                                    <div class="totals">
-                                                                  <% total = 0 %>
-                                                                  <% @orders.where(status: "done").each do |order| %>
-                                                                      <div class="card-order-list">
-                                                                            <div class="card-order-list">
-                                                                              <div class="how"><strong>#<%= order.id %></strong>
-                                                                              <% total = 0 %>
-                                                                              <% order.order_items.each do |item| %>
-                                                                                <% total += item.quantity * item.menu_item_price  %>
-                                                                              <% end %>
-                                                                              £<%= total.round(2) + 0.5 %></div>
-                                                                              <div class="green"><i class="fas fa-circle"></i></div>
-                                                                            </div>
-                                                                  <% end %>
-                                                    </div>
-
-                                              <% end %>
-                                      </div>
-                              </div>
-
-
+            <% if @orders.where(status: "done").any? %>
+          <p class="order-titles"><strong>Past Orders</strong></p>
+              <div class="totals">
+                <% total = 0 %>
+                <% @orders.where(status: "done").each do |order| %>
+                    <div class="card-order-list">
+                      <div class="card-order-list">
+                        <div class="how"><strong>#<%= order.id %></strong>
+                        <% total = 0 %>
+                        <% order.order_items.each do |item| %>
+                          <% total += item.quantity * item.menu_item_price  %>
+                        <% end %>
+                        £<%= total.round(2) + 0.5 %>
+                      </div>
+                        <div class="green"><i class="fas fa-circle"></i></div>
+                      </div>
+                <% end %>
+              </div>
+            <% end %>
+        </div>
+        <div class="view-orders">
+        <div class="order">
+          <%= link_to order_path(current_user) do %>
+            Back
+          <% end %>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
-
 </div>
