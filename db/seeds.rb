@@ -44,6 +44,61 @@ puts 'Creating user'
     last_name: "Thompson")
 end
 
+1.times do
+  User.create(
+
+    email: '1@barly.io',
+    password: '123456',
+    gender: 'male',
+    dob: '01/02/1991',
+    first_name: 'Tilly',
+    last_name: "Thompson")
+end
+
+1.times do
+  User.create(
+
+    email: '2@barly.io',
+    password: '123456',
+    gender: 'male',
+    dob: '01/02/1991',
+    first_name: 'Pierre',
+    last_name: "Thompson")
+end
+
+1.times do
+  User.create(
+
+    email: '3@barly.io',
+    password: '123456',
+    gender: 'male',
+    dob: '01/02/1991',
+    first_name: 'Marco',
+    last_name: "Thompson")
+end
+
+1.times do
+  User.create(
+
+    email: '4@barly.io',
+    password: '123456',
+    gender: 'male',
+    dob: '01/02/1991',
+    first_name: 'Ben',
+    last_name: "Thompson")
+end
+
+1.times do
+  User.create(
+
+    email: '5@barly.io',
+    password: '123456',
+    gender: 'male',
+    dob: '01/02/1991',
+    first_name: 'Lenny',
+    last_name: "Thompson")
+end
+
 Basket.create(
   user: User.first
 )
