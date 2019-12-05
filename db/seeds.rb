@@ -25,23 +25,23 @@ puts 'Creating user'
 
 1.times do
   User.create(
-    email: 'ben@gmail.com',
+    email: 'jack.h@fullers.co.uk',
     password: '123456',
     gender: 'male',
     dob: '06/01/1990',
-    first_name: 'Ben',
-    last_name: 'Boom')
+    first_name: 'Jack',
+    last_name: 'Harris')
  end
 
 1.times do
   User.create(
 
-    email: 'issy@gmail.com',
+    email: 'rick.t@gmail.com',
     password: '123456',
-    gender: 'female',
+    gender: 'male',
     dob: '01/02/1991',
-    first_name: 'Issy',
-    last_name: "Mackintosh")
+    first_name: 'Rick',
+    last_name: "Thompson")
 end
 
 Basket.create(
@@ -497,72 +497,72 @@ end
 
 #######################################################
 
-  Bar.create(
+  # Bar.create(
 
-    name: "The Owl & The Pussycat",
-    address: 'W13 9RT',
-    capacity: '100',
-    opening_time: '15:00',
-    closing_time: '23:30',
-    user: User.first
-    )
+  #   name: "The Owl & The Pussycat",
+  #   address: 'W13 9RT',
+  #   capacity: '100',
+  #   opening_time: '15:00',
+  #   closing_time: '23:30',
+  #   user: User.first
+  #   )
 
-  50.times do
-  MenuItem.create(
-    name: Faker::Beer.name,
-    price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
-    description: Faker::Beer.style,
-    bar: Bar.last,
-    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
-    )
-  end
-
-
-  Bar.create(
-
-    name: "The Grapes",
-    address: 'E148BP',
-    capacity: '100',
-    opening_time: '15:00',
-    closing_time: '23:30',
-    user: User.first
-    )
-  50.times do
-  MenuItem.create(
-    name: Faker::Beer.name,
-    price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
-    # price: Faker::Number.decimal(l_digits: 1, range: 1..7),
-    # price: [ 3.50, 3.99, 4.20, 3.70, 3.90, 6.10, 5.40].sample,
-    description: Faker::Beer.style,
-    bar: Bar.last,
-    category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
-    )
-  end
+  # 50.times do
+  # MenuItem.create(
+  #   name: Faker::Beer.name,
+  #   price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
+  #   description: Faker::Beer.style,
+  #   bar: Bar.last,
+  #   category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
+  #   )
+  # end
 
 
-  Bar.create(
+  # Bar.create(
 
-    name: "Wenlock Arms",
-    address: 'N17TA',
-    capacity: '100',
-    opening_time: '15:00',
-    closing_time: '23:30',
-    user: User.first
-    )
+  #   name: "The Grapes",
+  #   address: 'E148BP',
+  #   capacity: '100',
+  #   opening_time: '15:00',
+  #   closing_time: '23:30',
+  #   user: User.first
+  #   )
+  # 50.times do
+  # MenuItem.create(
+  #   name: Faker::Beer.name,
+  #   price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
+  #   # price: Faker::Number.decimal(l_digits: 1, range: 1..7),
+  #   # price: [ 3.50, 3.99, 4.20, 3.70, 3.90, 6.10, 5.40].sample,
+  #   description: Faker::Beer.style,
+  #   bar: Bar.last,
+  #   category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
+  #   )
+  # end
 
-  Bar.create(
 
-    name: "The North Star",
-    address: 'E113AI' ,
-    capacity: '100',
-    opening_time: '15:00',
-    closing_time: '23:30',
-    user: User.first
-    )
+  # Bar.create(
 
-  puts 'Finished creating bars'
+  #   name: "Wenlock Arms",
+  #   address: 'N17TA',
+  #   capacity: '100',
+  #   opening_time: '15:00',
+  #   closing_time: '23:30',
+  #   user: User.first
+  #   )
 
-  puts 'Creating menu items'
+  # Bar.create(
+
+  #   name: "The North Star",
+  #   address: 'E113AI' ,
+  #   capacity: '100',
+  #   opening_time: '15:00',
+  #   closing_time: '23:30',
+  #   user: User.first
+  #   )
+
+  # puts 'Finished creating bars'
+
+  # puts 'Creating menu items'
 
 # images = ["https://images.unsplash.com/photo-1504502350688-00f5d59bbdeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", "https://images.unsplash.com/photo-1551980362-5f5816fdf020?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", "https://images.unsplash.com/photo-1573624658129-3f7856192f19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", "https://images.unsplash.com/photo-1567143768138-9ec527a6363a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"]
 # 50.times do
