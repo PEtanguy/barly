@@ -5,18 +5,22 @@
  }
 
  #order-notes {
-  height: 40px;
+  height: 40px !important;
  }
 
  .subtotal {
   font-family: $headers-font;
-  font-size: 18px;
+  font-size: 16px;
   color: $black;
   border-top: 1px solid #e8ebeb;
   border-bottom: 1px solid #e8ebeb;
   background-color: white;
   margin-top: 9px;
  }
+
+.mhresp-order-show {
+  height: calc(46vh - 170px);
+}
 
   .empty_basket{
     color: $primary;
@@ -87,8 +91,8 @@
   justify-content: space-between;
   font-family: $headers-font;
   color: $black;
-  font-size: 29px;
-  padding: 24px 16px;
+  font-size: 25px;
+  padding: 20px 16px;
   margin: 0 0 10px 0;
   background-color: white;
   border-bottom: 1px solid #e8ebeb;
@@ -142,7 +146,7 @@
 
 label {
   color: $black;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .fa-times {
@@ -173,3 +177,8 @@ label {
   display: flex;
   flex-direction: row;
 }
+
+textarea.form-control {
+  height: 40px;
+}
+
