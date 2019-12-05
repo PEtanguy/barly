@@ -108,7 +108,7 @@ end
   image = URI.open('https://www.lambandflagcoventgarden.co.uk/-/media/Sites/Microsites/L/The-Lamb-and-Flag-_-P154/Images/2017-new-images/GalleryDrink/12DrinkPoured.jpg')
   menu_item = MenuItem.new(
     name: "Seafarers",
-    price: 4.50,
+    price: 4.55,
     abv: "3.6%",
     description: "Faintly fruity on the nose, this light amber beer sails a steady course through welldeveloped malt character towards a satisfying, hoppy finish",
     bar: Bar.first,
@@ -122,7 +122,7 @@ end
   image = URI.open('https://i.pinimg.com/originals/3d/95/8d/3d958dcc9ed740ea00a04c12c91c1c61.jpg')
   menu_item = MenuItem.new(
     name: "ESB",
-    price: 5.20,
+    price: 5.25,
     abv: "5.5%",
     description: "Rich mahogany in colour, ESB tempts with aromas of orange marmalade, balanced
 by soft malt toffee. The hops impart grassy, peppery notes alongside hints of citrus fruit
@@ -138,7 +138,7 @@ end
   image = URI.open('https://cdn-b.william-reed.com/var/wrbm_gb_hospitality/storage/images/publications/hospitality/morningadvertiser.co.uk/article/2018/03/12/fuller-s-we-won-t-blanket-our-pubs-with-dark-star-beer/2768552-1-eng-GB/Fuller-s-We-won-t-blanket-our-pubs-with-Dark-Star-beer_wrbm_large.jpg')
   menu_item = MenuItem.new(
     name: "Darkstar Hophead",
-    price: 5.10,
+    price: 5.15,
     abv: "3.8%",
     description: "An extremely clean-drinking pale golden ale with a strong floral aroma and elderflower notes from the Cascade hops. This beer is full-bodied and full-flavoured yet gentle
 enough to make it a favourite session beer.",
@@ -166,7 +166,7 @@ end
   image = URI.open('https://i2-prod.essexlive.news/incoming/article2025552.ece/ALTERNATES/s615b/0_Heres-how-you-get-get-a-free-pint-in-London-this-Thursday-1.jpg')
   menu_item = MenuItem.new(
     name: "Abbot Ale",
-    price: 5.20,
+    price: 5.25,
     abv: "5%",
     bar: Bar.first,
     category: "Beer"
@@ -180,10 +180,10 @@ end
 ######## Wine seed menu items ####################
 
 1.times do
-  image = URI.open('https://explorewines.dk/wp-content/uploads/2018/09/Domaine-du-Grezas.png')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575546942/cotesdurhone_xfjjsu.jpg')
   menu_item = MenuItem.new(
     name: "Cotes Du Rhone Domaine Grezas",
-    price: 27.50,
+    price: 27.55,
     abv: "11.2%",
     description: "A wonderful blend of Grenache, Syrah and Carignan",
     bar: Bar.first,
@@ -194,10 +194,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://www.10international.com/wp-content/uploads/2014/07/RioDelReyCrianza-2017-660x1024.jpg')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575546942/rioja_c1d6ce.jpg')
   menu_item = MenuItem.new(
     name: "Rioja Crianza Rio Del Rey",
-    price: 27.50,
+    price: 27.55,
     abv: "12.00%",
     description: "Lightly oaked. Food friendly and very approachable",
     bar: Bar.first,
@@ -208,10 +208,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://darwina.pl/16203/cruz-alta-gran-reserva-malbec.jpg')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575546942/alta_scnxm8.jpg')
   menu_item = MenuItem.new(
     name: "Cruz Alta Malbec",
-    price: 26.10,
+    price: 26.15,
     abv: "11.5%",
     description: "Smooth with spice & perfect for a meal",
     bar: Bar.first,
@@ -222,7 +222,7 @@ end
 end
 
 1.times do
-  image = URI.open('https://www.gerrys.uk.com/content/images/thumbs/0003392_chateau-fourcas-hosten-listrac-medoc-75cl_256.png')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575546942/cas_wbrhv3.jpg')
   menu_item = MenuItem.new(
     name: "Medoc CH Fourcas Hosten",
     price: 44.25,
@@ -236,10 +236,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://www.gerrys.uk.com/content/images/thumbs/0003392_chateau-fourcas-hosten-listrac-medoc-75cl_256.png')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575546942/bichot_u9idyz.jpg')
   menu_item = MenuItem.new(
     name: "Beaune Bichot",
-    price: 65,
+    price: 65.05,
     abv: "10.0%",
     description: "A developed Burgundian classic, lovely texture",
     bar: Bar.first,
@@ -251,7 +251,7 @@ end
 
 
 1.times do
-  image = URI.open('https://www.nectar.net/productimages/win1009-leonard-road-chardonnay-3884836_t@2x.jpg')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1575546942/leonard_lpocpy.jpg')
   menu_item = MenuItem.new(
     name: "Leonard Road Chardonnay",
     price: 22.35,
@@ -265,12 +265,12 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1575546942/riebeek_kwvaos.jpg')
   menu_item = MenuItem.new(
     name: "Riebeek Chenin Blanc",
-    price: 22.50,
+    price: 22.15,
     abv: "10.0%",
-    description: "Lots of tropical fruit. ",
+    description: "Lots of tropical fruit.",
     bar: Bar.first,
     category: "Wine"
     )
@@ -278,19 +278,7 @@ end
   menu_item.save
 end
 
-1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
-  menu_item = MenuItem.new(
-    name: "ST-VERAN ALBERT BICHOT",
-    price: 22.50,
-    abv: "11.0%",
-    description: "Best value 'village' from the burgundy region",
-    bar: Bar.first,
-    category: "Wine"
-    )
-  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
-  menu_item.save
-end
+
 
 
 
@@ -298,10 +286,10 @@ end
 
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1575490840/gin_t_k3u0eh.jpg')
   menu_item = MenuItem.new(
     name: "Gin & Tonic",
-    price: 7,
+    price: 7.55,
     abv: "6%",
     description: "The classic British drink",
     bar: Bar.first,
@@ -312,10 +300,24 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575490841/liisland_xokhyb.jpg')
+  menu_item = MenuItem.new(
+    name: "Long Island Iced Tea",
+    price: 8.49,
+    abv: "6%",
+    description: "An unusual blend of vodka, gin, tequila, rum and orange liqueur with cola. Perfect together",
+    bar: Bar.first,
+    category: "Cocktail"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1575490842/mojito1_wbppz2.jpg')
   menu_item = MenuItem.new(
     name: "Mojito",
-    price: 8,
+    price: 7.99,
     abv: "6%",
     description: "The perfect party drink mixing fresh mint, white rum, sugar, zesty lime",
     bar: Bar.first,
@@ -326,10 +328,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575490840/cap1_uugwrm.jpg')
   menu_item = MenuItem.new(
     name: "Caipirinha",
-    price: 7,
+    price: 7.55,
     abv: "5%",
     description: "Brazil's sweet and refreshing national cocktail",
     bar: Bar.first,
@@ -340,10 +342,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1575490840/bm1_nldbrm.jpg')
   menu_item = MenuItem.new(
     name: "Bloody Mary",
-    price: 8,
+    price: 8.25,
     abv: "6%",
     description: "Classic vodka cocktail with tomato juice, and other spices",
     bar: Bar.first,
@@ -354,10 +356,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575490840/Cuba_Libre_ynztcb.jpg')
   menu_item = MenuItem.new(
     name: "Cuba Libre",
-    price: 6,
+    price: 6.85,
     abv: "5%",
     description: "Equal parts simple, refreshng and special",
     bar: Bar.first,
@@ -368,10 +370,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1575490841/marti_e8fmhp.jpg')
   menu_item = MenuItem.new(
     name: "Martini",
-    price: 7,
+    price: 7.85,
     abv: "6%",
     description: "Dry, Elegant, Classic",
     bar: Bar.first,
@@ -382,19 +384,7 @@ end
 end
 
 
-1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
-  menu_item = MenuItem.new(
-    name: "Long Island Iced Tea",
-    price: 8,
-    abv: "6%",
-    description: "An unusual blend of vodka, gin, tequila, rum and orange liqueur with cola. Perfect together",
-    bar: Bar.first,
-    category: "Cocktail"
-    )
-  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
-  menu_item.save
-end
+
 
 
 ######## Spirits seed menu items ####################
@@ -403,10 +393,10 @@ end
 ######## Soft drinks seed menu items ####################
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open("https://res.cloudinary.com/dwdzxacem/image/upload/v1575545904/coke_dxsgja.jpg")
   menu_item = MenuItem.new(
     name: "Coca Cola",
-    price: 4,
+    price: 4.25,
     abv: "",
     description:"",
     bar: Bar.first,
@@ -417,10 +407,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575545904/dietcoke_hvms1e.jpg')
   menu_item = MenuItem.new(
     name: "Diet Coke",
-    price: 4,
+    price: 4.25,
     abv: "",
     description:"",
     bar: Bar.first,
@@ -431,10 +421,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575545904/lemonade_i40ocf.jpg')
   menu_item = MenuItem.new(
     name: "Cloudy Lemonade",
-    price: 5,
+    price: 4.95,
     abv: "",
     description:"",
     bar: Bar.first,
@@ -445,10 +435,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575545904/ginger_eomyrm.jpg')
   menu_item = MenuItem.new(
     name: "Ginger Ale",
-    price: 5,
+    price: 4.95,
     abv: "",
     description:"",
     bar: Bar.first,
@@ -459,7 +449,7 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575545904/water_r04boh.jpg')
   menu_item = MenuItem.new(
     name: "Sparkling Water",
     price: 3.55,
@@ -473,10 +463,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575545904/orange_flvmpu.jpg')
   menu_item = MenuItem.new(
     name: "Orange Juice",
-    price: 3.50,
+    price: 3.55,
     abv: "",
     description:"",
     bar: Bar.first,
@@ -487,10 +477,10 @@ end
 end
 
 1.times do
-  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  image = URI.open('https://res.cloudinary.com/dwdzxacem/image/upload/v1575545904/apple_zrvoot.jpg')
   menu_item = MenuItem.new(
     name: "Apple Juice",
-    price: 3.50,
+    price: 3.55,
     abv: "",
     description:"",
     bar: Bar.first,
@@ -522,7 +512,7 @@ end
     name: Faker::Beer.name,
     price: [ 3.49, 3.99, 4.15, 3.75, 3.85, 6.15, 5.49, 3.95, 2.99, 3.49, 4.55, 4.75, 5.15, 5.49].sample,
     description: Faker::Beer.style,
-    bar: Bar.find(2),
+    bar: Bar.last,
     category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
     )
   end
@@ -544,7 +534,7 @@ end
     # price: Faker::Number.decimal(l_digits: 1, range: 1..7),
     # price: [ 3.50, 3.99, 4.20, 3.70, 3.90, 6.10, 5.40].sample,
     description: Faker::Beer.style,
-    bar: Bar.find(3),
+    bar: Bar.last,
     category: ["Beer", "Wine", "Cocktail", "Mocktail", "Soft Drink"].sample
     )
   end
