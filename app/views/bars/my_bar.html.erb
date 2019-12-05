@@ -109,6 +109,7 @@
               </div>
               <p class="order-num-info"><small>Created at:</small> <span class=""> <%= order.created_at.strftime("%H:%M%p") %></span></p>
               <p class="order-num-info"><small>Customer:</small> <span class=""> <%= order.basket.user.first_name %></span></p>
+              <!-- <p class="order-num-info"><small>Table:</small> <span class=""> UPDATE THIS!!! </span></p> -->
               <% if order.notes != '' %>
               <div class="notes-box">
                 <strong><p><%= order.notes %></strong></p>
