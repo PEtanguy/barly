@@ -56,6 +56,7 @@ class BasketItemsController < ApplicationController
   def destroy
     @basket_item = BasketItem.find(params[:id])
     @basket_item.destroy
+    redirect_to basket_path
     # redirect_to root_path
     authorize @basket_item
 
