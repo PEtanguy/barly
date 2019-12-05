@@ -3,6 +3,9 @@
 
 <div class="order-page">
   <div class="angled">
+      <p class="back-home"><%= link_to root_path do %>
+        <i class="fas fa-home"></i>
+      <% end %></p>
     <div class="order-summary">
       <h1><strong> Order Sent <i class="fas fa-check"></i></strong> </h1>
       <% if @order.status == "pending" %>

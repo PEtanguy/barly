@@ -28,6 +28,17 @@
     transform: skewY(-7deg);
     transform-origin: 100%;
   }
+
+  .fa-home {
+    color: $white;
+  }
+}
+
+.back-home {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 20px;
+  color: $white;
 }
 
 .order-page {
@@ -53,7 +64,7 @@
   border-radius: 5px;
   border: 1px solid #e8ebeb;
   display: inline-grid;
-  margin: 120px 19px 20px;
+  margin: 40px 19px 20px;
     h1 {
       margin-left: 17px;
     }
