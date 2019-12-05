@@ -4,7 +4,6 @@
   max-width: 100vw;
  }
 
-
  .subtotal {
   font-family: $headers-font;
   font-size: 18px;
@@ -162,7 +161,7 @@ label {
 #order-navbar {
   width: 100vw;
   overflow: scroll;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 .scroller {
   margin-left: 4%;
