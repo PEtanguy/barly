@@ -47,7 +47,7 @@
                       <% end %>
                       £<%= total.round(2) + 0.5 %>
                     </div>
-                    <div class="red"><i class="fas fa-circle"></i></div>
+                    <div class="red"><i class="fas fa-circle" style="font-size:10px"></i></div>
                 </div>
               <% end %>
             <% end %>
@@ -62,21 +62,22 @@
               <div class="totals">
                 <% total = 0 %>
                 <% @orders.where(status: "done").each do |order| %>
-                    <div class="card-order-list">
                       <div class="card-order-list">
+
                         <div class="how"><strong>#<%= order.id %></strong>
-                        <% total = 0 %>
-                        <% order.order_items.each do |item| %>
-                          <% total += item.quantity * item.menu_item_price  %>
-                        <% end %>
-                        £<%= total.round(2) + 0.5 %>
-                      </div>
-                        <div class="green"><i class="fas fa-circle"></i></div>
+                          <% total = 0 %>
+                          <% order.order_items.each do |item| %>
+                            <% total += item.quantity * item.menu_item_price  %>
+                          <% end %>
+                          £<%= total.round(2) + 0.5 %>
+                        </div>
+
+                        <div class="green"><i class="fas fa-circle" style="font-size:10px;"></i></div>
                       </div>
                 <% end %>
               </div>
-            <% end %>
         </div>
+            <% end %>
         <div class="view-orders">
         <div class="order">
           <%= link_to order_path(current_user) do %>
