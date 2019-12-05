@@ -121,6 +121,12 @@
     }
 }
 
+.cost-total {
+  display: flex;
+  margin-left: 42%;
+  align-items: center;
+}
+
 .bill-total-order-page{
   display: flex;
     -webkit-box-orient: vertical;
@@ -139,7 +145,7 @@
   padding: 15px;
   border: 1px solid #e8ebeb;
   position: absolute;
-  bottom: -612px;
+  bottom: -535px;
   width: 100%;
 }
 
