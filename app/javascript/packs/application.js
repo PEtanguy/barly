@@ -10,8 +10,8 @@ if (document.querySelector('.sw-button')) {
     Swal.fire({
       position: 'center',
       // text: <% <img src="https://cdn.dribbble.com/users/957410/screenshots/3226085/dribbble-gif.gif" >%>,
-        imageUrl: "https://cdn.dribbble.com/users/957410/screenshots/3226085/dribbble-gif.gif" ,
-           icon: 'success',
+        // imageUrl: "https://cdn.dribbble.com/users/957410/screenshots/3226085/dribbble-gif.gif" ,
+      icon: 'success',
       title: 'Payment sent',
       showConfirmButton: false,
       timer:1800
