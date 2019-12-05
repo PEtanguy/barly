@@ -23,7 +23,7 @@ insertBasketItem = () => {
     <div class="adding-item">
       <button class="back-menu"><i class="fas fa-times" id="exit_cross"></i></button>
      <div class="selected_item_menu"> <%= @menu_item.name %></div>
-      <div id="price" data-price="<%= @menu_item.price %>">£<%= @item_quantity * @menu_item.price %></div>
+      <div id="price" data-price="<%= @menu_item.price %>">£<%= (@item_quantity * @menu_item.price).round(2) %></div>
     </div>
 
 
