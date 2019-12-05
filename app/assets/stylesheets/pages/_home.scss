@@ -75,6 +75,28 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
+ background: linear-gradient(16deg, #46bea9, #a946be, #000000);
+background-size: 600% 600%;
+
+-webkit-animation: AnimationName 36s ease infinite;
+-moz-animation: AnimationName 36s ease infinite;
+animation: AnimationName 36s ease infinite;
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:81% 0%}
+    50%{background-position:20% 100%}
+    100%{background-position:81% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:81% 0%}
+    50%{background-position:20% 100%}
+    100%{background-position:81% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:81% 0%}
+    50%{background-position:20% 100%}
+    100%{background-position:81% 0%}
+}
 }
 
 
