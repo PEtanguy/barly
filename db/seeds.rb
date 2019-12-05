@@ -175,6 +175,8 @@ end
   menu_item.save
 end
 
+
+
 ######## Wine seed menu items ####################
 
 1.times do
@@ -276,7 +278,123 @@ end
   menu_item.save
 end
 
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "ST-VERAN ALBERT BICHOT",
+    price: 22.50,
+    abv: "11.0%",
+    description: "Best value 'village' from the burgundy region",
+    bar: Bar.first,
+    category: "Wine"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+
+
 ######## Cocktails seed menu items ####################
+
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Gin & Tonic",
+    price: 7,
+    abv: "6",
+    description: "The classic British drink",
+    bar: Bar.first,
+    category: "Cocktail"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Mojito",
+    price: 8,
+    abv: "6",
+    description: "The perfect party drink mixing fresh mint, white rum, sugar, zesty lime",
+    bar: Bar.first,
+    category: "Cocktail"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Caipirinha",
+    price: 7,
+    abv: "5",
+    description: "Brazil's sweet and refreshing national cocktail",
+    bar: Bar.first,
+    category: "Cocktail"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Bloody Mary",
+    price: 8,
+    abv: "6",
+    description: "Classic vodka cocktail with tomato juice, and other spices",
+    bar: Bar.first,
+    category: "Cocktail"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Cuba Libre",
+    price: 6,
+    abv: "5",
+    description: "Equal parts simple, refreshng and special",
+    bar: Bar.first,
+    category: "Cocktail"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Martini",
+    price: 7,
+    abv: "6",
+    description: "Dry, Elegant, Classic",
+    bar: Bar.first,
+    category: "Cocktail"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Long Island Iced Tea",
+    price: 8,
+    abv: "6",
+    description: "An unusual blend of vodka, gin, tequila, rum and orange liqueur with cola. Perfect together",
+    bar: Bar.first,
+    category: "Cocktail"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
 
 
 ######## Spirits seed menu items ####################
