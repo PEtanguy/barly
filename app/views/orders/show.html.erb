@@ -29,20 +29,24 @@
       <i class="fas fa-map-marker-alt"></i>
       <div class="current-bar"><%= @order.bar.name %><br><%= @order.bar.address %></div>
     </div>
-    <div class="list-order">
-      <% total = 0  %>
-      <% @order.order_items.each do |item| %>
-      <% total += item.quantity * item.menu_item_price  %>
-      <div class="totals">
-        <div class="how"><strong><%= item.quantity %> x</strong>
-        <%= item.menu_item_name %></div>
-        <div class="cost">£<%= item.menu_item_price %></div>
-      </div>
-      <% end %>
-      <div class="bill-total-order-page">
-        <div class="how">Total:</div>
-        <div class="cost">£<%= total.round(2) + 0.5 %></div>
-      </div>
+
+
+    <div class="mhresp-order-show">
+          <div class="list-order">
+            <% total = 0  %>
+            <% @order.order_items.each do |item| %>
+            <% total += item.quantity * item.menu_item_price  %>
+            <div class="totals">
+              <div class="how"><strong><%= item.quantity %> x</strong>
+              <%= item.menu_item_name %></div>
+              <div class="cost">£<%= item.menu_item_price %></div>
+            </div>
+            <% end %>
+            <div class="bill-total-order-page">
+              <div class="how">Total:</div>
+              <div class="cost">£<%= total.round(2) + 0.5 %></div>
+            </div>
+          </div>
     </div>
     <div class="view-orders">
       <div class="order">
