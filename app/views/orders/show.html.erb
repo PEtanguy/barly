@@ -27,7 +27,13 @@
     </div>
     <div class="order-bar">
       <i class="fas fa-map-marker-alt"></i>
-      <div class="current-bar"><%= @order.bar.name %><br><%= @order.bar.address %></div>
+      <div class="current-bar"><%= @order.bar.name %><br><%= @order.bar.address %>
+        <% total = 0  %>
+            <% @order.order_items.each do |item| %>
+            <% total += item.quantity * item.menu_item_price  %>
+            <% end %>
+      </div>
+            <div class="cost-total">£<%= total.round(2) + 0.5 %></div>
     </div>
 
 
