@@ -211,7 +211,7 @@ end
   image = URI.open('https://darwina.pl/16203/cruz-alta-gran-reserva-malbec.jpg')
   menu_item = MenuItem.new(
     name: "Cruz Alta Malbec",
-    price: 26,
+    price: 26.10,
     abv: "11.5%",
     description: "Smooth with spice & perfect for a meal",
     bar: Bar.first,
@@ -225,7 +225,7 @@ end
   image = URI.open('https://www.gerrys.uk.com/content/images/thumbs/0003392_chateau-fourcas-hosten-listrac-medoc-75cl_256.png')
   menu_item = MenuItem.new(
     name: "Medoc CH Fourcas Hosten",
-    price: 44,
+    price: 44.25,
     abv: "11.0%",
     description: "A mature Bourgeiose from a great year",
     bar: Bar.first,
@@ -254,7 +254,7 @@ end
   image = URI.open('https://www.nectar.net/productimages/win1009-leonard-road-chardonnay-3884836_t@2x.jpg')
   menu_item = MenuItem.new(
     name: "Leonard Road Chardonnay",
-    price: 22,
+    price: 22.35,
     abv: "10.0%",
     description: "Un-oaked and youthful, luscious tropical fruit",
     bar: Bar.first,
@@ -302,7 +302,7 @@ end
   menu_item = MenuItem.new(
     name: "Gin & Tonic",
     price: 7,
-    abv: "6",
+    abv: "6%",
     description: "The classic British drink",
     bar: Bar.first,
     category: "Cocktail"
@@ -316,7 +316,7 @@ end
   menu_item = MenuItem.new(
     name: "Mojito",
     price: 8,
-    abv: "6",
+    abv: "6%",
     description: "The perfect party drink mixing fresh mint, white rum, sugar, zesty lime",
     bar: Bar.first,
     category: "Cocktail"
@@ -330,7 +330,7 @@ end
   menu_item = MenuItem.new(
     name: "Caipirinha",
     price: 7,
-    abv: "5",
+    abv: "5%",
     description: "Brazil's sweet and refreshing national cocktail",
     bar: Bar.first,
     category: "Cocktail"
@@ -344,7 +344,7 @@ end
   menu_item = MenuItem.new(
     name: "Bloody Mary",
     price: 8,
-    abv: "6",
+    abv: "6%",
     description: "Classic vodka cocktail with tomato juice, and other spices",
     bar: Bar.first,
     category: "Cocktail"
@@ -358,7 +358,7 @@ end
   menu_item = MenuItem.new(
     name: "Cuba Libre",
     price: 6,
-    abv: "5",
+    abv: "5%",
     description: "Equal parts simple, refreshng and special",
     bar: Bar.first,
     category: "Cocktail"
@@ -372,7 +372,7 @@ end
   menu_item = MenuItem.new(
     name: "Martini",
     price: 7,
-    abv: "6",
+    abv: "6%",
     description: "Dry, Elegant, Classic",
     bar: Bar.first,
     category: "Cocktail"
@@ -387,7 +387,7 @@ end
   menu_item = MenuItem.new(
     name: "Long Island Iced Tea",
     price: 8,
-    abv: "6",
+    abv: "6%",
     description: "An unusual blend of vodka, gin, tequila, rum and orange liqueur with cola. Perfect together",
     bar: Bar.first,
     category: "Cocktail"
@@ -401,6 +401,106 @@ end
 
 
 ######## Soft drinks seed menu items ####################
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Coca Cola",
+    price: 4,
+    abv: "",
+    description:"",
+    bar: Bar.first,
+    category: "Soft Drink"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Diet Coke",
+    price: 4,
+    abv: "",
+    description:"",
+    bar: Bar.first,
+    category: "Soft Drink"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Cloudy Lemonade",
+    price: 5,
+    abv: "",
+    description:"",
+    bar: Bar.first,
+    category: "Soft Drink"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Ginger Ale",
+    price: 5,
+    abv: "",
+    description:"",
+    bar: Bar.first,
+    category: "Soft Drink"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Sparkling Water",
+    price: 3.55,
+    abv: "",
+    description:"",
+    bar: Bar.first,
+    category: "Soft Drink"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Orange Juice",
+    price: 3.50,
+    abv: "",
+    description:"",
+    bar: Bar.first,
+    category: "Soft Drink"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+1.times do
+  image = URI.open('https://images.wine.co.za/GetWineImage.ashx?ImageSize=large&IMAGEID=252520')
+  menu_item = MenuItem.new(
+    name: "Apple Juice",
+    price: 3.50,
+    abv: "",
+    description:"",
+    bar: Bar.first,
+    category: "Soft Drink"
+    )
+  menu_item.drink_photo.attach(io: image, filename: 'drink-image.jpg', content_type: 'image/jpg')
+  menu_item.save
+end
+
+
 
 
 
