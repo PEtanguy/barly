@@ -122,6 +122,19 @@
     }
 }
 
+.bill-total-order-page{
+  display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    color: #383D38;
+    border: 1px solid #e8ebeb;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+
 .view-orders {
   background-color: $white;
   padding: 15px;
