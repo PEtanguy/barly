@@ -4,10 +4,11 @@ $transition-speed: 0.4s;
   height: 30vh;
   width: 100vw;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   align-items: center;
   transition: height $transition-speed;
+  padding: 30px 20px;
 }
 
 #top-holder {
