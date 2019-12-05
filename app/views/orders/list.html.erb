@@ -16,12 +16,13 @@
             <div class="totals">
               <% @orders.where(status: "making").each do |order| %>
                 <div class="card-order-list">
-                  <div class="how">#<%= order.id %></div>
-                  <% order.order_items.each do |item| %>
+                  <div class="how"><strong>#<%= order.id %></strong>
                   <% total = 0 %>
+                  <% order.order_items.each do |item| %>
                     <% total += item.quantity * item.menu_item_price  %>
                   <% end %>
-                  <div class="cost">£<%= total.round(2) + 0.5 %></div>
+                  £<%= total.round(2) + 0.5 %></div>
+                  <div class="amber"><i class="fas fa-circle"></i></div>
                 </div>
               <% end %>
             </div>
@@ -29,12 +30,15 @@
           <% if @orders.where(status: "pending").any? %>
             <div class="totals">
               <% @orders.where(status: "pending").each do |order| %>
-                <div class="how">#<%= order.id %> Status: <%= order.status.capitalize %></div>
-                <% total = 0 %>
-                <% order.order_items.each do |item| %>
-                  <% total += item.quantity * item.menu_item_price  %>
-                <% end %>
-                <div class="cost">£<%= total.round(2) + 0.5 %></div>
+                <div class="card-order-list">
+                  <div class="how"><strong>#<%= order.id %></strong>
+                  <% total = 0 %>
+                  <% order.order_items.each do |item| %>
+                    <% total += item.quantity * item.menu_item_price  %>
+                  <% end %>
+                  £<%= total.round(2) + 0.5 %></div>
+                  <div class="red"><i class="fas fa-circle"></i></div>
+                </div>
               <% end %>
             </div>
           <% end %>
@@ -45,11 +49,15 @@
               <div class="totals">
                 <% total = 0 %>
                 <% @orders.where(status: "done").each do |order| %>
-                  <div class="how">#<%= order.id %></div>
+                  <div class="card-order-list">
+                    <div class="how"><strong>#<%= order.id %></strong>
+                    <% total = 0 %>
                     <% order.order_items.each do |item| %>
                       <% total += item.quantity * item.menu_item_price  %>
                     <% end %>
-                  <div class="cost">£<%= total.round(2) + 0.5 %></div>
+                    £<%= total.round(2) + 0.5 %></div>
+                    <div class="green"><i class="fas fa-circle"></i></div>
+                  </div>
                 <% end %>
               </div>
             <% end %>

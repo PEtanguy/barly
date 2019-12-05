@@ -61,11 +61,9 @@
 
 .card-order-list {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   padding: 5px;
-  border-radius: 5px;
-  border: solid 1px;
 }
 
 .order-summary {
@@ -142,6 +140,28 @@
   position: absolute;
   bottom: -612px;
   width: 100%;
+}
+
+.red {
+  .fa-circle {
+    color: $redy;
+  }
+}
+
+.green {
+  .fa-circle {
+    color: $greeny;
+  }
+}
+
+.amber {
+  .fa-circle {
+    color: $orangy;
+  }
+}
+
+.how {
+  margin-top: 5px;
 }
 
 // .angled {
