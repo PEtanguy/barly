@@ -1,16 +1,15 @@
-
-
-
-
-
+<div class="fly-me">
+  <h2 class="bar_index_heading"><%= User.first.first_name %>'s bars</h2>
 <div class="my_bars">
-  <h2 class="bar_index_heading">Your Bars</h2>
   <%  @bars.each do |bar| %>
+  <div class="mybar-cards">
   <div class="bar">
   <%= link_to bar.name, my_bar_bars_path(bar.id)%>
+  <hr>
  <%= bar.address%>
   </div>
+</div>
   <% end %>
 </div>
-
+</div>
 

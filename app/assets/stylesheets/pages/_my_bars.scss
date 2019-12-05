@@ -6,25 +6,38 @@
 //     background-color:#F5F5F5;
 // }
 
+.fly-me {
+    position: fixed;
+    top: 1vh;
+    width: 100vw;
+    height: 100vh;
+    width: 60%;
+}
+
 .bar {
   padding: 18px;
   color: black;
-  border-top: 1px solid #B0B0B0;
-  a {color: #FF6A6A;
-
-  }
+  font-weight: bold;
+  margin: 10px;
+      a {color: $primary;
+        font-size: 150%;
+        font-weight: normal!important;
+      }
 }
 
-.my_bars {
+// .my_bars {
+//   background-color: white;
+//   color: black;
+// }
+
+.mybar-cards {
+  // padding-bottom: 20px;
   background-color: white;
-  width: 50%;
-  color: black;
 }
-
 .bar_index_heading{
-  color: #A9A9A9;
-  padding: 10px;
-  font-size: 20px;
+  color: $dark;
+  padding: 25px 10px 10px 10px;
+  // font-size: ;
 }
 
 
@@ -33,6 +46,10 @@
     color: #FF6A6A;
   }
 }
+
+// .mybar-cards {
+//   height: 100%;
+// }
 
 // .bar {
 //   background-color: red;
