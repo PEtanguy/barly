@@ -8,14 +8,14 @@
       <div class="bar-details">
         <h3><%= @bar.name %></h3>
         <p><%= @bar.address %></p>
-        <%= link_to "Admin Settings", my_bars_bars_path, class: "btn btn-info" if current_user.bars.include?(@bar) %>
+        <%= link_to "Admin Settings", my_bars_bars_path, class: "btn btn-outline-dark" if current_user.bars.include?(@bar) %>
       </div>
       <div class="drink-buttons-arthur" id="drinks-navbar">
         <span class="menu-category active" data-id="beer">Beer</span>
         <span class="menu-category" data-id="cocktail">Cocktails</span>
         <span class="menu-category" data-id="wine">Wine</span>
 
-        <span class="menu-category" data-id="mocktail">Mocktails</span>
+        <!-- <span class="menu-category" data-id="mocktail">Mocktails</span> -->
         <span class="last">
           <span class="menu-category" data-id="soft_drink">Soft Drinks</span>
         </span>
@@ -49,14 +49,7 @@
             </div>
           <% end %>
 
-          <% if @bar.menu_items.where(category: 'Mocktail').any? %>
-            <div id="mocktail" class="menu-item-container">
-              <h1>Mocktails</h1>
-              <% @bar.menu_items.where(category: 'Mocktail').find_each do |menuitem| %>
-                <%= render 'drink_card', menuitem: menuitem %>
-              <% end %>
-            </div>
-          <% end %>
+
 
           <% if @bar.menu_items.where(category: 'Soft Drink').any? %>
             <div id="soft_drink" class="menu-item-container">

@@ -2,7 +2,7 @@
   background: $primary;
   position: relative;
   z-index: 1;
-  width: 101vw;
+  width: 100vw;
   height: 20vh;
 
   &:before,
@@ -61,12 +61,15 @@
 
 .card-order-list {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   padding: 5px;
+<<<<<<< HEAD
   border-radius: 5px;
   border: solid 1px;
   color: $primary;
+=======
+>>>>>>> 9eb0c8fc83ffe498634b9b0744a6753978040979
 }
 
 .order-summary {
@@ -123,6 +126,19 @@
     }
 }
 
+.bill-total-order-page{
+  display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    color: #383D38;
+    border: 1px solid #e8ebeb;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+
 .view-orders {
   background-color: $white;
   padding: 15px;
@@ -130,6 +146,28 @@
   position: absolute;
   bottom: -612px;
   width: 100%;
+}
+
+.red {
+  .fa-circle {
+    color: $redy;
+  }
+}
+
+.green {
+  .fa-circle {
+    color: $greeny;
+  }
+}
+
+.amber {
+  .fa-circle {
+    color: $orangy;
+  }
+}
+
+.how {
+  margin-top: 5px;
 }
 
 // .angled {
