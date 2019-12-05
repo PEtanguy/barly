@@ -27,15 +27,15 @@ h1 {
 }
 
 .status-update-pending i {
-  color: $redy;
+  color: red;
   padding: 10px;
 }
 .status-update-making i {
-  color: $orangy;
+  color: orange;
   padding: 10px;
 }
 .status-update-complete i {
-  color: $greeny;
+  color: limegreen;
   padding: 10px;
 }
 
@@ -245,7 +245,20 @@ h1 {
 }
 
 .traffic-light {
-  background-color: $primary;
+  background-color: red;
+  transition: background-color 0.5s;
+  border-radius: 34px;
+  color: $dark;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.traffic-light-done {
+  background-color: #39ff14;
   transition: background-color 0.5s;
   border-radius: 34px;
   color: $dark;
@@ -258,11 +271,19 @@ h1 {
 }
 
 .orange {
-background-color: $secondary;
+color: orange;
+transition: color 0.5s;
+}
+.orange-button {
+background-color: orange;
 transition: background-color 0.5s;
 }
 
 .green {
+  color: limegreen;
+  transition: color 0.5s;
+}
+.green-button {
   background-color: limegreen;
   transition: background-color 0.5s;
 }
@@ -277,5 +298,6 @@ transition: background-color 0.5s;
   font-size: 16px;
   margin: auto;
   padding: 6px;
+  color: black !important;
 }
 

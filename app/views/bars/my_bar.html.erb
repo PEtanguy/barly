@@ -11,27 +11,23 @@
       <div class="traffic-cards column" id="trigger<%= triggerCounter %>">
         <div class="traffic-card-info">
 
-
-
-
-
           <% if order.status == "pending" %>
 
 
-                    <div class="quick-status<%= triggerCounter %> status-update-pending">
+                    <div class="quick-status<%= triggerCounter %> status-update-pending order-target">
                     <i class="fas fa-circle quick-status<%= triggerCounter %> status-update-pending"> </i>
                     </div>
 
           <% elsif order.status == "making" %>
 
-                    <div class="quick-status<%= triggerCounter %> status-update-making">
+                    <div class="quick-status<%= triggerCounter %> status-update-making order-target">
                    <i class="fas fa-circle"> </i>
                     </div>
 
 
           <% elsif order.status == "done" %>
 
-                     <div class="quick-status<%= triggerCounter %> status-update-complete">
+                     <div class="quick-status<%= triggerCounter %> status-update-complete order-target">
                    <i class="fas fa-circle quick-status<%= triggerCounter %> status-update-complete"> </i>
                     </div>
 
@@ -86,7 +82,7 @@
 
           <% elsif order.status == "making" %>
 
-                   <button class="traffic-light orange" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
+                   <button class="traffic-light orange-button" data-id="<%= order.id %>"><i class="fas fa-circle"></i>
                      <p class="status-text">Making</p></button>
 
 
@@ -182,23 +178,33 @@ add_orange = (data) => {
   traffic_light.forEach(button => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
-      event.currentTarget.classList.add('orange');
-      let traffic_light_parent = document.querySelector(`.quick-status${button.dataset.id}`);
-      traffic_light_parent.classList.add('orange');
+      event.currentTarget.classList.add('orange-button');
+      // let id_button = button.dataset.id
+      // let number_button_find = parseInt(event.currentTarget.parentElement.parentElement.id.slice(-1),  10)
+      let number_button_find = parseInt(event.currentTarget.parentElement.parentElement.id.replace("content", ""), 10);
+
+      let traffic_light_parent = document.querySelector(`.quick-status${number_button_find} i`);
+      // console.log((traffic_light_parent))
+      // traffic_light_parent.classList.add('orange');
+      traffic_light_parent.style.color = 'orange';
       document.querySelectorAll('.traffic-light')
       document.getElementById(`submit_making${button.dataset.id}`).click()
       button.children[1].innerHTML = "Making"
-        const traffic_light_orange = document.querySelectorAll('.orange');
+        const traffic_light_orange = document.querySelectorAll('.orange-button');
+
+
          add_green = (data) => {
-          traffic_light_orange.forEach(button => {
-            button.addEventListener("click", (event) => {
-              event.preventDefault();
-              document.getElementById(`submit_done${button.dataset.id}`).click()
-              button.children[1].innerHTML = "Done!"
-              event.currentTarget.classList.add('green')
-              let traffic_light_parent = document.querySelector(`.quick-status${button.dataset.id}`);
-                    traffic_light_parent.classList.add('green');
-              let trafficContent = document.getElementById(`content${button.dataset.id}`);
+            traffic_light_orange.forEach(button => {
+              button.addEventListener("click", (event) => {
+                event.preventDefault();
+                document.getElementById(`submit_done${button.dataset.id}`).click()
+                button.children[1].innerHTML = "Done!"
+                event.currentTarget.classList.add('green-button')
+                let number_button_find = parseInt(event.currentTarget.parentElement.parentElement.id.replace("content", ""), 10);
+                let traffic_light_parent = document.querySelector(`.quick-status${number_button_find} i`);
+                // traffic_light_parent.classList.add('green');
+                traffic_light_parent.style.color = 'limegreen';
+                let trafficContent = document.getElementById(`content${button.dataset.id}`);
               // setTimeout(function(){ trafficContent.classList.add('magictime', 'swashOut'); }, 1500);
               // setTimeout(function(){ traffic_light_parent.classList.add('magictime', 'swashOut'); }, 1500);
             });
@@ -209,19 +215,24 @@ add_orange = (data) => {
   })
 };
   add_orange();
-    if(document.querySelectorAll('.orange')){
-          const traffic_light_orange = document.querySelectorAll('.orange');
+    if(document.querySelectorAll('.orange-button')){
+          const traffic_light_orange = document.querySelectorAll('.orange-button');
                  add_green = (data) => {
                   traffic_light_orange.forEach(button => {
                     button.addEventListener("click", (event) => {
                       event.preventDefault();
                       document.getElementById(`submit_done${button.dataset.id}`).click()
                       button.children[1].innerHTML = "Done!"
-                      event.currentTarget.classList.add('green')
+                      event.currentTarget.classList.add('green-button')
+
+                      let number_button_find = parseInt(event.currentTarget.parentElement.parentElement.id.replace("content", ""), 10);
+                      let traffic_light_parent = document.querySelector(`.quick-status${number_button_find} i`);
+                      console.log((traffic_light_parent))
+
                       let trafficContent = document.getElementById(`content${button.dataset.id}`);
                       // setTimeout(function(){ trafficContent.classList.add('magictime', 'swashOut'); }, 1500);
-                      let traffic_light_parent = document.querySelector(`.quick-status${button.dataset.id}`);
-                    traffic_light_parent.classList.add('green');
+                    // traffic_light_parent.classList.add('green');
+                    traffic_light_parent.style.color = 'limegreen';
                     });
                   })
                 };
