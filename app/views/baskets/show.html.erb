@@ -65,7 +65,7 @@
                 <span>£<%= total.round(2) + 0.5 %></span>
 
               </li>
-              <%= button_tag(type: 'submit') do %>
+              <%= button_tag(type: 'submit', class: 'checkout-button' ) do %>
                 <%= image_tag "applepay.png", alt: "apple pay", class: 'applepay' %>
               <% end %>
               <%#= f.submit "#{image_tag 'applepay.png' }", class: "order sw-button" %>
