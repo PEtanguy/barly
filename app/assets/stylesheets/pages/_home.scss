@@ -28,6 +28,9 @@ h2 {
   align-items: center;
 }
 
+#mygrey i {
+  color: $mygrey!important;
+}
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -45,7 +48,7 @@ h2 {
 
 i {
   font-size: 30px;
-  color: $primary;
+  color: $mygrey;
 }
 
 .search-form-control {
