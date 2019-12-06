@@ -34,6 +34,12 @@
     padding-bottom: 35px;
     padding-top: 10px;
   }
+
+  .checkout-button {
+    -webkit-appearance: button;
+    background-color: transparent;
+    border: none;
+  }
   .empty_basket_div {
     display: flex;
     flex-direction: columns;
