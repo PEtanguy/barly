@@ -5,8 +5,8 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'magic.css/dist/magic.min.css';
 import Swal from 'sweetalert2';
 
-if (document.querySelector('.sw-button')) {
-  document.querySelector('.sw-button').addEventListener('click', () => {
+if (document.querySelector('.applepay')) {
+  document.querySelector('.applepay').addEventListener('click', () => {
     Swal.fire({
       position: 'center',
       // text: <% <img src="https://cdn.dribbble.com/users/957410/screenshots/3226085/dribbble-gif.gif" >%>,

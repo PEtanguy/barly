@@ -103,10 +103,13 @@
 }
 
 .basket-items {
-  background-color: $secondary;
+  background-color: $white;
   margin-right: 14px;
   padding: 0 12px;
   border-radius: 5px;
+    strong {
+      color: $primary;
+    }
 }
 
 // .basket_item_field {

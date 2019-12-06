@@ -58,15 +58,22 @@
           <div class="forms">
             <%= simple_form_for([@bar, Order.new]) do |f| %>
 
-            <%= f.input :table_id, collection: [1,2,3,4,5,6,7,8,9,10,], label: 'Do you have a table number?'%>
-            <%= f.input :notes, class: "til-input", label: 'Additional information' %>
-            <li class="items-total">
-              <span>Total:</span>
-              <span>£<%= total.round(2) + 0.5 %></span>
+              <%= f.input :table_id, collection: [1,2,3,4,5,6,7,8,9,10,], label: 'Do you have a table number?'%>
+              <%= f.input :notes, class: "til-input", label: 'Additional information' %>
+              <li class="items-total">
+                <span>Total:</span>
+                <span>£<%= total.round(2) + 0.5 %></span>
 
-            </li>
-            <%= f.button :submit, "Order Now", class: "order sw-button" %>
+              </li>
+              <%= button_tag(type: 'submit') do %>
+                <%= image_tag "applepay.png", alt: "apple pay", class: 'applepay' %>
+              <% end %>
+              <%#= f.submit "#{image_tag 'applepay.png' }", class: "order sw-button" %>
             <% end %>
+
+            <div>
+
+        </div>
           </div>
 
 
