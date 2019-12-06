@@ -58,7 +58,7 @@
     </div>
     <div class="card-invoice">
       <% contentCounter = 0 %>
-      <% @bar.orders.each do |order| %>
+      <% @bar.orders.reverse.each do |order| %>
       <%= simple_form_for(order, html: {class: "d-none"}) do |f| %>
       <%= f.input :status, input_html: {value: "making"} %>
       <%= f.input :order_id, input_html: {value: order.id} %>
