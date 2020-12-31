@@ -24,7 +24,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 #nokigiri
-gem 'nokogiri', '~> 1.6', '>= 1.6.7.2'
+gem 'nokogiri', '~> 1.10'
 
 #LetterOpener
 gem 'letter_opener', group: :development
